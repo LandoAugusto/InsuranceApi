@@ -4,6 +4,7 @@ namespace InsuranceApi.Core.Entities
 {
     public class QuotationItem : IIdentityEntity
     {
+        public int QuotationItemId { get; set; }
         public int QuotationId { get; set; }
         public int NumberItem { get; set; }
         public int InclusionUserId { get; set; }

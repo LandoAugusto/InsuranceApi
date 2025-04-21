@@ -4,7 +4,7 @@ namespace InsuranceApi.Core.Entities
 {
     public class QuotationWarranty : IIdentityEntity
     {
-        public int QuotationId { get; set; }
+        public int QuotationWarrantyId { get; set; }        
         public int VersionNumber { get; set; }
         public int EndorsementId { get; set; }
         public DateTime QuotationDate { get; set; }
@@ -30,6 +30,7 @@ namespace InsuranceApi.Core.Entities
         public DateTime InclusionDate { get; set; }
         public int? LastChangeUserId { get; set; }
         public DateTime? LastChangeDate { get; set; }
+        public virtual ICollection<QuotationWarrantyClaimant> QuotationWarrantyClaimant { get; set; } = new HashSet<QuotationWarrantyClaimant>();
         public virtual ICollection<QuotationWarrantyComplement> QuotationWarrantyComplement { get; set; } = new HashSet<QuotationWarrantyComplement>();
         public virtual ICollection<QuotationWarrantyLegalRecourse> QuotationWarrantyLegalRecourse { get; set; } = new HashSet<QuotationWarrantyLegalRecourse>();
         

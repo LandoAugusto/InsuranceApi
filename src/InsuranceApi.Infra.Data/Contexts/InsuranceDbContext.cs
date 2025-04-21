@@ -15,7 +15,7 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<QuotationItem> QuotationItem { get; set; }
         public virtual DbSet<QuotationCoverage> QuotationCoverage { get; set; }
         public virtual DbSet<QuotationCoverageFranchise> QuotationCoverageFranchise { get; set; }
-        public virtual DbSet<QuotationFlexMixRate> QuotationFlexMixRate { get; set; }
+        //public virtual DbSet<QuotationFlexMixRate> QuotationFlexMixRate { get; set; }
         public virtual DbSet<QuotationQuestionnaireItem> QuotationQuestionnaireItem { get; set; }
         public virtual DbSet<QuotationRiskLocationItem> QuotationRiskLocationItem { get; set; }
         public virtual DbSet<QuotationWarranty> QuotationWarranty { get; set; }

@@ -24,7 +24,7 @@ namespace InsuranceApi.Core.Entities
 
         //Foreing key
         public virtual ICollection<Broker> Broker { get; set; } = new HashSet<Broker>();
-        public virtual ICollection<Borrower> Taker { get; set; } = new HashSet<Borrower>();
+        public virtual ICollection<Borrower> Borrower { get; set; } = new HashSet<Borrower>();
         public virtual ICollection<PersonEntityType> PersonEntityType { get; set; } = new HashSet<PersonEntityType>();
     }
 }

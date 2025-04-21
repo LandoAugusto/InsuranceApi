@@ -4,8 +4,8 @@ namespace InsuranceApi.Core.Entities
 {
     public class BorrowerAppealFee : IIdentityEntity
     {
-        public int TakerAppealFeeId { get; set; }
-        public int TakerId { get; set; }
+        public int BorrowerAppealFeeId { get; set; }
+        public int BorrowerId { get; set; }
         public int ProductId { get; set; }
         public int CoverageId { get; set; }
         public decimal InsuredAmountValueMin { get; set; }
@@ -15,6 +15,6 @@ namespace InsuranceApi.Core.Entities
         public int Status { get; set; }
         public int UserId { get; set; }
         public DateTime DateUtc { get; set; }
-        public virtual Borrower Taker { get; set; } = null!;
+        public virtual Borrower Borrower { get; set; } = null!;
     }
 }
