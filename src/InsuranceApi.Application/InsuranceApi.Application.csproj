@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InsuranceApi.Core\InsuranceApi.Core.csproj" />
+    <ProjectReference Include="..\InsuranceApi.Infra.Data\InsuranceApi.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,10 @@ using InsuranceApi.Core.Infrastructure.Mapper;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.IO.Compression;
 using System.Reflection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace InsuranceApi.Extensions
 {
@@ -39,7 +43,8 @@ namespace InsuranceApi.Extensions
             services.AddApiVersion();
             services.AddSwagger(apiConfig);
             services.AddAutoMapper(typeof(ConfigurarationMapping));
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();            
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddAuthAndAuthor(apiConfig);
         }
 
         private static IServiceCollection ConfigControllersPipeline(this IServiceCollection services)
@@ -55,8 +60,6 @@ namespace InsuranceApi.Extensions
 
             return services;
         }
-
-
         private static void AddResponseCompression(this IServiceCollection services, ApiConfig apiConfig)
         {
             if (apiConfig != null && apiConfig.UseResponseCompression)
@@ -74,7 +77,6 @@ namespace InsuranceApi.Extensions
                 });
             }
         }
-
         private static void AddUseCors(this IServiceCollection services)
         {
             services.AddCors(delegate (CorsOptions options)
@@ -85,7 +87,6 @@ namespace InsuranceApi.Extensions
                 });
             });
         }
-
         private static void AddRoutings(this IServiceCollection services)
         {
             services.AddRouting(delegate (RouteOptions option)
@@ -94,7 +95,6 @@ namespace InsuranceApi.Extensions
                 option.LowercaseUrls = true;
             });
         }
-
         private static void AddApiVersion(this IServiceCollection services)
         {
             services.AddApiVersioning(delegate (ApiVersioningOptions config)
@@ -112,7 +112,6 @@ namespace InsuranceApi.Extensions
                 options.DefaultApiVersionParameterDescription = "Versão da API.";
             }).EnableApiVersionBinding(); ;
         }
-
         private static void AddSwagger(this IServiceCollection services, ApiConfig apiConfig)
         {
             services.AddSwaggerGen(delegate (SwaggerGenOptions options)
@@ -120,7 +119,7 @@ namespace InsuranceApi.Extensions
                 options.OperationFilter<SwaggerDefaultValues>();
 
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {   
+                {
                     Description =
                     @"Digite 'Bearer' [espaço] e, em seguida, seu token na entrada de texto abaixo.<br><br>Example: 'Bearer 12345abcdef'<br>",
                     Name = "Authorization",
@@ -153,6 +152,63 @@ namespace InsuranceApi.Extensions
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
             });
+        }
+        private static void AddAuthAndAuthor(this IServiceCollection services, ApiConfig apiConfig)
+        {
+            if (apiConfig.Jwt.Enable)
+            {
+                var signingConfigurations = new SigningConfiguration();
+                services.AddSingleton(signingConfigurations);
+
+                services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; ;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                }).AddJwtBearer(jwtOptions =>
+                {
+                    var secretKey = apiConfig.Jwt.Secret;
+                    var validateSigningKey = !string.IsNullOrWhiteSpace(secretKey);
+
+                    var paramsValidation = jwtOptions.TokenValidationParameters;
+
+                    paramsValidation.IssuerSigningKey = signingConfigurations.Key;
+                    paramsValidation.ValidAudience = apiConfig.Jwt.Audience;
+                    paramsValidation.ValidIssuer = apiConfig.Jwt.Issuer;
+                    paramsValidation.ValidateIssuerSigningKey = true;
+                    paramsValidation.ValidateLifetime = true;
+                    paramsValidation.ClockSkew = TimeSpan.FromHours(apiConfig.Jwt.ExpiresInMinutes);
+                    if (validateSigningKey)
+                    {
+                        var secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
+                        jwtOptions.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(secretKeyBytes);
+                    }
+                    else
+                    {
+                        jwtOptions.TokenValidationParameters.RequireExpirationTime = false;
+                        jwtOptions.TokenValidationParameters.RequireSignedTokens = false;
+                        jwtOptions.TokenValidationParameters.SignatureValidator = (token, _) =>
+                            new JwtSecurityToken(token);
+                    }
+
+                    jwtOptions.TokenValidationParameters = paramsValidation;
+
+                    jwtOptions.Events = new JwtBearerEvents
+                    {
+                        OnChallenge = async (context) =>
+                        {
+                            context.HandleResponse();
+                            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+
+                        },
+                        OnForbidden = async (context) =>
+                        {
+                            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                        },
+                    };
+                });
+
+                services.AddAuthorization();
+            }
         }
     }
 }
