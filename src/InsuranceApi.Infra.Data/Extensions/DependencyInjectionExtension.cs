@@ -19,7 +19,9 @@ namespace InsuranceApi.Infra.Data.Extensions
 
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IQuotationRepository, QuotationRepository>();           
+            services.AddScoped<IQuotationRepository, QuotationRepository>();
+            services.AddScoped<IFlexRateBrokerRepository, FlexRateBrokerRepository>();
+            services.AddScoped<IFlexRateRepository, FlexRateRepository>();
 
             return services;
         }

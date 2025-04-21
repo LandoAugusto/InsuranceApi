@@ -2,7 +2,7 @@
 
 namespace InsuranceApi.Core.Entities
 {
-    internal class QuotationWarrantyClaimant : IIdentityEntity
+    public class QuotationWarrantyClaimant : IIdentityEntity
     {
     }
 }

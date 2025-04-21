@@ -2,7 +2,7 @@
 
 namespace InsuranceApi.Core.Entities
 {
-    internal class QuotationFlexMixRate : IIdentityEntity
+    public class QuotationFlexMixRate : IIdentityEntity
     {
     }
 }
