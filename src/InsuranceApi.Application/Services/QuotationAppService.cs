@@ -7,7 +7,7 @@ namespace InsuranceApi.Application.Services
     {
         public async Task<IEnumerable<QuotationModel>?> GetByNumberAsync(int quotationNumber)
         {
-            return await Task.FromResult<IEnumerable<QuotationModel>?>(null);   
+            return await Task.FromResult<IEnumerable<QuotationModel>?>(null);
         }
     }
 }

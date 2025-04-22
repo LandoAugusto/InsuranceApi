@@ -1,4 +1,5 @@
-﻿using InsuranceApi.Core.Entities.Interfaces;
+﻿using InsuranceApi.Core.Entities.Enumerators;
+using InsuranceApi.Core.Entities.Interfaces;
 
 namespace InsuranceApi.Core.Entities
 {
@@ -10,7 +11,7 @@ namespace InsuranceApi.Core.Entities
         public int LegacyUserId { get; set; }
         public string? LegacyCode { get; set; }
         public string? AddressLegacyCode { get; set; }
-        public int Status { get; set; }
+        public RecordStatusEnum Status { get; set; }
         public int InclusionUserId { get; set; }
         public DateTime InclusionDate { get; set; }
         public int? LastChangeUserId { get; set; }

@@ -9,7 +9,10 @@ namespace InsuranceApi.Application.Extensions
         public static void AddAppServices(this IServiceCollection services)
         {             
             services.AddScoped<IQuotationAppService, QuotationAppService>();
+            services.AddScoped<IQuotationWarrantyAppService, QuotationWarrantyAppService>();
             services.AddScoped<IFlexRateAppService, FlexRateAppService>();
+            services.AddScoped<IBrokerAppService, BrokerAppService>();
+            services.AddScoped<IBorrowerAppService, BorrowerAppService>();
         }
     }
 }

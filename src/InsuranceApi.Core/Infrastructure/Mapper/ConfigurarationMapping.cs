@@ -7,6 +7,7 @@ namespace InsuranceApi.Core.Infrastructure.Mapper
     {
         public ConfigurarationMapping()
         {
+            CreateMap<FlexRateModel, FlexRate>().ReverseMap();
             CreateMap<QuotationModel, Quotation>().ReverseMap();
           
         }
