@@ -11,5 +11,10 @@
         /// Gets or sets the JWT configuration.
         /// </summary>
         public JwtConfig Jwt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of HTTP configurations.
+        /// </summary>
+        public List<HttpConfig> Configurations { get; set; }
     }
 }

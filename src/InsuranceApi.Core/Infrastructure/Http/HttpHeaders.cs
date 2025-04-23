@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsuranceApi.Core.Models
+namespace InsuranceApi.Core.Infrastructure.Http
 {
-    public class BorrowerModel
+    internal class HttpHeaders
     {
-
     }
 }

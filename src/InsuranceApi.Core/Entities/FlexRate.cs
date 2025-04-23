@@ -1,4 +1,4 @@
-﻿using Guarantee.Core.Entities;
+﻿using InsuranceApi.Core.Entities;
 using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Entities.Interfaces;
 

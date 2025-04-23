@@ -1,7 +1,7 @@
 ﻿using InsuranceApi.Core.Entities;
 using InsuranceApi.Core.Entities.Interfaces;
 
-namespace Guarantee.Core.Entities
+namespace InsuranceApi.Core.Entities
 {
     public class RateType : IIdentityEntity
     {

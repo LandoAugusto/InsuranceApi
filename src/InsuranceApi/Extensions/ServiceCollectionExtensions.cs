@@ -16,6 +16,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Polly;
+using Serilog;
 
 namespace InsuranceApi.Extensions
 {
@@ -45,6 +47,41 @@ namespace InsuranceApi.Extensions
             services.AddAutoMapper(typeof(ConfigurarationMapping));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddAuthAndAuthor(apiConfig);
+
+            if (apiConfig == null)
+            {
+                services.AddHttpClient("Default").AddPolicyHandler((HttpRequestMessage request) =>
+                Policy.WrapAsync<HttpResponseMessage>(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromMilliseconds(30000.0)),
+                Policy.Handle<Exception>().OrResult((HttpResponseMessage response) => !response.IsSuccessStatusCode).RetryAsync(0,
+                delegate (DelegateResult<HttpResponseMessage> exception, int retryCount, Context context)
+                {
+                    Log.Error($"Retry number {retryCount}: Exception:{exception.Exception}");
+
+                })));
+                return;
+            }
+
+            foreach (HttpConfig configurationHttp in apiConfig.Configurations)
+            {
+                services.AddHttpClient(configurationHttp.Name, client =>
+                {
+                    client.BaseAddress = new Uri(configurationHttp.Url);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                })
+                .AddPolicyHandler((Func<HttpRequestMessage, IAsyncPolicy<HttpResponseMessage>>)delegate
+                {
+                    IAsyncPolicy<HttpResponseMessage>[] array = new IAsyncPolicy<HttpResponseMessage>[2];
+                    PolicyConfig policy = configurationHttp.Policy;
+                    array[0] = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromMilliseconds((policy == null || !policy.TimeoutMs.HasValue) ? 30000.0 : ((double)(configurationHttp.Policy?.TimeoutMs).Value)));
+                    PolicyBuilder<HttpResponseMessage> policyBuilder = Policy.Handle<Exception>().OrResult((HttpResponseMessage response) => !response.IsSuccessStatusCode);
+                    PolicyConfig policy2 = configurationHttp.Policy;
+                    array[1] = policyBuilder.RetryAsync((policy2 != null && policy2.Retries.HasValue) ? (configurationHttp.Policy?.Retries).Value : 0, delegate (DelegateResult<HttpResponseMessage> exception, int retryCount, Context context)
+                    {
+                        Log.Error($"Retry number {retryCount}: Exception:{exception.Exception}");
+                    });
+                    return Policy.WrapAsync(array);
+                });
+            }
         }
 
         private static IServiceCollection ConfigControllersPipeline(this IServiceCollection services)
