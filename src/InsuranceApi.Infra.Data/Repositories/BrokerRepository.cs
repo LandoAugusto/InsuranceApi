@@ -9,7 +9,7 @@ namespace InsuranceApi.Infra.Data.Repositories
 {
     internal class BrokerRepository(InsuranceDbContext context) : DomainRepository<Broker>(context), IBrokerRepository
     {
-        public async Task<Broker?> GetAsync(int? BrokerId, RecordStatusEnum recordStatus)
+        public async Task<Broker?> GetByIdAsync(int? BrokerId, RecordStatusEnum recordStatus)
         {
             var query =
                     await Task.FromResult(

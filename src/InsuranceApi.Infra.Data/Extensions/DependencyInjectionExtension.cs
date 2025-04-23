@@ -22,6 +22,10 @@ namespace InsuranceApi.Infra.Data.Extensions
             services.AddScoped<IQuotationRepository, QuotationRepository>();
             services.AddScoped<IFlexRateBrokerRepository, FlexRateBrokerRepository>();
             services.AddScoped<IFlexRateRepository, FlexRateRepository>();
+            services.AddScoped<IQuotationWarrantyRepository, QuotationWarrantyRepository>();
+            services.AddScoped<IBorrowerRepository, BorrowerRepository>();
+            services.AddScoped<IBrokerRepository, BrokerRepository>();
+
 
             return services;
         }

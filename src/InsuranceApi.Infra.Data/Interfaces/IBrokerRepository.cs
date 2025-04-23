@@ -6,6 +6,6 @@ namespace InsuranceApi.Infra.Data.Interfaces
 {
     public interface IBrokerRepository : IDomainRepository<Broker>  
     {
-        Task<Broker?> GetAsync(int? BrokerId, RecordStatusEnum recordStatus);
+        Task<Broker?> GetByIdAsync(int? BrokerId, RecordStatusEnum recordStatus);
     }
 }

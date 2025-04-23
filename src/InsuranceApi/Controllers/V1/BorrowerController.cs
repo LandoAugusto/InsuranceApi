@@ -1,12 +1,38 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InsuranceApi.Application.Interfaces;
+using InsuranceApi.Controllers.V1.Base;
+using InsuranceApi.Core.Model;
+using InsuranceApi.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceApi.Controllers.V1
 {
-    public class BorrowerController : Controller
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="borrowerAppService"></param>
+    public class BorrowerController(IBorrowerAppService borrowerAppService) : BaseController
     {
-        public IActionResult Index()
+        private readonly IBorrowerAppService _borrowerAppService = borrowerAppService;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="brokerId"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-taker/{brokerId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetTakerAsync(int brokerId, string name)
         {
-            return View();
+            var response = await _borrowerAppService.ListAsync(brokerId, name, Core.Entities.Enumerators.RecordStatusEnum.Ativo);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
         }
     }
 }

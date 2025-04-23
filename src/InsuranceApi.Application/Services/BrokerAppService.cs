@@ -10,13 +10,11 @@ namespace InsuranceApi.Application.Services
     {
         private readonly IMapper _mapper = mapper;
         private readonly IBrokerRepository _brokerRepository = brokerRepository;
-        public async Task<BrokerModel?> GetAsync(int? brokerId, RecordStatusEnum recordStatus)
-        {
-            var entidade = await _brokerRepository.GetAsync(brokerId, recordStatus);
-            if (entidade == null)
-                return null;    
 
-            return _mapper.Map<BrokerModel>(entidade);
-        }
+        public async Task<BrokerModel?> GetByIdAsync(int? brokerId, RecordStatusEnum recordStatus) =>
+            _mapper.Map<BrokerModel>(await _brokerRepository.GetByIdAsync(brokerId, recordStatus));
+
+
+
     }
 }

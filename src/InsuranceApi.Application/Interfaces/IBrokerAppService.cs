@@ -5,6 +5,6 @@ namespace InsuranceApi.Application.Interfaces
 {
     public interface IBrokerAppService
     {
-        Task<BrokerModel?> GetAsync(int? brokerId, RecordStatusEnum recordStatus);
+        Task<BrokerModel?> GetByIdAsync(int? brokerId, RecordStatusEnum recordStatus);
     }
 }
