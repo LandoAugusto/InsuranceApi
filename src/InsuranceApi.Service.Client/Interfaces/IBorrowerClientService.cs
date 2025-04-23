@@ -2,7 +2,7 @@
 
 namespace InsuranceApi.Service.Client.Interfaces
 {
-    public  interface ITakerClientService
+    public  interface IBorrowerClientService
     {
         Task<IEnumerable<RetornoTomadorDetalheListaDTO>?> ListAsync(int brokerId, string? name);
     }

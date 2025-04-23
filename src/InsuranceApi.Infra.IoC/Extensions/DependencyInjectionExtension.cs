@@ -1,5 +1,6 @@
 ﻿using InsuranceApi.Application.Extensions;
 using InsuranceApi.Infra.Data.Extensions;
+using InsuranceApi.Service.Client.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,8 @@ namespace InsuranceApi.Infra.IoC.Extensions
         public static void AddIoC(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAppServices();
-            services.AddInfraData(configuration);            
+            services.AddInfraData(configuration);
+            services.AddServiceClient();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace InsuranceApi.Service.Client.Services
     /// <summary>
     /// 
     /// </summary>
-    internal class TakerClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ITakerClientService
+    internal class BorrowerClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IBorrowerClientService
     {
 
         private readonly ILogWriter _logWriter = logWriter;

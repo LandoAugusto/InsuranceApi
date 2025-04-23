@@ -9,8 +9,11 @@ namespace InsuranceApi.Service.Client.Extensions
         public static IServiceCollection AddServiceClient(this IServiceCollection services)
         {
             services.AddScoped<IZipCodeClientService, ZipCodeClientService>();
-            services.AddScoped<ITakerClientService, TakerClientService>();
+            services.AddScoped<IBorrowerClientService, BorrowerClientService>();
             services.AddScoped<IBrokerClientService, BrokerClientService>();
+            services.AddScoped<IProductClientService, ProductClientService>();
+            services.AddScoped<ICalculationClientService, CalculationClientService>();
+            services.AddScoped<IAuthenticationClientService, AuthenticationClientService>();
 
             return services;
         }

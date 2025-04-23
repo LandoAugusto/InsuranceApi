@@ -1,7 +1,10 @@
-﻿using Component.Log.Interfaces;
+﻿using Amazon.Runtime;
+using Component.Log.Interfaces;
+using Infrastructure.Logger.Logging;
 using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Infrastructure.Http;
+using InsuranceApi.Core.Model;
 using InsuranceApi.Service.Client.Interfaces;
 using InsuranceApi.Service.Client.Models;
 using Microsoft.Extensions.Options;
@@ -9,36 +12,33 @@ using Newtonsoft.Json;
 
 namespace InsuranceApi.Service.Client.Services
 {
-
-    internal class ZipCodeClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IZipCodeClientService
+    internal class AuthenticationClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IAuthenticationClientService
     {
-
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
-        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("ZipCode"));
+        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("Authentication"));
 
-        public async Task<ZipCodeModel> GetAsync(string zipcode)
+        public async Task<string> GetAsync(string login, string password)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
-
             try
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
-                rawRequest.RequestUri = $"{_endpont.Url}/ws/{zipcode}/json/";
-                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
-                var response = JsonConvert.DeserializeObject<ZipCodeResponseModel>(rawResponse.Conteudo);
 
-                return new ZipCodeModel()
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/auth/token";
+                rawRequest.BodyObject = new
                 {
-                    ZipCode = response.ZipCode,
-                    State = response.State,
-                    StateUf = response.StateUf,
-                    District = response.District,
-                    Complement = response.Complement,
-                    City = response.City,
-                    StreetName = response.City
+                    login,
+                    password
                 };
+                rawResponse = await _httpClient.PostAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<TokenResponse>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data.AccessToken;
             }
             catch (Exception exception)
             {
