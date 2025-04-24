@@ -7,8 +7,6 @@ namespace InsuranceApi.Application.Services
     {
         public async Task<QuotationWarrantyResponseModel> SaveUpdateAsync(QuotationWarrantyRequestModel request)
         {
-
-
             return new QuotationWarrantyResponseModel();
         }
 
