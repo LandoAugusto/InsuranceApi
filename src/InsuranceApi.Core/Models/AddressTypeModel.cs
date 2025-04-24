@@ -1,4 +1,4 @@
-﻿namespace InsuranceApi.Service.Client.Models
+﻿namespace InsuranceApi.Core.Models
 {
     public class AddressTypeModel
     {

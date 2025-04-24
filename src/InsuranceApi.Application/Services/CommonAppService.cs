@@ -1,17 +1,24 @@
 ﻿using AutoMapper;
 using InsuranceApi.Application.Interfaces;
+using InsuranceApi.Core.Entities.Enumerators;
+using InsuranceApi.Core.Models;
+using InsuranceApi.Infra.Data.Interfaces;
 using InsuranceApi.Service.Client.Interfaces;
 using InsuranceApi.Service.Client.Models;
 
 namespace InsuranceApi.Application.Services
 {
-    public class CommonAppService(IMapper mapper, IZipCodeClientService zipCodeService) : ICommonAppService
+    public class CommonAppService(IMapper mapper, IDocumentTypeRepository documentTypeRepository, IInsuredTypeRepository insuredTypeRepository,
+        IAddressTypeRepository adrressTypeRepository, IZipCodeClientService zipCodeService) : ICommonAppService
     {
 
-        public readonly IMapper _mapper = mapper;
-        public readonly IZipCodeClientService _zipCodeService = zipCodeService;
+        private readonly IMapper _mapper = mapper;
+        private readonly IDocumentTypeRepository _documentTypeRepository = documentTypeRepository;
+        private readonly IInsuredTypeRepository _insuredTypeRepository = insuredTypeRepository;
+        private readonly IAddressTypeRepository _adrressTypeRepository = adrressTypeRepository;
+        private readonly IZipCodeClientService _zipCodeService = zipCodeService;
 
-        public async Task<ZipCodeModel> GetZipCodeAsync(string zipCode)
+        public async Task<ZipCodeModel?> GetZipCodeAsync(string zipCode)
         {
             var response = await _zipCodeService.GetAsync(zipCode);
             if (response == null) return null;
@@ -19,51 +26,28 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<AddressTypeModel>> GetAddressTypeAsync()
+        public async Task<IEnumerable<AddressTypeModel>?> ListAddressTypeAsync(RecordStatusEnum recordStatusEnum)
         {
-            var response = new List<AddressTypeModel>() {
+            var response = await _adrressTypeRepository.ListAsync(recordStatusEnum);
+            if (response == null) return null;
 
-                new()
-                {
-                    AddressTypeId = 1,
-                    Name ="Residencial"
-
-                },
-                new(){
-
-                    AddressTypeId = 2,
-                    Name ="Comercial"
-                },
-                  new(){
-
-                    AddressTypeId = 3,
-                    Name ="Correspondência"
-                }
-            };
-
-
-            return response;
+            return _mapper.Map<IEnumerable<AddressTypeModel>>(response);
         }
 
-        public async Task<IEnumerable<DocumenTypeModel>> GetDocumentypeAsync()
+        public async Task<IEnumerable<DocumentTypeModel>?> ListDocumentTypeAsync(RecordStatusEnum recordStatusEnum)
         {
-            var response = new List<DocumenTypeModel>() {
+            var response = await _documentTypeRepository.ListAsync(recordStatusEnum);
+            if (response == null) return null;
 
-                new()
-                {
-                    DocumenTypeId = 1,
-                    Name ="CPF"
+            return _mapper.Map<IEnumerable<DocumentTypeModel>>(response);
+        }
 
-                },
-                new(){
+        public async Task<IEnumerable<InsuredTypeModel>?> ListInsuredTypeAsync(RecordStatusEnum recordStatusEnum)
+        {
+            var response = await _insuredTypeRepository.ListAsync(recordStatusEnum);
+            if (response == null) return null;
 
-                    DocumenTypeId = 2,
-                    Name ="CNPJ"
-                }
-            };
-
-
-            return response;
+            return _mapper.Map<IEnumerable<InsuredTypeModel>>(response);
         }
     }
 }

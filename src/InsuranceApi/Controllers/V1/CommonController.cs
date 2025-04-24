@@ -1,6 +1,8 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
+using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Model;
+using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +15,6 @@ namespace InsuranceApi.Controllers.V1
     public class CommonController(ICommonAppService commonAppService) : BaseController
     {
         private readonly ICommonAppService _commonAppService = commonAppService;
-
 
         /// <summary>
         /// 
@@ -42,9 +43,9 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetAddressTypeAsync()
+        public async Task<IActionResult> ListAddressTypeAsync()
         {
-            var response = await _commonAppService.GetAddressTypeAsync();
+            var response = await _commonAppService.ListAddressTypeAsync(RecordStatusEnum.Ativo);
             if (response == null)
                 return ReturnNotFound();
 
@@ -57,12 +58,29 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-document-type")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumenTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumenTypeModel>>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumenTypeModel>>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetDocumentypeAsync()
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> ListDocumentTypeAsync()
         {
-            var response = await _commonAppService.GetDocumentypeAsync();
+            var response = await _commonAppService.ListDocumentTypeAsync(RecordStatusEnum.Ativo);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-insured-type")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> ListInsuredTypeAsync()
+        {
+            var response = await _commonAppService.ListInsuredTypeAsync(RecordStatusEnum.Ativo);
             if (response == null)
                 return ReturnNotFound();
 
