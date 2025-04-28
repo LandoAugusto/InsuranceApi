@@ -3,6 +3,7 @@ using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Core.Entities;
 using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Extensions;
+using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Models;
 using InsuranceApi.Infra.Data.Interfaces;
 using System.Text;
@@ -49,7 +50,7 @@ namespace InsuranceApi.Application.Services
         {
             ///-- Busca os dados da taxa flex
             var flexRate = await _flexRateRepository.GetByIdAsync(simulation.FlexRateMixId) ??
-                throw new ApplicationException("Dados da taxa mix selecionada não localizados");
+                throw new BusinessException("Taxa mix não localiza.");
 
             var returnSimulation = new SimulationModel
             {

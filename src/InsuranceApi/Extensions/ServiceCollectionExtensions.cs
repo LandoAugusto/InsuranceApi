@@ -1,23 +1,27 @@
 ﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using InsuranceApi.Configurations;
-using InsuranceApi.Filters;
 using InsuranceApi.Core.Infrastructure;
 using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Core.Infrastructure.Interfaces;
 using InsuranceApi.Core.Infrastructure.Mapper;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using System.IO.Compression;
-using System.Reflection;
+using InsuranceApi.Core.Models.Validators;
+using InsuranceApi.Filters;
+using InsuranceApi.Interceptor;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
+using Microsoft.OpenApi.Models;
 using Polly;
 using Serilog;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.IdentityModel.Tokens.Jwt;
+using System.IO.Compression;
+using System.Reflection;
+using System.Text;
 
 namespace InsuranceApi.Extensions
 {
@@ -46,6 +50,7 @@ namespace InsuranceApi.Extensions
             services.AddSwagger(apiConfig);
             services.AddAutoMapper(typeof(ConfigurarationMapping));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddAuthAndAuthor(apiConfig);
 
             if (apiConfig == null)
@@ -86,12 +91,12 @@ namespace InsuranceApi.Extensions
 
         private static IServiceCollection ConfigControllersPipeline(this IServiceCollection services)
         {
+            services.AddValidatorsFromAssemblyContaining<SimulationFilterValidator>();
+            services.AddTransient<IValidatorInterceptor, CustomValidatorInterceptor>();
+
             services.AddScoped<IApiWorkContext, ApiWorkContext>();
             services.AddControllers(mvcOptions =>
             {
-
-                //mvcOptions.Filters.Add<ContextFilter>(order: 1);
-                //mvcOptions.Filters.Add<ControllersFilter>(order: 2);
                 mvcOptions.Filters.Add<ExceptionFilter>(order: 0);
             });
 

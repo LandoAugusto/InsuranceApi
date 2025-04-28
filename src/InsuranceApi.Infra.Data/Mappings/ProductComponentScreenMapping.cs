@@ -4,23 +4,21 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace InsuranceApi.Infra.Data.Mappings
 {
-    internal class InsuredTypeMapping : IEntityTypeConfiguration<InsuredType>
+    internal class ProductComponentScreenMapping : IEntityTypeConfiguration<ProductComponentScreen>
     {
-        public void Configure(EntityTypeBuilder<InsuredType> builder)
+        public void Configure(EntityTypeBuilder<ProductComponentScreen> builder)
         {
+            builder
+              .HasKey(x => x.Id);
 
             builder
-          .HasKey(x => x.InsuredTypeId);
-
-            builder.Property(e => e.Name)
-              .HasMaxLength(100)
-              .IsUnicode(false);
+            .Property(x => x.ProductComponent);
 
             builder
-            .Property(x => x.Status);
+            .Property(x => x.Component);
 
             builder
-           .Property(x => x.Status);
+            .Property(x => x.Order);
 
             builder
             .Property(x => x.InclusionUserId);

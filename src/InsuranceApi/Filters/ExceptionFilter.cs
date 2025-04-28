@@ -8,12 +8,11 @@ using System.Net;
 
 namespace InsuranceApi.Filters
 {
-    internal class ExceptionFilter : IExceptionFilter
+    internal class ExceptionFilter(ILogWriter logWriter, IApiWorkContext requestContextHolder) : IExceptionFilter
     {
-        private readonly ILogWriter _logWriter;
-        private readonly IApiWorkContext _requestContextHolder;
-        public ExceptionFilter(ILogWriter logWriter, IApiWorkContext requestContextHolder) =>
-            (_logWriter, _requestContextHolder) = (logWriter, requestContextHolder);
+        private readonly ILogWriter _logWriter = logWriter;
+        private readonly IApiWorkContext _requestContextHolder = requestContextHolder;
+
 
         public void OnException(ExceptionContext context)
         {

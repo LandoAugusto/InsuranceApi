@@ -1,26 +1,20 @@
-﻿using InsuranceApi.Core.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace InsuranceApi.Infra.Data.Mappings
 {
-    internal class AddressTypeMapping : IEntityTypeConfiguration<AddressType>
+    internal class ComponentMapping : IEntityTypeConfiguration<Core.Entities.Component>
     {
-        public void Configure(EntityTypeBuilder<AddressType> builder)
+        public void Configure(EntityTypeBuilder<Core.Entities.Component> builder)
         {
+            builder
+            .HasKey(x => x.Id);
 
             builder
-            .HasKey(x => x.AddressTypeId);
-
-            builder.Property(e => e.Name)
-              .HasMaxLength(100)
-              .IsUnicode(false);
+            .Property(x => x.Name);
 
             builder
-            .Property(x => x.Status);
-
-            builder
-           .Property(x => x.Status);
+            .Property(x => x.Description);
 
             builder
             .Property(x => x.InclusionUserId);

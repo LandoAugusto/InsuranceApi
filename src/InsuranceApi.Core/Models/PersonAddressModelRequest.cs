@@ -1,7 +1,10 @@
-﻿namespace InsuranceApi.Core.Models
+﻿using InsuranceApi.Core.Entities.Enumerators;
+
+namespace InsuranceApi.Core.Models
 {
     public class PersonAddressModelRequest
     {
+        public AddressTypeEnum AddressType { get; set; }
         public string? ZipCode { get; set; }
         public string? StreetName { get; set; }
         public string? Complement { get; set; }

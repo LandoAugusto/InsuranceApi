@@ -32,9 +32,9 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<FlexRateProfile> FlexRateProfile { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<PersonType> PersonType { get; set; }
-        public virtual DbSet<AddressType> AddressType { get; set; }
-        public virtual DbSet<InsuredType> InsuredType { get; set; }
-        public virtual DbSet<DocumentType> DocumentType { get; set; }
+        public virtual DbSet<Core.Entities.Component> Component { get; set; }
+        public virtual DbSet<ProductComponent> ProductComponent { get; set; }
+        public virtual DbSet<ProductComponentScreen> ProductComponentScreen { get; set; }
 
     }
 }

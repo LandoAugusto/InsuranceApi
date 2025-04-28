@@ -1,8 +1,7 @@
 ﻿namespace InsuranceApi.Core.Models
 {
     public class SimulationFilterModel
-    {
-        //-- Dados utilizados para simulação
+    {   
         public int FlexRateMixId { get; set; }
         public DateTime StartOfTerm { get; set; }
         public DateTime EndOfTerm { get; set; }

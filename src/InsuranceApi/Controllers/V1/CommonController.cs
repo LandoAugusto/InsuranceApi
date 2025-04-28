@@ -34,57 +34,5 @@ namespace InsuranceApi.Controllers.V1
             return base.ReturnSuccess(response);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("get-address-type")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> ListAddressTypeAsync()
-        {
-            var response = await _commonAppService.ListAddressTypeAsync(RecordStatusEnum.Ativo);
-            if (response == null)
-                return ReturnNotFound();
-
-            return base.ReturnSuccess(response);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("get-document-type")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumentTypeModel>>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> ListDocumentTypeAsync()
-        {
-            var response = await _commonAppService.ListDocumentTypeAsync(RecordStatusEnum.Ativo);
-            if (response == null)
-                return ReturnNotFound();
-
-            return base.ReturnSuccess(response);
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("get-insured-type")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> ListInsuredTypeAsync()
-        {
-            var response = await _commonAppService.ListInsuredTypeAsync(RecordStatusEnum.Ativo);
-            if (response == null)
-                return ReturnNotFound();
-
-            return base.ReturnSuccess(response);
-        }
     }
 }
