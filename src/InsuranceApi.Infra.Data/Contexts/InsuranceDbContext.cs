@@ -9,7 +9,7 @@ namespace InsuranceApi.Infra.Data.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         }
-       
+
         public virtual DbSet<Quotation> Quotation { get; set; }
         public virtual DbSet<QuotationAutoItem> QuotationAutoItem { get; set; }
         public virtual DbSet<QuotationItem> QuotationItem { get; set; }
@@ -20,7 +20,7 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<QuotationRiskLocationItem> QuotationRiskLocationItem { get; set; }
         public virtual DbSet<QuotationWarranty> QuotationWarranty { get; set; }
         public virtual DbSet<QuotationWarrantyComplement> QuotationWarrantyComplement { get; set; }
-        public virtual DbSet<QuotationWarrantyClaimant> QuotationWarrantyClaimant { get; set; }        
+        public virtual DbSet<QuotationWarrantyClaimant> QuotationWarrantyClaimant { get; set; }
         public virtual DbSet<QuotationWarrantyLegalRecourse> QuotationWarrantyLegalRecourse { get; set; }
         public virtual DbSet<Borrower> Borrower { get; set; }
         public virtual DbSet<BorrowerAppealFee> BorrowerAppealFee { get; set; }
@@ -31,6 +31,7 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<FlexRateBroker> FlexRateBroker { get; set; }
         public virtual DbSet<FlexRateProfile> FlexRateProfile { get; set; }
         public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<PersonAddress> PersonAddress { get; set; }
         public virtual DbSet<PersonType> PersonType { get; set; }
         public virtual DbSet<Core.Entities.Component> Component { get; set; }
         public virtual DbSet<ProductComponent> ProductComponent { get; set; }

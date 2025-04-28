@@ -1,0 +1,27 @@
+{
+  "cd_retorno": 0,
+  "nm_retorno": "Processamento efetuado com sucesso",
+  "Corretor": [
+    {
+      "id_pessoa": 3129901,
+      "nm_pessoa": "AON HOLDINGS CORRETORES DE SEGUROS LTDA",
+      "nm_tipo_pessoa": "Jurídica",
+      "nr_cnpj_cpf": 48102552000137.0,
+      "cd_susep_re": "202039375",
+      "fl_ativo": true,
+      "nm_email": "contato@aon.com",
+      "nr_celular": "48735327",
+      "nr_ddd": "11"
+    },
+
+    {
+      "id_pessoa": 3127700,
+      "nm_pessoa": "MARSH CORRETORA DE SEGUROS LTDA.",
+      "nm_tipo_pessoa": "Jurídica",
+      "nr_cnpj_cpf": 61038592000125.0,
+      "cd_susep_re": "202030323",
+      "fl_ativo": true,
+      "nm_email": "vistoria.auto@ezzeseguros.com.br"
+    }
+  ]
+}

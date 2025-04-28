@@ -11,6 +11,10 @@ namespace InsuranceApi.Core.Entities
         public string? LegacyCode { get; set; }
         public string? AddressLegacyCode { get; set; }
         public int Status { get; set; }
+        public int InclusionUserId { get; set; }
+        public DateTime InclusionDate { get; set; }
+        public int? LastChangeUserId { get; set; }
+        public DateTime? LastChangeDate { get; set; }
         public virtual Person Person { get; set; } = null!;
         public virtual ICollection<BorrowerAppealFee> BorrowerAppealFee { get; set; } = new HashSet<BorrowerAppealFee>();
     }

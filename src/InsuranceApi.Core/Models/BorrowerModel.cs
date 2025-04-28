@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InsuranceApi.Core.Models
+﻿namespace InsuranceApi.Core.Models
 {
     public class BorrowerModel
     {
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Document { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public decimal AvailableLimit { get; set; }
     }
 }

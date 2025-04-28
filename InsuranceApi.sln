@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApi.Infra.IoC", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApi.Service.Client", "src\InsuranceApi.Service.Client\InsuranceApi.Service.Client.csproj", "{55728445-441D-4091-9123-8A2B738AEDE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warranty.Mock", "src\Warranty.Mock\Warranty.Mock.csproj", "{DA2FB306-2AE6-4397-8D81-D64B4116D8BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{55728445-441D-4091-9123-8A2B738AEDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55728445-441D-4091-9123-8A2B738AEDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55728445-441D-4091-9123-8A2B738AEDE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2FB306-2AE6-4397-8D81-D64B4116D8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2FB306-2AE6-4397-8D81-D64B4116D8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2FB306-2AE6-4397-8D81-D64B4116D8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2FB306-2AE6-4397-8D81-D64B4116D8BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{6CB6222E-F2EB-499E-B614-CAE73BBE8136} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{3D21D3BC-9066-43AA-AD7E-96AC6AEB27ED} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{55728445-441D-4091-9123-8A2B738AEDE5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DA2FB306-2AE6-4397-8D81-D64B4116D8BA} = {6A5C8867-E4B3-405E-9BDD-8B2FEECDA20B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16407DA1-644E-4D1A-BF2A-73669E5B5C32}

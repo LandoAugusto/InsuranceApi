@@ -1,0 +1,768 @@
+{
+  "id_pessoa": "3519992"
+}
+=========================================================================================================
+{
+ "cd_retorno": 0,
+ "nm_retorno": "Código 0: Processamento efetuado com sucesso",
+ "Tomador": [
+  {
+   "id_pessoa": 3519992,
+   "nr_cnpj_cpf": 66220047000179.0,
+   "nm_pessoa": "KIDDE BRASIL LTDA",
+   "nm_tipo_pessoa": "Jurídica",
+   "nm_status": "Ativo",
+   "dv_ppe": "false",
+   "TomadorDetalharEndereco": {
+    "Endereco": [
+     {
+      "id_endereco": 132591,
+      "nm_endereco": "ROD RODOVIA FERNAO DIAS KM 939 6 S/N",
+      "nr_rua_endereco": "#",
+      "nm_complemento": "",
+      "nm_bairro": "DO RODEIO",
+      "nm_cidade": "EXTREMA",
+      "cd_pais": 1,
+      "nm_pais": "Brasil",
+      "cd_uf": 17,
+      "nm_uf": "MG",
+      "nm_cep": "37640000",
+      "cd_tp_endereco": 1,
+      "nm_tp_endereco": "Correspondência",
+      "dv_endereco_padrao": true
+     }
+    ]
+   },
+   "TomadorDetalharMeioComunicacao": {
+    "MeioComunicacao": []
+   },
+   "TomadorDetalharContaCorrente": {
+    "ContaCorrente": []
+   },
+   "TomadorDetalharSituacao": {
+    "id_tomador": 29394,
+    "id_classe_risco": 15,
+    "nm_classe_risco": "M - Médio",
+    "nr_qualidade_risco": "20",
+    "vl_lim_credito_interno": 50000000.00,
+    "vl_taxa_risco": 0.50000000,
+    "vl_premio_minimo": 190.00,
+    "dt_validade": "2026-01-14T00:00:00",
+    "vl_acumulo": 786737.84,
+    "vl_retencao": 786737.84,
+    "cd_status": 1601,
+    "nm_status": "Aprovado",
+    "vl_premio_fixo_recursal": 200.00
+   },
+   "TomadorDetalharSubLimite": {
+    "SubLimite": [
+     {
+      "id_grp_cobertura": 44,
+      "nm_grp_cobertura": "ADUANEIRO"
+     },
+     {
+      "id_grp_cobertura": 46,
+      "nm_grp_cobertura": "EXECUTANTE CONSTRUTOR - TÉRMINO DE OBRA"
+     },
+     {
+      "id_grp_cobertura": 50,
+      "nm_grp_cobertura": "ADMINISTRATIVO DE CRÉDITOS TRIBUTARIOS"
+     },
+     {
+      "id_grp_cobertura": 51,
+      "nm_grp_cobertura": "AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOM"
+     },
+     {
+      "id_grp_cobertura": 52,
+      "nm_grp_cobertura": "AGENTE FINANCIADOR (COMPLETION)"
+     },
+     {
+      "id_grp_cobertura": 53,
+      "nm_grp_cobertura": "DEPÓSITO RECURSAL TRABALHISTA"
+     },
+     {
+      "id_grp_cobertura": 55,
+      "nm_grp_cobertura": "FINANCEIRA"
+     },
+     {
+      "id_grp_cobertura": 56,
+      "nm_grp_cobertura": "IMOBILIÁRIO"
+     },
+     {
+      "id_grp_cobertura": 57,
+      "nm_grp_cobertura": "JUDICIAL"
+     },
+     {
+      "id_grp_cobertura": 59,
+      "nm_grp_cobertura": "OPERAÇÕES DE FUSÕES E AQUISIÇÕES"
+     },
+     {
+      "id_grp_cobertura": 60,
+      "nm_grp_cobertura": "PAGAMENTO"
+     },
+     {
+      "id_grp_cobertura": 61,
+      "nm_grp_cobertura": "PARCELAMENTO ADMINISTRATIVO FISCAL"
+     },
+     {
+      "id_grp_cobertura": 62,
+      "nm_grp_cobertura": "ANTECIPAÇÃO DE PAGAMENTO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 124130,
+      "id_grp_cobertura": 43,
+      "nm_grp_cobertura": "ADIANTAMENTO DE PAGAMENTOS",
+      "vl_taxa": 0.90000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 124131,
+      "id_grp_cobertura": 45,
+      "nm_grp_cobertura": "CONSTRUÇÃO, FORNECIMENTO OU PRESTAÇÃO DE SERVIÇO",
+      "vl_taxa": 0.50000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 124132,
+      "id_grp_cobertura": 47,
+      "nm_grp_cobertura": "LICITANTE",
+      "vl_taxa": 0.50000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 124133,
+      "id_grp_cobertura": 48,
+      "nm_grp_cobertura": "MANUTENÇÃO CORRETIVA",
+      "vl_taxa": 0.50000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 124134,
+      "id_grp_cobertura": 49,
+      "nm_grp_cobertura": "RETENÇÃO DE PAGAMENTOS",
+      "vl_taxa": 0.50000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 124135,
+      "id_grp_cobertura": 54,
+      "nm_grp_cobertura": "FIANÇA LOCATÍCIA",
+      "vl_taxa": 0.65000000
+     }
+    ]
+   },
+   "TomadorDetalharCCG": {
+    "CCG": [
+     {
+      "id_tomador_documento": 5499,
+      "id_documento": 50,
+      "nm_documento": "CCG",
+      "dt_solicitacao": "2025-02-27T00:00:00",
+      "cd_modelo": 5,
+      "nm_modelo": "CCG Com 2 Fiadores",
+      "cd_status": 101,
+      "nm_status": "Formalizado",
+      "nm_texto_ccg": "[%b%]Instruções para formalização do Contrato de Contragarantia[%b%]\r\n\r\nO(s) Tomador(es) e o(s) Fiador(es) devem enviar à Seguradora a devida documentação comprobatória dos poderes de representação, conforme indicado a seguir. \r\n\r\n1.1. Documentos do Tomador: \r\n(i) Cópia do Contrato/Estatuto social devidamente atualizado e consolidado com o registro na Junta Comercial correspondente; \r\n(ii) Ata de Eleição Vigente da Diretoria, se aplicável; \r\n(iii) Certidão Simplificada Atualizada emitida pela Junta Comercial correspondente. \r\n(iv) Ata Societária autorizando e validando a assinatura do Contrato de Contragarantia, caso o Contrato/Estatuto Social do Tomador(es) e/ou FIADOR(ES) traga qualquer vedação ou limitação que inviabilize ou impacte a operação.\r\n\r\n1.2. Documentos dos Fiadores: \r\n1.2.1. Se pessoa Jurídica: \r\n(i) Cópia do Contrato/Estatuto social devidamente atualizado e consolidado com o registro na Junta Comercial correspondente;\r\n(ii) Ata de Eleição Vigente da Diretoria, se aplicável; \r\n(iii) Certidão Simplificada Atualizada emitida pela Junta Comercial correspondente; \r\n(iv) Ata de Autorização para prestação de Fiança devidamente registrada na Junta Comercial, se aplicável.\r\n\r\n1.2.2. Se for Pessoa Física: \r\n(i) Cópia dos documentos pessoais; \r\n(ii) Certidão de casamento e cópia dos documentos pessoais do cônjuge, se casado em Comunhão Universal ou Comunhão Parcial de Bens.\r\n\r\n2. Em observância do art. 1.647, III do Código Civil Brasileiro, é indispensável a assinatura do cônjuge para a prestação de fiança/aval (aplicável para pessoas físicas). Tal assinatura só é dispensada se o regime for de separação total de bens. \r\n\r\n[%b%]3. Quando o(s) Tomador(es) e/ou o(s) Fiador(es) forem representados por procurador, o instrumento de procuração deverá ser específico para o ato (assinatura de contrato, assunção de obrigações). [%b%]\r\n\r\n4. Documentos em língua estrangeira devem ser apostilados/consularizados e traduzidos por tradutor público juramentado. \r\n\r\n5. Nos termos do art. 10, § 2º, da Medida Provisória nº 2.200-2, as partes expressamente concordam e reconhecem como válida a utilização de assinatura eletrônica firmadas pela plataforma Clicksign (www.clicksign.com). [%b%]A formalização das avenças na maneira supra acordada será suficiente para a validade e integral vinculação das partes ao presente instrumento. \r\n\r\n5.1. Para a assinatura eletrônica do presente instrumento, todos os signatários deverão informar seus respectivos endereços de e-mail, que deverão permitir a sua identificação[%b%]\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n[%b%]CONTRATO DE CONTRAGARANTIA[%b%]\r\n\r\nPelo presente [%b%]Instrumento Particular de Contragarantia,[%b%] \r\n\r\n[%b%]EZZE SEGUROS S/A,[%b%] com sede na Cidade de São Paulo, Estado de São Paulo, na Avenida Presidente Juscelino Kubitschek, nº 50, Andar 10, CEP 04543-000 - inscrita no CNPJ/MF sob nº 31.534.848/0001-24, doravante denominada como SEGURADORA; e\r\n\r\n[%b%](%nm_TOMADOR%)[%b%], sociedade com sede na Cidade de (%cidade_TOMADOR%), Estado de (%estado_TOMADOR%), na (%endereco_TOMADOR%), CEP (%cep_TOMADOR%), inscrita no CNPJ/MF sob o nº (%cnpj_TOMADOR%), neste ato representado na forma de seu Estatuto Social, doravante denominada como [%b%]TOMADOR[%b%];\r\n\r\n[%b%](%nm_fiador%)[%b%] sociedade com sede na Cidade (%cidade_fiador%) e Estado de (%estado_fiador%), na (%endereco_fiador%), CEP (%CEP_fiador%), inscrita no CNPJ/CPF sob o nº (%nr_CNPJ_CPF_fiador%), doravante denominado [%b%]FIADOR[%b%]; e\r\n\r\n[%b%](%nm_fiador2%)[%b%] sociedade com sede na Cidade (%cidade_fiador2%) e Estado de (%estado_fiador2%), na (%endereco_fiador2%), CEP (%CEP_fiador2%), inscrita no CNPJ/CPF sob o nº (%nr_CNPJ_CPF_fiador2%), doravante denominado [%b%]FIADOR[%b%], referidas individualmente como “Parte” e em conjunto “Partes”, resolvem firmar o presente Contrato de Contragarantia (\"Contrato\"), conforme cláusulas e condições abaixo:\r\n\r\n1.\t[%b%]DEFINIÇÕES[%b%]\r\n\r\n1.1.\tPara fins desse instrumento, o significado de termos específicos citados, relacionados a operações de seguro, segue as definições contidas nos produtos da [%b%]SEGURADORA[%b%], na Circular SUSEP 662, de 11 de abril de 2022, ou outra que vier a substituir, disposições do Código Civil Brasileiro, bem como demais normas legais e regulamentares aplicáveis. Além disso, é definição aplicável ao presente Contrato:\r\n\r\n1.1.1.\tGARANTIAS ADICIONAIS / COLATERAL: garantia real ou fidejussória ofertada pelo [%b%]TOMADOR[%b%].\r\n\r\n2.\t[%b%]OBJETO[%b%]\r\n\r\n2.1.\tO presente Contrato dispõe acerca das obrigações exigíveis do [%b%]TOMADOR[%b%] em face da emissão de Apólice(s) e/ou Endosso(s) de Seguro Garantia e Fiança Locatícia emitidos pela [%b%]SEGURADORA[%b%].\r\n\r\n2.2.\tFicam vinculados ao presente instrumento toda(s) a(s) Apólice(s) e/ou Endosso(s) até o momento emitido(s) e os futuros que sejam emitidos em nome do [%b%]TOMADOR[%b%] e/ou das pessoas mencionadas no item 5, se aplicando esta disposição inclusive quando envolver operações de cosseguro (independentemente de a SEGURADORA estar ou não na condição de líder do cosseguro).\r\n\r\n2.3.\tA(s) Apólice(s) e/ou Endosso(s) faz(em) parte integrante deste Contrato, para todos os fins e efeitos de direito.\r\n\r\nParágrafo Único: em relação ao [%b%]SEGURO FIANÇA LOCATÍCIA[%b%], as cláusulas deste CONTRATO se aplicam observadas as particularidades previstas na legislação vigente.\r\n\r\n3.\t[%b%] OBRIGAÇÕES DA SEGURADORA[%b%]\r\n\r\n3.1.\tA [%b%]SEGURADORA[%b%] poderá, a seu exclusivo critério, emitir Apólice(s) e Endosso(s) para assegurar o cumprimento das obrigações contratualmente assumidas pelo [%b%]TOMADOR[%b%] perante o(s) Segurado(s), nas quais serão estabelecidos finalidades, valores, prazos e demais condições de cobertura dos seguros.\r\n\r\n3.1.1.\tAs Apólices serão emitidas mediante Proposta enviada pelo [%b%]TOMADOR[%b%], sua corretora de seguros, ou ainda, no caso de Apólice de seguro garantia judicial, pelo escritório de advocacia nomeado pelo [%b%]TOMADOR[%b%], podendo a [%b%]SEGURADORA[%b%], a seu exclusivo critério, negar a proposta, exceto para renovações e/ou endossos obrigatórios, nos termos da apólice e/ou na forma da regulamentação aplicável.\r\n\r\n3.2.\tAceita a proposta de seguro, com a consequente emissão da Apólice ou Endosso, estes vigorarão em conformidade com seus termos e demais normativas legais e regulatórias aplicáveis.\r\n\r\n4.\t[%b%]OBRIGAÇÕES DO TOMADOR[%b%]\r\n\r\n4.1.\tConstituem obrigações do [%b%]TOMADOR[%b%], sem prejuízo das demais obrigações previstas na Legislação, neste Contrato e na(s) Apólice(s) e/ou Endosso(s):\r\n\r\n4.1.1.\tPagar o PRÊMIO do(s) seguro(s) contratado(s) junto à [%b%]SEGURADORA[%b%] por todo o período da garantia, conforme os termos da(s) respectiva(s) Apólice(s) e/ou Endosso(s) e deste Contrato, nos respectivos prazos de vencimento;\r\n\r\n4.1.2.\tApresentar informações exatas ao solicitar a emissão de uma Apólice e/ou Endosso, não omitindo qualquer informação sobre a obrigação a ser garantida;\r\n\r\n4.1.3.\tEnviar à [%b%]SEGURADORA[%b%], no prazo de 10 (dez) dias corridos após a respectiva solicitação, informações de caráter econômico-financeiro, cadastral, fiscal e trabalhista, inclusive de suas controladas, controladoras e coligadas, que permitam a correta e contínua avaliação do risco;\r\n\r\n4.1.4.\tAvisar a [%b%]SEGURADORA[%b%], por escrito, antes da emissão da Apólice e/ou Endosso, a existência de pluralidade de garantias para o mesmo objeto assegurado, situação em que a [%b%]SEGURADORA[%b%] participará proporcionalmente;\r\n\r\n4.1.5.\t Manter íntegras e suficientes as garantias oferecidas à [%b%]SEGURADORA[%b%], livres e desembaraçadas de quaisquer ônus;\r\n\r\n4.1.5.1.\tApresentar à [%b%]SEGURADORA[%b%], em caso de aviso formal de sinistro, garantias adicionais líquidas, ou antecipar o equivalente ao valor da indenização diretamente ao Segurado.\r\n\r\n4.1.6.\tInformar previamente qualquer alteração no seu controle acionário; \r\n\r\n4.1.7.\tEfetuar, após intimação judicial e no prazo indicado pela [%b%]SEGURADORA[%b%] ou pelo juízo, o que for menor, o devido pagamento do valor constante na decisão judicial ou no acordo judicial homologado;\r\n\r\n4.1.8.\tEnviar todos os documentos necessários para instrução e efetivação da regulação de sinistro, no prazo indicado pela [%b%]SEGURADORA[%b%];\r\n\r\n4.1.9.\tRessarcir imediatamente a [%b%]SEGURADORA[%b%] de quaisquer indenizações, prejuízos e/ou despesas oriundas de avisos formais de sinistro, incluindo, sem limitação, custas e honorários advocatícios e periciais, bem como quaisquer outras despesas e encargos pagos ou incorridos, nos termos das Apólices e/ou no âmbito de procedimentos de análise de expectativa e/ou de regulação de sinistros; e\r\n\r\n4.1.10.\tPraticar todos os atos e formalidades necessários para o exercício do direito de sub-rogação da [%b%]SEGURADORA[%b%], no caso do pagamento de qualquer indenização com base nas Apólices, incluindo, sem limitação, formalidades necessárias para viabilizar o direito da [%b%]SEGURADORA[%b%] de concorrer proporcionalmente com as demais garantias;\r\n\r\n5.\t[%b%]EMISSÃO(ÕES) EM NOME DE TERCEIROS[%b%] \r\n\r\n5.1.\tA [%b%]SEGURADORA[%b%] fica desde já autorizada pelo [%b%]TOMADOR[%b%] a emitir Apólices e/ou Endossos de Seguro Garantia e Fiança Locatícia solicitados pelo(s) [%b%]TOMADOR(ES) [%b%]: (i) empresas controladas, afiliadas, coligadas, subsidiárias e filiais do [%b%]TOMADOR[%b%]; (ii) consórcios e/ou Sociedades de Propósito Específico nos quais o [%b%]TOMADOR[%b%] participe, independentemente de solidariedade ou liderança; (iii) empresa(s) na(s) qual(is) o [%b%]TOMADOR[%b%] detenha participação societária; (iv) pessoas físicas que detenham participação societária em algumas das empresas acima mencionadas. \r\n\r\n5.1.1.\tEm quaisquer dessas hipóteses, o [%b%]TOMADOR[%b%] será automaticamente considerado [%b%]CO-TOMADOR[%b%] e [%b%]FIADOR[%b%] da Apólice em questão (independentemente de inclusão expressa na Apólice e/ou Endosso), respondendo solidariamente por todas as obrigações decorrentes das emissões. Em razão disso, a [%b%]SEGURADORA[%b%] poderá utilizar-se deste Contrato para reaver qualquer valor referente à emissão e à satisfação pecuniária das Apólices citadas nos itens acima, reconhecendo-o como um título executivo extrajudicial, nos termos do artigo 784, III e XI-A do Novo Código de Processo Civil.\r\n\r\n5.1.2.\tAo assumir a condição de [%b%]CO-TOMADOR[%b%] e [%b%]FIADOR[%b%], nos termos desta Cláusula, obriga-se o [%b%]TOMADOR[%b%] a liquidar todas as obrigações devidas decorrentes das Apólices emitidas no âmbito deste Contrato, no prazo máximo de 48 (quarenta e oito) horas, contados da comunicação escrita da [%b%]SEGURADORA[%b%], independentemente de qualquer outra formalidade, judicial ou extrajudicial, sob pena de constituição em mora e sujeição aos encargos previstos neste Contrato.\r\n\r\n6.\t[%b%]RENOVAÇÕES E ENDOSSOS OBRIGATÓRIOS[%b%]\r\n\r\n6.1.\tObservadas especialmente as disposições do item 7, o [%b%]TOMADOR[%b%] desde já expressamente autoriza a [%b%]SEGURADORA[%b%] a emitir Apólices e/ou Endossos previstos nessa cláusula, independentemente de qualquer solicitação.\r\n\r\n6.2.\tNos casos de Apólices emitidas na modalidade Judicial, Judicial para Execução Fiscal, Parcelamento Administrativo Fiscal e demais modalidades atinentes a riscos envolvendo débitos do [%b%]TOMADOR[%b%] em discussão perante o Poder Judiciário, Arbitral ou a Fazenda Pública, ou qualquer outra modalidade aplicável por norma legal, regulamentar ou por estabelecimento nas condições contratuais do seguro:\r\n\r\n6.2.1.\tna hipótese de a [%b%]SEGURADORA[%b%], por conta do término da vigência indicada nas Apólices e pela falta de garantia do segurado, for compelida a renovar as Apólices, o [%b%]TOMADOR[%b%] desde já declara concordar expressamente com tal renovação, nas condições e valores determinados pela [%b%]SEGURADORA[%b%], não podendo opor-se, sobretudo, ao pagamento do prêmio adicional devido. \r\n\r\n6.2.2.\tem que as Apólices não possuam cláusula de atualização monetária da importância segurada, fica desde já estabelecido que a atualização monetária do limite máximo garantido ocorrerá anualmente e de forma automática, com base no índice mencionado na Apólice ou, na sua ausência, pela taxa Selic, procedendo a [%b%]SEGURADORA[%b%] à emissão de endosso para mera formalização e viabilização da cobrança do prêmio respectivo.\r\n\r\n6.3.\tIndependentemente do disposto acima e do que dispor as Condições Contratuais de cada apólice, a [%b%]SEGURADORA[%b%] poderá optar, a seu exclusivo critério, por não renovar as Apólices das modalidades citadas na cláusula acima, observado o disposto no item 10 desse Contrato.\r\n\r\n7.\t[%b%]PRÊMIO[%b%]\r\n\r\n7.1.\tO TOMADOR deverá efetuar, de forma tempestiva, os pagamentos dos prêmios relativos à(s) Apólice(s) e/ou Endosso(s) emitidos pela [%b%]SEGURADORA[%b%], nos prazos e na forma pactuada em cada emissão.\r\n\r\n7.1.1.\tHavendo a inadimplência do [%b%]TOMADOR[%b%], em relação ao pagamento do prêmio de qualquer Apólice e/ou Endosso, em parcela única ou fracionada, ocorrerá o vencimento antecipado das demais parcelas vincendas, podendo a [%b%]SEGURADORA[%b%] recorrer à execução parcial deste Contrato, somente para a apólice e/ou endosso com débitos em aberto, independentemente de interpelação judicial, extrajudicial ou aviso prévio a qualquer uma das Partes. \r\n\r\n7.2. Caberá devolução proporcional do prêmio pago em caso de cancelamento da apólice, na forma nela prevista, exceto nas hipóteses de (i) cancelamento de apólice(s) e/ou endosso(s) emitido(s) nas modalidades licitante e judicial depósito recursal, independentemente do motivo; (ii) extinção da garantia pelo término da vigência ou (iii) extinção da garantia pelo pagamento da indenização securitária.\r\n\r\n7.3. Os prêmios relativos às renovações e aos endossos obrigatórios de atualização monetária do limite máximo garantido deverão ser pagos até a extinção do risco ou substituição por outra garantia aceita pelo segurado/juízo.\r\n\r\n7.4.\tExclusivamente em caso de parcelamento do prêmio de seguro fiança locatícia, ocorrendo o inadimplemento de qualquer umas das parcelas subsequentes à primeira, o prazo de vigência da cobertura será ajustado em função do prêmio efetivamente pago.\r\n\r\n8.\t[%b%]PENALIDADES[%b%]\r\n\r\n8.1.\tSem prejuízo das demais penalidades previstas na Legislação, neste Contrato e nas Apólices, ficam estabelecidas as seguintes penas:\r\n\r\n8.1.1.\tOcorrendo o inadimplemento de qualquer pagamento devido à [%b%]SEGURADORA[%b%], o débito em atraso ficará sujeito a correção monetária pelo índice utilizado na Apólice, juros de mora à razão de 1% (um por cento) ao mês, calculados sobre o débito corrigido monetariamente, e multa não compensatória de 2% (dois por cento) sobre o valor total devido, independentemente de qualquer interpelação administrativa ou judicial; \r\n\r\n8.1.2.\tO inadimplemento de qualquer obrigação não pecuniária prevista neste CONTRATO, sujeitará o [%b%]TOMADOR[%b%] à multa de 0,5% (meio por cento) ao mês calculada sobre o valor total do prêmio da(s) Apólice(s) e eventual(ais) Endosso(s) em vigor, de forma proporcional aos dias decorridos até que a obrigação seja cumprida, independentemente de qualquer interpelação administrativa ou judicial;\r\n\r\n8.1.3. Se a [%b%]SEGURADORA[%b%] tiver que ingressar em juízo para a defesa dos direitos que decorrem deste CONTRATO fará jus a honorários advocatícios incorridos acrescidos das custas e demais despesas processuais.\r\n\r\n8.2.\tSem prejuízo do disposto acima, eventuais débitos decorrentes de inadimplemento pecuniário do [%b%]TOMADOR[%b%] serão comunicados pela [%b%]SEGURADORA[%b%] às entidades mantenedoras de banco de dados de proteção ao crédito.\r\n\r\n9.\t[%b%]PRAZO E VALOR ENVOLVIDO[%b%] \r\n\r\n9.1.\tO presente Contrato será válido a partir da sua assinatura e permanecerá vigente até que sejam cumpridas todas as obrigações principais e acessórias do [%b%]TOMADOR[%b%] perante esta [%b%]SEGURADORA[%b%], estabelecidas neste instrumento e na(s) Apólice(s) e/ou Endosso(s). \r\n\r\n9.2.\tO valor do presente Contrato corresponde ao somatório dos limites máximos de garantia estabelecidos nas Apólices e Endossos emitidos, acrescidos dos índices de correção aplicáveis e consectários, bem como de todas as despesas ou encargos incorridos pela [%b%]SEGURADORA[%b%]. \r\n\r\n10.\t[%b%]VENCIMENTO ANTECIPADO[%b%]\r\n\r\n10.1.\tCaso a [%b%]SEGURADORA[%b%] decida, a seu critério, não dar continuidade à cobertura dos riscos segurados, o [%b%]TOMADOR[%b%], desde já, se compromete a, imediatamente, desonerar a [%b%]SEGURADORA[%b%] das responsabilidades assumidas, bem como providenciar a substituição das Apólices e Endossos por outras formas de garantia admitidas em lei ou em contrato, conforme o caso, no prazo máximo e improrrogável de até 30 (trinta) dias, contados da solicitação. \r\n\r\n10.2.\tExclusivamente nos casos de Apólices emitidas nas modalidades Judicial, Judicial para Execução Fiscal, Parcelamento Administrativo Fiscal e Administrativo de Créditos Tributários e demais modalidades atinentes a riscos envolvendo débitos do [%b%]TOMADOR[%b%] em discussão perante o Poder Judiciário, Arbitral ou a Fazenda Pública, a [%b%]SEGURADORA[%b%] terá a faculdade de informar ao [%b%]TOMADOR[%b%] o não interesse pela renovação da garantia, devendo o [%b%]TOMADOR[%b%], nessa hipótese, no prazo de 60 (sessenta), alternativamente, (i) antecipar à [%b%]SEGURADORA[%b%] o valor correspondente à importância segurada ou (ii) substituí-la por outra garantia idônea e aceita pelo Segurado/Juízo. \r\n\r\n10.3.\tNa inobservância dos itens acima, independentemente de qualquer outro aviso, interpelação ou notificação, judicial ou extrajudicial, a [%b%]SEGURADORA[%b%] poderá considerar antecipadamente vencido este Contrato, podendo tomar as necessárias para exoneração das suas obrigações.\r\n\r\n10.4.\tA [%b%]SEGURADORA[%b%] poderá, ainda, considerar antecipadamente vencido este Contrato e exigir do [%b%]TOMADOR[%b%] as liberações das obrigações assumidas, quer através de pagamento imediato de valor equivalente e/ou impetrar medida preventiva sobre os bens do [%b%]TOMADOR[%b%], nos seguintes casos:\r\n\r\n10.4.1.\tQuando ocorrer declaração inexata do [%b%]TOMADOR[%b%] ao solicitar a emissão de apólice ou endosso; \r\n\r\n10.4.2.\tQuando o [%b%]TOMADOR[%b%] não cumprir com quaisquer das obrigações decorrentes deste Contrato; \r\n\r\n10.4.3.\tSe ocorrer mudança de seu controle acionário sem prévia anuência da [%b%]SEGURADORA[%b%]; \r\n\r\n10.4.4.\tQuando a [%b%]SEGURADORA[%b%] avaliar que a conduta ou solvência do [%b%]TOMADOR[%b%] evidencie incapacidade para cumprir as obrigações contraídas com o Segurado;\r\n\r\n10.4.5.\tQuando o [%b%]TOMADOR[%b%] ou empresa a ele coligada ou por ele controlada estiver em recuperação judicial, requerer ou tiver requerida sua falência; \r\n\r\n10.4.6.\tQuando ocorrer protesto de títulos ou for distribuída qualquer ação contra o [%b%]TOMADOR[%b%], desde que importem na redução de sua solvência e capacidade de liquidar as obrigações assumidas, e, em se tratando de protestos de títulos, desde que: (i) não sejam sustados no prazo legal; (ii) não ocorra o depósito ou pagamento; ou (iii) não decorram de comprovado erro ou dolo de terceiros;\r\n\r\n10.4.7.\tRestar comprovada a depredação do imóvel dolosamente pelo [%b%]TOMADOR[%b%], que não possa ser atribuída como mero desgaste pelo uso regular que resulte na agravação do risco assegurado, e\r\n\r\n10.4.8.\tNos demais casos previstos em lei. \r\n\r\n10.5.\tA [%b%]SEGURADORA[%b%] poderá, com intuito de fazer prevalecer seus direitos, iniciar as ações judiciais e extrajudiciais e, em especial, solicitar embargos, proibições especiais ou gerais e todas e quaisquer medidas preventivas que julgue necessárias, ficando entendido que as citadas medidas preventivas serão mantidas enquanto persistir a obrigação da [%b%]SEGURADORA[%b%] na(s) Apólice(s) em vigor.\r\n\r\n11.\t[%b%]GARANTIAS ADICIONAIS[%b%]\r\n\r\n11.1.\tEm caso de conversão de expectativa de sinistro em reclamação ou em caso de aviso formal de sinistro, o [%b%]TOMADOR[%b%] deverá realizar em favor da [%b%]SEGURADORA[%b%] depósito/caução equivalente a 130% (cento e trinta porcento) do limite máximo de garantia da Apólice (e Endosso(s)). Se aprovado pela [%b%]SEGURADORA[%b%], como alternativa ao depósito em dinheiro, o [%b%]TOMADOR[%b%] poderá formalizar garantia colateral de liquidez imediata, na forma do item 11.2.3 abaixo, no prazo de 72 (setenta e duas) horas úteis, contadas da conversão/reclamação.\r\n\r\n11.2.\tEm caso de deterioração do risco de crédito do [%b%]TOMADOR[%b%], insolvência, comunicação de expectativa de sinistro ou caso as circunstâncias evidenciem a incapacidade do [%b%]TOMADOR[%b%] de cumprir suas obrigações, a [%b%]SEGURADORA[%b%] poderá exigir ativos que deverão corresponder a, no mínimo, 130% (cento e trinta por cento) das obrigações garantidas, consubstanciados em:\r\n\r\n11.2.1.\tGarantia fidejussória; \r\n\r\n11.2.2.\tGarantia real; e/ou \r\n\r\n11.2.3.\tOutras garantias que julgar pertinentes, incluindo, sem limitação, carta de fiança, emitida por banco de primeira linha; bem como cessão fiduciária de ativos financeiros de liquidez imediata (títulos públicos ou CDB - Certificado de Depósito Bancário). \r\n\r\n12.\t[%b%]MONITORAMENTO DAS OBRIGAÇÕES GARANTIDAS[%b%]\r\n\r\n12.1.\tDurante a vigência das Apólices, o [%b%]TOMADOR[%b%] é obrigado a:\r\n\r\n12.1.1.\tsempre que solicitado, prestar informações sobre o cumprimento das obrigações garantidas pela Apólice, bem como fornecer informações e/ou documentos referentes aos processos garantidos;\r\n\r\n12.1.2.\tpermitir à [%b%]SEGURADORA[%b%], mediante prévia comunicação, visitar e inspecionar os locais e/ou analisar documentos relativos a riscos por ela assegurados, incluindo, sem limitação, canteiros de obras, linhas de produção e locais de risco, bem como permitir auditorias, exames e inspeções de documentos relacionados com as obrigações garantidas na Apólice;\r\n\r\n12.1.3.\tinformar prévia ou imediatamente à [%b%]SEGURADORA[%b%], conforme o caso, qualquer circunstância ou ocorrência que possa, ainda que potencialmente, vir a resultar inadimplemento, total ou parcial, das obrigações garantidas pelas Apólices emitidas;\r\n\r\n12.1.4.\trepassar imediatamente à [%b%]SEGURADORA[%b%] qualquer comunicação de inadimplemento ou possível inadimplemento apresentada pelo Segurado.\r\n\r\n12.2.\tDurante a vigência das Apólices da modalidade Judicial, além das obrigações acima, o [%b%]TOMADOR[%b%] deverá:\r\n\r\n12.2.1.\tManter a [%b%]SEGURADORA[%b%] informada acerca do andamento dos processos judiciais e administrativos garantidos pelas Apólices, bem como enviar peças e decisões relevantes do processo e/ou procedimento.\r\n\r\n12.2.2.\tNotificar a [%b%]SEGURADORA[%b%] em caso de intenção da celebração de acordo que implique o parcelamento da(s) dívida(s) discutida(s) em juízo ou em sede de discussão administrativa garantida pela(s) Apólice(S), logo que o saiba, inclusive de sua intenção e interesse no pagamento à vista.\r\n\r\n12.2.2.1.\tO [%b%]TOMADOR[%b%] expressamente concorda e anui que a ausência da notificação supracitada implicará aplicação de multa de 5% (cinco por cento) sobre o valor da importância segurada nas Apólices relacionadas ao acordo, bem como consequente desoneração da garantia, na forma do item 10.1, sem prejuízo das demais sanções previstas neste instrumento.\r\n\r\n12.2.2.2.\tEm caso de parcelamento de débitos tributários, comunicados a esta [%b%]SEGURADORA[%b%], o [%b%]TOMADOR[%b%] deverá comprovar perante respectiva Secretaria da Fazenda (Estadual ou Federal) em procedimento administrativo próprio, se houver, a garantia do débito executado com exigibilidade suspensa pelo parcelamento, através dos meios permitidos em lei.\r\n\r\n13.\t[%b%]SINISTRO[%b%]\r\n\r\n13.1.\tA [%b%]SEGURADORA[%b%] determinará, em consonância com a boa-fé e segundo as disposições deste Contrato e das Apólices, o pagamento ou a negativa da cobertura a qualquer sinistro relacionado ou referente a qualquer Apólice, independentemente da existência de ação judicial pelo [%b%]TOMADOR[%b%] que seja ou apresentada à [%b%]SEGURADORA[%b%], exceto na hipótese de determinação judicial suspendendo o processo de regulação de sinistro, ficando o [%b%]TOMADOR[%b%] totalmente e incondicionalmente vinculado à conclusão da [%b%]SEGURADORA[%b%].\r\n\r\n13.1.1.\tPara efeitos desta cláusula, o [%b%]TOMADOR[%b%] declara e concorda que o pagamento efetuado de boa-fé pela [%b%]SEGURADORA[%b%] ao Segurado o obriga integralmente ao reembolso imediato da indenização paga nos termos deste Contrato. casona hipótese de não concordância, o [%b%]TOMADOR[%b%] deverá tentar reaver exclusivamente do Segurado quaisquer importâncias que, a juízo do [%b%]TOMADOR[%b%], tenham sido pagas indevidamente ou a maior para o Segurado. \r\n\r\n13.2.\tCaso a [%b%]SEGURADORA[%b%] tenha que cumprir no todo ou em parte as obrigações decorrentes deste Contrato, o [%b%]TOMADOR[%b%] declara que não exigirá dela nenhuma protelação no pagamento do débito que for apresentado pelo(s) Segurado(s) credor(es), seja a que título for, e nem poderá exigir que ela discuta com o(s) Segurado(s) a certeza ou liquidez da dívida.\r\n\r\n13.3.\t[%b%]Exclusivamente para as Apólices da modalidade judicial:[%b%]\r\n\r\n13.3.1.\to sinistro caracterizar-se-á no momento em que a [%b%]SEGURADORA[%b%] recepcionar qualquer notificação expedida pelo Juízo Segurado determinando pagamento da indenização, o qual será informado ao [%b%]TOMADOR[%b%] por meio dos contatos previstos na Cláusula 16.\r\n\r\n13.3.1.1.\tO [%b%]TOMADOR[%b%] em toda e qualquer hipótese de caracterização de sinistro deverá efetuar o pagamento da quantia até as 12h (doze horas) do último dia útil programado pelo Juízo para o efetivo pagamento. A obrigação de pagamento é sempre de responsabilidade do [%b%]TOMADOR[%b%], motivo pelo qual referido pagamento deverá ser sempre espontâneo.\r\n\r\n13.3.1.2.\tEm caso de descumprimento ao disposto no item supra, o [%b%]TOMADOR[%b%] obriga-se a efetuar o ressarcimento do valor indenizado pela [%b%]SEGURADORA[%b%] ao Juízo Segurado, no prazo máximo de 24h (vinte e quatro horas), contadas a partir da efetivação do pagamento. \r\n\r\n13.3.2.\tCaso a [%b%]SEGURADORA[%b%] receba ordem judicial que a obrigue a efetuar o pagamento de indenização relativa às Apólices antes do trânsito em julgado de sentença judicial, ficará obrigada a comunicar imediatamente ao [%b%]TOMADOR[%b%], que deverá efetuar o pagamento exigido diretamente aos Segurados, no prazo determinado pelo juízo competente ou, na sua ausência, no prazo máximo de 72 (setenta e duas) horas.\r\n\r\n13.3.3.\tCaso a [%b%]SEGURADORA[%b%] seja obrigada a indenizar qualquer valor superior ao valor segurado expresso nas Apólices, por qualquer motivo, ficará o [%b%]TOMADOR[%b%] obrigado a pagar a [%b%]SEGURADORA[%b%] o valor efetivamente indenizado, acrescido do prêmio proporcional correspondente a diferença, com a devida atualização monetária, juros de mora e demais encargos.\r\n\r\n13.3.4.\tNa ocorrência de pagamento em duplicidade do débito reclamado, obriga-se o [%b%]TOMADOR[%b%] a promover a devolução do(s) valor(es) pago(s) pela [%b%]SEGURADORA[%b%], no prazo de 24 (vinte e quatro) horas, sob pena de aplicação das penalidades previstas neste Contrato.\r\n\r\n14.\t[%b%]SUB-ROGAÇÃO[%b%]\r\n\r\n14.1.\tPaga a indenização, ou iniciado o cumprimento das obrigações inadimplidas pelo [%b%]TOMADOR[%b%], a [%b%]SEGURADORA[%b%] sub-rogar-se-á, automaticamente, na forma da lei e do contrato, nos direitos do Segurado contra o [%b%]TOMADOR[%b%] e/ou contra terceiros, cujos atos ou fatos tenham dado causa ou contribuído para o sinistro, para recuperar toda e qualquer despesa ou pagamento que venha a comprovadamente efetuar em decorrência das Apólices.\r\n\r\n14.2.\tO [%b%]TOMADOR[%b%] deverá efetuar o reembolso de todos os pagamentos feitos e despesas incorridas pela [%b%]SEGURADORA[%b%], nos termos deste Contrato e das Apólices, dentro do prazo improrrogável de 02 (dois) dias úteis, contados do recebimento de notificação da [%b%]SEGURADORA[%b%] para pagamento.\r\n\r\n14.2.1.\tPara os fins do presente Contrato, ordens de pagamento, transferências eletrônicas, recibos, notas fiscais ou outros instrumentos de pagamento e de comprovação de despesas realizadas ou incorridas pela [%b%]SEGURADORA[%b%] em razão das Apólices serão evidências para reembolso da [%b%]SEGURADORA[%b%]. \r\n\r\n14.3.\tCaso a indenização securitária seja paga antes da conclusão da apuração de eventuais saldos no(s) contrato(s) resguardado(s) pelas Apólices sinistradas, o [%b%]TOMADOR[%b%] desde já concorda com a sub-rogação da [%b%]SEGURADORA[%b%] nos direitos em relação aos valores existentes em poder do(s) Segurado(s) ou que venham a surgir, decorrentes de contrato(s) firmado(s) pelas Partes, até o limite dos valores despendidos pela [%b%]SEGURADORA[%b%] para pagamento da indenização securitária.\r\n\r\n15.\t[%b%]FIANÇA (Se aplicável)[%b%]\r\n\r\n15.1.\tIntervêm neste ato e assinam o presente Contrato como [%b%]FIADOR[%b%] a pessoa designada e qualificada nesse instrumento, a qual se declara principal pagador,  responsabilizando-se solidariamente com o [%b%]TOMADOR[%b%] pelo cumprimento de todas as obrigações por este assumidas neste Contrato, sejam principais ou acessórias, bem como de todas aquelas assumidas em decorrência das Apólices, nos termos dos artigos 821 e 822, do Código Civil Brasileiro, e com expressa renúncia aos benefícios de ordem e às faculdades contidas nos artigos 835 a 838, do referido Código. \r\n\r\n15.2.\tSem prejuízo das demais obrigações assumidas neste Contrato, obriga-se o [%b%]FIADOR[%b%] a:\r\n\r\n15.2.1.\tLiquidar as obrigações exigidas do [%b%]TOMADOR[%b%] e/ou apresentar garantias líquidas colaterais, assim que solicitado e nos termos da comunicação escrita que a [%b%]SEGURADORA[%b%] lhe enviar, independentemente de qualquer outra formalidade, judicial ou extrajudicial; e\r\n\r\n15.2.2.\tInformar previamente à [%b%]SEGURADORA[%b%] qualquer alteração no seu controle societário.\r\n\r\n15.2.3.\tComunicar a [%b%]SEGURADORA[%b%] sobre qualquer modificação nos dados informados na pactuação deste instrumento.\r\n\r\n15.3.\tO [%b%]FIADOR[%b%] aceita todas as condições das Apólices e declara-se ciente de que a desoneração da fiança prestada ocorrerá somente quando for verificada e comprovada o cumprimento de todas as obrigações do [%b%]TOMADOR[%b%] no âmbito das Apólices e das obrigações garantidas junto ao(s) Segurado(s).\r\n\r\n15.3.1.\tA desoneração só se concretizará após a formalização mediante entrega, pela [%b%]SEGURADORA[%b%] ao [%b%]FIADOR[%b%], de documento assinado pelos representantes legais da [%b%]SEGURADORA[%b%], declarando extinta a garantia fidejussória.\r\n\r\n15.4.\tO(s) FIADOR(ES), por meio deste instrumento, declara(m) e garante(m) que:\r\n\r\n15.4.1.\testa fiança é válida e exequível a qualquer tempo para todas as obrigações oriundas das Apólices e deste Contrato, de acordo com os seus respectivos termos e condições; \r\n\r\n15.4.2.\ttodas as aprovações e requisitos corporativos, societários e legais para a emissão dessa fiança foram obtidos e observados pelo [%b%]FIADOR[%b%], sendo que seus respectivos representantes legais, ora signatários, estão devidamente autorizados para tanto; e \r\n\r\n15.4.3.\ttêm pleno conhecimento das obrigações assumidas, não sendo necessária sua autorização expressa para emissão das Apólices, razão pela qual a fiança ora outorgada continuará válida e exequível após a emissão de novas Apólices, nos termos deste instrumento.\r\n\r\n15.5.\tO [%b%]FIADOR[%b%] permanecerá vinculado às obrigações decorrentes da fiança prestada, independentemente de falência, insolvência, recuperação judicial ou extrajudicial, liquidação, aquisição, fusão, cisão, incorporação ou qualquer tipo de reorganização societária do [%b%]TOMADOR[%b%] e/ou do [%b%]FIADOR[%b%].\r\n\r\n16.\t[%b%]COMUNICAÇÃO ENTRE AS PARTES[%b%]\r\n\r\n16.1. Qualquer aviso, notificação, solicitação ou comunicação, relativa ao presente [%b%]CONTRATO[%b%] deverá ser enviada para os endereços indicados no cadastro do [%b%]TOMADOR[%b%], por meio de: (i) carta registrada, com comprovante de recebimento; ou (ii) entrega pessoal, com protocolo assinado pelo próprio destinatário ou, na sua ausência, por representante legal por ele indicado; ou, (iii) meio eletrônico, com comprovante de entrega ao destinatário.\r\n\t\t\r\n16.2.\tA fim de dar agilidade à comunicação, as Partes aceitarão, como documentos originais, os enviados via e-mail. \r\n\r\n17.\t[%b%]CONFIDENCIALIDADE[%b%]\r\n\r\n17.1.\tA [%b%]SEGURADORA[%b%] poderá transmitir as informações designadas expressamente como confidenciais pelo [%b%]TOMADOR[%b%] aos terceiros envolvidos nas emissões das Apólices tratadas neste Contrato, incluindo os resseguradores, cosseguradores, funcionários, terceirizados, reguladores de sinistros, consultores, auditores e/ou advogados, ficando, neste ato, expressamente consentida a divulgação aos terceiros que estejam relacionados à cadeia de operações de seguro garantia e fiança locatícia \r\n\r\n17.2.\tNão serão consideradas confidenciais as informações: \r\n\r\n17.2.1.\tque já eram de conhecimento público ou da [%b%]SEGURADORA[%b%] anteriormente à relação comercial mantida entre as Partes;\r\n\r\n17.2.2.\tque, legitimamente, foram obtidas por outra fonte e independente da relação mantida entre as Partes;\r\n\r\n17.2.3.\tsolicitadas por autoridades judiciais, administrativas ou regulatórias; e \r\n\r\n17.2.4.\tnão designadas expressamente como sigilosas.\r\n\r\n18.\t[%b%]PROTEÇÃO DE DADOS PESSOAIS[%b%]\r\n\r\n18.1.\tEm observância à Lei nº 13.709/2020 (Lei Geral de Proteção de Dados – LGPD), o [%b%]TOMADOR[%b%], ao assinar o presente Contrato, dão expresso, livre e inequívoco consentimento para que a [%b%]SEGURADORA[%b%] realize o tratamento dos Dados Pessoais compartilhados, direta ou indiretamente, em razão do Contrato.\r\n \r\n18.2.\tO tratamento dos Dados Pessoais em questão atende à finalidade de viabilizar a eventual contratação de apólice de seguro junto à [%b%]SEGURADORA[%b%], englobando eventuais trâmites regulatórios e/ou executórios decorrentes.\r\n\r\n19.\t[%b%]PREVENÇÃO E COMBATE A “LAVAGEM DE DINHEIRO” [%b%]\r\n\r\n19.1.\tO [%b%]TOMADOR[%b%] declara não ser Pessoa Politicamente Exposta (PPE) nos termos da legislação e regulamentação aplicáveis, comprometendo-se, desde já, a informar imediatamente à [%b%]SEGURADORA[%b%] qualquer alteração dessa condição, sob pena do vencimento antecipado deste Contrato, sem prejuízo da incidência da multa aqui prevista. \r\n\r\n19.2.\tO [%b%]TOMADOR[%b%], neste ato, declara por si, seus representantes, empregados e prepostos: \r\n\r\n19.2.1.\tNão utilizar recursos para financiamento de atividades ilegais. \r\n\r\n19.2.2.\tNão oferecer, dar ou comprometer-se a dar, direta ou indiretamente, vantagem indevida a agente público ou a terceira pessoa a ele relacionada, aceitar ou comprometer-se a aceitar, seja por conta própria ou de outrem, qualquer doação, pagamento, compensação, vantagens financeiras ou não financeiras ou, ainda, benefícios de qualquer espécie que constituam prática ilegal sob as leis brasileiras ou de qualquer outro país conforme definido no artigo 5º (incisos, letras e parágrafos) da Lei nº 12.846/2013, de forma relacionada, ou não, ao presente Contrato (“Obrigações contra Atos Lesivos).\r\n\r\n19.2.3.\tQue todos os valores pagos ou dados em eventual garantia à [%b%]SEGURADORA[%b%] para viabilizar a emissão das Apólices, nos termos deste Contrato, não constituem fraude à execução, a credores e/ou provém de atividade tipificada pela Lei nº 9.613/98. \r\n\r\n19.3.\tO [%b%]TOMADOR[%b%] se compromete a informar, de imediato e por escrito, à [%b%]SEGURADORA[%b%] a existência de quaisquer violações relativas às declarações e as Obrigações contra Atos Lesivos acima mencionados de que venha a tomar conhecimento. A obrigação ora assumida deverá ser rigorosamente cumprida até o término do presente instrumento. \r\n\r\n19.4.\tTodas infrações incorridas pelo [%b%]TOMADOR[%b%] ao disposto nesta cláusula implicam a sua imediata responsabilização perante a [%b%]SEGURADORA[%b%] pelas perdas e danos que esta vier a comprovadamente experimentar em decorrência de tais infrações.\r\n\r\n20.\t[%b%]DECLARAÇÕES[%b%]\r\n\r\n20.1.\tConforme artigo 421-A do Código Civil, as Partes expressamente declaram que o presente Contrato é paritário e simétrico, devendo ser respeitadas e observadas as obrigações e alocações de riscos estipuladas, não sendo admitida qualquer revisão judicial de seus termos.\r\n\r\n20.2.\tO [%b%]TOMADOR[%b%] declara conhecer a extensão e a modalidade de cada Apólice que vier a solicitar da [%b%]SEGURADORA[%b%], estando de pleno acordo que a [%b%]SEGURADORA[%b%] a preste e a cumpra, conforme nela(s) se contém, independentemente de prévia anuência ou interferência dele, [%b%]TOMADOR[%b%], ou de qualquer formalidade judicial ou extrajudicial.\r\n\r\n20.3.\tO [%b%]TOMADOR[%b%] se responsabilizará pela exatidão das informações prestadas, assumindo todas as consequências e danos decorrentes.\r\n\r\n20.4.\tO [%b%]TOMADOR[%b%] reconhece e possui ciência de que a formalização do presente Contrato não garante a emissão de Apólice(s) e/ou endosso(s), uma vez que referida(s) emissão(ões) ocorrerá(ão) a exclusivo critério da [%b%]SEGURADORA[%b%], de acordo com seu apetite a riscos e outros motivos. \r\n\r\n20.4.1.\tNos casos em que o [%b%]TOMADOR[%b%] se lograr vencedor do(s) certame(s) licitatório(s) para o(s) qual(is) a [%b%]SEGURADORA[%b%] tenha emitido apólice(s) e/ou endosso(s) na modalidade Licitante (Bid), a [%b%]SEGURADORA[%b%] não estará obrigada a emitir a(s) respectiva(s) apólice(s) de performance determinada(s) no(s) instrumento(s) convocatório(s), sendo certo que tais emissões dependerão de nova análise de subscrição de risco pela [%b%]SEGURADORA[%b%].\r\n\r\n20.5.\tO [%b%]TOMADOR[%b%] declara que as obrigações assumidas por meio deste Contrato de forma alguma contradizem as disposições de seu Contrato/Estatuto Social, ou de outros regulamentos aplicáveis, e declaram ainda que detêm os poderes necessários para assumir tais obrigações, assumindo os ônus decorrentes de quaisquer irregularidades.\r\n\r\n20.5.1.\t[%b%]Caso a assinatura deste instrumento por quaisquer das Partes contenha vício, ou seja, declarada inválida por qualquer motivo, tal invalidade não deverá, a qualquer título, afetar a validade do presente instrumento e das demais obrigações impostas às Partes[%b%]\r\n\r\n20.6.\tO [%b%]TOMADOR[%b%] declara e reconhece que o presente Contrato representa uma obrigação a termo e não a prazo (determinado ou indeterminado), ou seja, só termina quando todas as Apólices emitidas com base nesse instrumento tenham sido liberadas por escrito pelos segurados e não haja qualquer indenização securitária pendente de ressarcimento pelo [%b%]TOMADOR[%b%].\r\n\r\n20.7.\tCaso um [%b%]FIADOR[%b%] ou outro garantidor venha a garantir as obrigações do [%b%]TOMADOR[%b%], seja assinando este contrato ou a ele aderindo posteriormente nessa qualidade, a eventual exoneração da garantia somente surtirá efeito em relação as Apólices emitidas após a notificação da exoneração, permanecendo válida e eficaz até que todas as Apólices emitidas até a data da exoneração tenham sido liberadas por escrito pelos SEGURADOS e não haja qualquer indenização securitária pendente de ressarcimento pelo [%b%]TOMADOR[%b%].\r\n\r\n20.8.\tO [%b%]TOMADOR[%b%] reconhece o presente Contrato de como título executivo extrajudicial, na forma do art. 784, III e XI-A, do Código de Processo Civil, que, acompanhado do(s) comprovante(s) do(s) pagamento(s) efetuado(s) pela [%b%]SEGURADORA[%b%] servirá como documento hábil para a competente execução judicial.\r\n\r\n21.\t[%b%]DISPOSIÇÕES GERAIS[%b%]\r\n\r\n21.1.\tEste Contrato é celebrado de forma irrevogável e irretratável e constitui o acordo integral entre as Partes com relação às questões tratadas neste instrumento, substituindo todas as comunicações, contratos (inclusive Contrato de contragarantia previamente firmado entre as partes) e declarações anteriores escritas ou verbais.\r\n\r\n21.2.\tQualquer omissão ou tolerância por parte da [%b%]SEGURADORA[%b%] em exigir o fiel cumprimento das obrigações deste Contrato não constituirá novação ou renúncia, nem afetará o seu direito de exigir o seu cumprimento a qualquer tempo. \r\n\r\n21.3.\tEste Contrato obriga as partes, seus sucessores e cessionários a qualquer título, até o cumprimento integral da obrigação originária garantida pelas Apólices emitidas, não podendo o [%b%]TOMADOR[%b%] transferir as obrigações ora assumidas a terceiros sem a autorização expressa e prévia da [%b%]SEGURADORA[%b%]. \r\n\r\n21.4.\tO [%b%]TOMADOR[%b%] não poderá exercer qualquer direito de retenção ou compensação quanto a qualquer reivindicação ou créditos que possam ter contra a [%b%]SEGURADORA[%b%] ou entre si no âmbito deste Contrato e das Apólices e/ou Endossos.\r\n\r\n21.5.\tComo alternativa à assinatura física, as Partes declaram e concordam que a assinatura poderá ser realizada em formato eletrônico, para tanto, reconhecem a veracidade, autenticidade, integridade, validade e eficácia deste instrumento e seus termos, nos termos do art. 219 do Código Civil, ainda que assinados por certificados eletrônicos não emitidos pela ICP-Brasil, nos termos do art. 10, § 2º, da Medida Provisória nº 2.200-2, de 24 de agosto de 2001.\r\n\r\n21.6.\tAs disposições atinentes a(os) [%b%]FIADOR(ES) [%b%] terão eficácia somente se aplicável.\r\n\r\n22.\t[%b%]FORO[%b%]\r\n\r\n22.1.\tFica eleito o foro da Comarca da capital de São Paulo para dirimir quaisquer dúvidas ou questões resultantes deste Contrato, com renúncia a qualquer outro, por mais privilegiado que o seja. \r\n\r\nE, por estarem, assim, justas e acertadas e para que produza este instrumento todos os efeitos em direito admitidos, as Partes firmam o presente instrumento em 03 (três) vias de igual teor e forma, se fisicamente, ou eletrônica/digitalmente por meio de plataforma eletrônica, conforme aplicável, na presença de 02 (duas) testemunhas.",
+      "id_pessoa_fiador1": 3519992,
+      "nm_fiador1": "KIDDE BRASIL LTDA",
+      "id_pessoa_fiador2": 3519992,
+      "nm_fiador2": "KIDDE BRASIL LTDA"
+     }
+    ]
+   },
+   "TomadorDetalharCorretores": {
+    "Corretores": [
+     {
+      "id_garant_tomador_corretor": 62937,
+      "id_pessoa_corretor": 3127700,
+      "nm_pessoa_corretor": "MARSH CORRETORA DE SEGUROS LTDA.",
+      "cd_tp_comissao": 2,
+      "nm_tp_comissao": "Corretagem",
+      "pe_comissao": 15.000,
+      "dv_lider": true
+     },
+     {
+      "id_garant_tomador_corretor": 34513,
+      "id_pessoa_corretor": 3129901,
+      "nm_pessoa_corretor": "AON HOLDINGS CORRETORES DE SEGUROS LTDA",
+      "cd_tp_comissao": 2,
+      "nm_tp_comissao": "Corretagem",
+      "pe_comissao": 15.000,
+      "dv_lider": false
+     }
+    ]
+   },
+   "TomadorDetalharVinculo": {
+    "Acionista": [
+     {
+      "tp_vinculo": "Acionista",
+      "nm_pessoa_vinculada": "KIDDE INTERNATIONAL LIMITED                                                                                                                           ",
+      "id_vinculo": 27753,
+      "id_pessoa_vinculada": 3519993,
+      "pe_ordinario": 99.6000000000,
+      "pe_participacao": 99.600,
+      "dv_fiador_ccg": "SIM"
+     },
+     {
+      "tp_vinculo": "Acionista",
+      "nm_pessoa_vinculada": "KIDDE FIRE PROTECTION INC                                                                                                                             ",
+      "id_vinculo": 27754,
+      "id_pessoa_vinculada": 3519994,
+      "pe_ordinario": 0.3000000000,
+      "pe_participacao": 0.300,
+      "dv_fiador_ccg": "SIM"
+     },
+     {
+      "tp_vinculo": "Acionista",
+      "nm_pessoa_vinculada": "KIDDE US HOLDINGS INC                                                                                                                                 ",
+      "id_vinculo": 27755,
+      "id_pessoa_vinculada": 3519995,
+      "pe_ordinario": 0.1000000000,
+      "pe_participacao": 0.100,
+      "dv_fiador_ccg": "SIM"
+     }
+    ]
+   }
+  }
+ ]
+}
+=========================================================================================================
+{
+  "id_pessoa": "3534979"
+}
+
+{
+ "cd_retorno": 0,
+ "nm_retorno": "Código 0: Processamento efetuado com sucesso",
+ "Tomador": [
+  {
+   "id_pessoa": 3534979,
+   "nr_cnpj_cpf": 93209765023672.0,
+   "nm_pessoa": "WMS SUPERMERCADOS DO BRASIL LTDA.",
+   "nm_tipo_pessoa": "Jurídica",
+   "nm_status": "Ativo",
+   "dv_ppe": "false",
+   "TomadorDetalharEndereco": {
+    "Endereco": [
+     {
+      "id_endereco": 135025,
+      "nm_endereco": "Rua Mandaguari",
+      "nr_rua_endereco": "617",
+      "nm_bairro": "Emiliano Perneta",
+      "nm_cidade": "Pinhais",
+      "cd_pais": 1,
+      "nm_pais": "Brasil",
+      "cd_uf": 19,
+      "nm_uf": "PR",
+      "nm_cep": "83324410",
+      "cd_tp_endereco": 5,
+      "nm_tp_endereco": "Cobrança",
+      "dv_endereco_padrao": true
+     }
+    ]
+   },
+   "TomadorDetalharMeioComunicacao": {
+    "MeioComunicacao": []
+   },
+   "TomadorDetalharContaCorrente": {
+    "ContaCorrente": []
+   },
+   "TomadorDetalharSituacao": {
+    "id_tomador": 29998,
+    "id_classe_risco": 15,
+    "nm_classe_risco": "M - Médio",
+    "vl_lim_credito_interno": 500000000.00,
+    "vl_taxa_risco": 0.10500000,
+    "vl_premio_minimo": 190.00,
+    "dt_validade": "2024-03-06T00:00:00",
+    "vl_acumulo": 438329408.94,
+    "vl_retencao": 131110.14,
+    "cd_status": 1601,
+    "nm_status": "Aprovado"
+   },
+   "TomadorDetalharSubLimite": {
+    "SubLimite": [
+     {
+      "id_grp_cobertura": 43,
+      "nm_grp_cobertura": "ADIANTAMENTO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_cobertura": 44,
+      "nm_grp_cobertura": "ADUANEIRO"
+     },
+     {
+      "id_grp_cobertura": 50,
+      "nm_grp_cobertura": "ADMINISTRATIVO DE CRÉDITOS TRIBUTARIOS"
+     },
+     {
+      "id_grp_cobertura": 51,
+      "nm_grp_cobertura": "AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOM"
+     },
+     {
+      "id_grp_cobertura": 52,
+      "nm_grp_cobertura": "AGENTE FINANCIADOR (COMPLETION)"
+     },
+     {
+      "id_grp_cobertura": 53,
+      "nm_grp_cobertura": "DEPÓSITO RECURSAL TRABALHISTA"
+     },
+     {
+      "id_grp_cobertura": 55,
+      "nm_grp_cobertura": "FINANCEIRA"
+     },
+     {
+      "id_grp_cobertura": 56,
+      "nm_grp_cobertura": "IMOBILIÁRIO"
+     },
+     {
+      "id_grp_cobertura": 59,
+      "nm_grp_cobertura": "OPERAÇÕES DE FUSÕES E AQUISIÇÕES"
+     },
+     {
+      "id_grp_cobertura": 61,
+      "nm_grp_cobertura": "PARCELAMENTO ADMINISTRATIVO FISCAL"
+     },
+     {
+      "id_grp_cobertura": 62,
+      "nm_grp_cobertura": "ANTECIPAÇÃO DE PAGAMENTO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63942,
+      "id_grp_cobertura": 45,
+      "nm_grp_cobertura": "CONSTRUÇÃO, FORNECIMENTO OU PRESTAÇÃO DE SERVIÇO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63943,
+      "id_grp_cobertura": 46,
+      "nm_grp_cobertura": "EXECUTANTE CONSTRUTOR - TÉRMINO DE OBRA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63944,
+      "id_grp_cobertura": 47,
+      "nm_grp_cobertura": "LICITANTE"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63945,
+      "id_grp_cobertura": 48,
+      "nm_grp_cobertura": "MANUTENÇÃO CORRETIVA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63946,
+      "id_grp_cobertura": 49,
+      "nm_grp_cobertura": "RETENÇÃO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_sub_limite_tomador": 63947,
+      "id_grp_cobertura": 57,
+      "nm_grp_cobertura": "JUDICIAL",
+      "vl_taxa": 0.10500000
+     },
+     {
+      "id_grp_sub_limite_tomador": 63948,
+      "id_grp_cobertura": 60,
+      "nm_grp_cobertura": "PAGAMENTO",
+      "vl_taxa": 0.25000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 84594,
+      "id_grp_cobertura": 54,
+      "nm_grp_cobertura": "FIANÇA LOCATÍCIA",
+      "vl_taxa": 0.25000000
+     }
+    ]
+   },
+   "TomadorDetalharCCG": {
+    "CCG": [
+     {
+      "id_tomador_documento": 2862,
+      "id_documento": 50,
+      "nm_documento": "CCG",
+      "dt_recebimento": "2022-07-12T00:00:00",
+      "dt_solicitacao": "2022-07-12T00:00:00",
+      "cd_modelo": 3,
+      "nm_modelo": "CCG Sem Fiador",
+      "cd_status": 101,
+      "nm_status": "Formalizado",
+      "nm_texto_ccg": "CCG DO GRUPO FORMALIZADO\r\n"
+     }
+    ]
+   },
+   "TomadorDetalharCorretores": {
+    "Corretores": [
+     {
+      "id_garant_tomador_corretor": 35365,
+      "id_pessoa_corretor": 3127700,
+      "nm_pessoa_corretor": "MARSH CORRETORA DE SEGUROS LTDA.",
+      "cd_tp_comissao": 2,
+      "nm_tp_comissao": "Corretagem",
+      "pe_comissao": 8.000,
+      "dv_lider": true
+     }
+    ]
+   },
+   "TomadorDetalharVinculo": {
+    "Acionista": []
+   }
+  }
+ ]
+}
+
+=========================================================================================================
+{
+  "id_pessoa": "3318604"
+}
+
+{
+ "cd_retorno": 0,
+ "nm_retorno": "Código 0: Processamento efetuado com sucesso",
+ "Tomador": [
+  {
+   "id_pessoa": 3318604,
+   "nr_cnpj_cpf": 75315333012034.0,
+   "nm_pessoa": "ATACADAO S.A.",
+   "nm_tipo_pessoa": "Jurídica",
+   "nm_status": "Inativo",
+   "dv_ppe": "false",
+   "TomadorDetalharEndereco": {
+    "Endereco": [
+     {
+      "id_endereco": 95593,
+      "nm_endereco": "Avenida Doutor Custódio de Lima",
+      "nr_rua_endereco": "297 A",
+      "nm_bairro": "Parque Cruzeiro do Sul",
+      "nm_cidade": "São Paulo",
+      "cd_pais": 1,
+      "nm_pais": "Brasil",
+      "cd_uf": 1,
+      "nm_uf": "SP",
+      "nm_cep": "08071000",
+      "cd_tp_endereco": 5,
+      "nm_tp_endereco": "Cobrança",
+      "dv_endereco_padrao": true
+     }
+    ]
+   },
+   "TomadorDetalharMeioComunicacao": {
+    "MeioComunicacao": []
+   },
+   "TomadorDetalharContaCorrente": {
+    "ContaCorrente": []
+   },
+   "TomadorDetalharSituacao": {
+    "id_tomador": 19272,
+    "id_classe_risco": 15,
+    "nm_classe_risco": "M - Médio",
+    "vl_lim_credito_interno": 500000000.00,
+    "vl_taxa_risco": 0.10500000,
+    "vl_premio_minimo": 190.00,
+    "dt_validade": "2024-03-06T00:00:00",
+    "vl_acumulo": 438329408.94,
+    "vl_retencao": 439253766.34,
+    "cd_status": 1601,
+    "nm_status": "Aprovado"
+   },
+   "TomadorDetalharSubLimite": {
+    "SubLimite": [
+     {
+      "id_grp_cobertura": 43,
+      "nm_grp_cobertura": "ADIANTAMENTO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_cobertura": 44,
+      "nm_grp_cobertura": "ADUANEIRO"
+     },
+     {
+      "id_grp_cobertura": 50,
+      "nm_grp_cobertura": "ADMINISTRATIVO DE CRÉDITOS TRIBUTARIOS"
+     },
+     {
+      "id_grp_cobertura": 51,
+      "nm_grp_cobertura": "AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOM"
+     },
+     {
+      "id_grp_cobertura": 52,
+      "nm_grp_cobertura": "AGENTE FINANCIADOR (COMPLETION)"
+     },
+     {
+      "id_grp_cobertura": 53,
+      "nm_grp_cobertura": "DEPÓSITO RECURSAL TRABALHISTA"
+     },
+     {
+      "id_grp_cobertura": 55,
+      "nm_grp_cobertura": "FINANCEIRA"
+     },
+     {
+      "id_grp_cobertura": 56,
+      "nm_grp_cobertura": "IMOBILIÁRIO"
+     },
+     {
+      "id_grp_cobertura": 59,
+      "nm_grp_cobertura": "OPERAÇÕES DE FUSÕES E AQUISIÇÕES"
+     },
+     {
+      "id_grp_cobertura": 61,
+      "nm_grp_cobertura": "PARCELAMENTO ADMINISTRATIVO FISCAL"
+     },
+     {
+      "id_grp_cobertura": 62,
+      "nm_grp_cobertura": "ANTECIPAÇÃO DE PAGAMENTO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 39731,
+      "id_grp_cobertura": 57,
+      "nm_grp_cobertura": "JUDICIAL",
+      "vl_taxa": 0.10500000
+     },
+     {
+      "id_grp_sub_limite_tomador": 64044,
+      "id_grp_cobertura": 45,
+      "nm_grp_cobertura": "CONSTRUÇÃO, FORNECIMENTO OU PRESTAÇÃO DE SERVIÇO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 64045,
+      "id_grp_cobertura": 46,
+      "nm_grp_cobertura": "EXECUTANTE CONSTRUTOR - TÉRMINO DE OBRA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 64046,
+      "id_grp_cobertura": 47,
+      "nm_grp_cobertura": "LICITANTE"
+     },
+     {
+      "id_grp_sub_limite_tomador": 64047,
+      "id_grp_cobertura": 48,
+      "nm_grp_cobertura": "MANUTENÇÃO CORRETIVA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 64048,
+      "id_grp_cobertura": 49,
+      "nm_grp_cobertura": "RETENÇÃO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_sub_limite_tomador": 64049,
+      "id_grp_cobertura": 60,
+      "nm_grp_cobertura": "PAGAMENTO",
+      "vl_taxa": 0.25000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 84578,
+      "id_grp_cobertura": 54,
+      "nm_grp_cobertura": "FIANÇA LOCATÍCIA",
+      "vl_taxa": 0.25000000
+     }
+    ]
+   },
+   "TomadorDetalharCCG": {
+    "CCG": [
+     {
+      "id_tomador_documento": 2019,
+      "id_documento": 50,
+      "nm_documento": "CCG",
+      "dt_solicitacao": "2021-02-25T00:00:00",
+      "cd_modelo": 3,
+      "nm_modelo": "CCG Sem Fiador",
+      "cd_status": 101,
+      "nm_status": "Formalizado",
+      "nm_texto_ccg": "[%b%][%r2500%]INSTRUMENTO PARTICULAR DE CONTRAGARANTIA\r\n\r\n\r\n\r\n[%r0%]Por este Instrumento particular de Contragarantia (“[%b%]CONTRATO[%b%]\"), de um lado, [%b%](%nm_SEGURADORA%)[%b%], com sede na Cidade de (%cidade_SEGURADORA%), Estado do (%estado_SEGURADORA%), na (%endereco_SEGURADORA%), (%nr_end_SEGURADORA%), inscrita no CNPJ/MF sob nº (%cnpj_SEGURADORA%), doravante denominada como [%b%]SEGURADORA[%b%], neste ato representada na forma de seu Estatuto Social, e de outro lado a empresa, [%b%](%nm_TOMADOR%)[%b%], sociedade com sede na Cidade de (%cidade_TOMADOR%), Estado de (%estado_TOMADOR%), na (%endereco_TOMADOR%), CEP (%cep_TOMADOR%), inscrita no CNPJ/MF sob o nº (%cnpj_TOMADOR%), neste ato representado na forma de seu Estatuto Social, doravante denominada como [%b%]TOMADOR[%b%], e, em conjunto com a [%b%]SEGURADORA[%b%], como \"Partes”.\r\n\r\nPelo presente [%b%]CONTRATO[%b%] e, na melhor forma de direito, as Partes designadas e firmadas neste instrumento avençam a emissão de [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] de seguro-garantia, visando a assegurar o fiel cumprimento das obrigações assumidas pelo [%b%]TOMADOR[%b%] perante terceiros, que reger-se-ão pelas cláusulas e condições a seguir estabelecidas, que mutuamente aceitam e pelas quais se obrigam:\r\n\r\n\r\n\r\n[%b%]CLÁUSULA PRIMEIRA – DEFINIÇÕES\r\n\r\n1.1. Aplicam-se a este [%b%]CONTRATO[%b%] e aos seus termos em letra maiúscula as definições constantes das condições gerais da Circular Susep nº 477, de 30 de setembro de 2013, inerentes ao seguro garantia (segurado – setor público e privado). \r\n\r\n\r\n[%b%]CLÁUSULA SEGUNDA- DIREITOS E OBRIGAÇÕES DAS PARTES CONTRATANTES\r\n\r\n2.1. A [%b%]SEGURADORA[%b%] garantirá as obrigações contratualmente assumidas pelo [%b%]TOMADOR[%b%] perante o(s) [%b%]SEGURADO[%b%](s) mediante emissão de [%b%]APÓLICE[%b%] e eventual(is) [%b%]ENDOSSO[%b%](s) na qual serão estabelecidas finalidades, valores, prazos e demais condições da cobertura do [%b%]SEGURO GARANTIA[%b%], de acordo a(s) obrigação(ões) garantida(s).\r\n\r\n[%r400%]2.1.1 - As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] emitidos fazem parte integrante deste [%b%]CONTRATO[%b%], para todos os fins e efeitos de direito.\r\n\r\n2.1.2. As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] serão emitidos mediante [%b%]PROPOSTAS[%b%] apresentadas pelo [%b%]TOMADOR[%b%], ou através de corretor de seguros devidamente habilitado, sendo que a [%b%]SEGURADORA[%b%] poderá, a seu exclusivo critério, negar-se a fazê-lo, exceto para os [%b%]ENDOSSOS[%b%] emitidos de forma automática, nos estritos termos da regulamentação aplicável.\r\n\r\n2.1.3. Aceita a proposta de seguro, com a consequente emissão da(s) [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%], esta(s) vigorará(ão) em conformidade com a Circular da Superintendência de Seguros Privados – SUSEP 477/2013 e condições especiais exigidas pelo Seguro e aceitas pela [%b%]SEGURADORA[%b%], nos termos da legislação aplicável.\r\n\r\n[%r0%]2.2. - Para todos os fins e efeitos de direito, fica certo e ajustado que este [%b%]CONTRATO[%b%] abrange todas as [%b%]APÓLICES[%b%] emitidas até a presente data, bem como aquelas que vierem a ser emitidas após a data de assinatura deste instrumento.\r\n\r\n2.3. O [%b%]TOMADOR[%b%] declara conhecer a extensão e a modalidade de cada [%b%]APÓLICE[%b%] que vier a solicitar da [%b%]SEGURADORA[%b%], estando de pleno acordo que a [%b%]SEGURADORA[%b%] a preste e a cumpra, conforme nela(s) se contém, independentemente de prévia anuência ou interferência dele, [%b%]TOMADOR[%b%], ou de qualquer formalidade judicial ou extrajudicial.\r\n\r\n2.4. Fica ressalvado que a [%b%]SEGURADORA[%b%] não responderá quando o descumprimento das obrigações contratuais do [%b%]TOMADOR[%b%] decorrer de uma ou mais das seguintes hipóteses:\r\n\r\n[%r400%]a)\tcasos fortuitos e de força maior, devidamente comprovados ou notoriamente conhecidos, nos termos do Código Civil Brasileiro;\r\nb) atos ou fatos de responsabilidade exclusiva do(s) SEGURADO(s);\r\nc) alteração(ões) ou modificação(ões) acordada(s) entre SEGURADO(s) e [%b%]TOMADOR[%b%] relacionadas ao objeto da apólice, sem prévia concordância da [%b%]SEGURADORA[%b%].\r\nd) atos ilícitos dolosos praticados pelo(s) [%b%]SEGURADO[%b%](s) ou por seu(s) representante(s) legal(is).\r\n\r\n\r\n\r\n\r\n[%r0%]2.5. O [%b%]TOMADOR[%b%] obriga-se a:\r\n\r\n[%r400%]a) Pagar o [%b%]PRÊMIO[%b%] do(s) seguro(s) contratado(s) junto à [%b%]SEGURADORA[%b%] por todo o período da garantia, conforme os termos da(s) respectiva(s) [%b%]APÓLICE[%b%](s) e deste [%b%]CONTRATO[%b%], nos respectivos prazos de vencimento. Na hipótese em que, por determinação legal, a [%b%]SEGURADORA[%b%] for obrigada a renovar a garantia e/ou prorrogar a sua vigência ou ainda, emitir nova(s) [%b%]APÓLICE[%b%](s) e/ou [%b%]ENDOSSO[%b%](s), o [%b%]TOMADOR[%b%] desde já autoriza a cobrança de prêmio adicional pelo risco assumido;\r\n\r\nb) Manter íntegras e suficientes as garantias oferecidas ao Seguro Garantia, livres e desembaraçadas de quaisquer ônus;\r\n\r\nc) Enviar à [%b%]SEGURADORA[%b%], no prazo de 10 (dez) dias corridos após a respectiva solicitação, informações de caráter econômico-financeiro, cadastral, fiscal e trabalhista, inclusive de suas controladas, controladoras e coligadas, que habilitem à correta e contínua avaliação do risco;\r\n\r\nd) Prestar à [%b%]SEGURADORA[%b%] sempre que solicitado, informações sobre o cumprimento da(s) obrigação(ões) garantida(s) pela(s) [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) de Seguro-Garantia;\r\n\r\ne) Informar previamente à [%b%]SEGURADORA[%b%], a existência ou não de pluralidade de garantias para o mesmo objeto garantido pela(s) Apólice(s), o que, em sendo efetiva, a [%b%]SEGURADORA[%b%] participará proporcionalmente;\r\n\r\nf) Apresentar informações exatas à [%b%]SEGURADORA[%b%], ao solicitar o seguro, não omitindo qualquer informação sobre a obrigação a ser garantida;\r\n\r\ng) Cumprir rigorosamente com todas as obrigações garantidas pela(s) Apólice(s) no tempo e modo fixados, evitando que qualquer inadimplemento de tais obrigações possa gerar uma expectativa ou aviso de sinistro;\r\n\r\nh) Informar previamente à [%b%]SEGURADORA[%b%] qualquer alteração no seu controle acionário; \r\n\r\ni) Efetuar o devido pagamento ao(s) SEGURADO(S) quando intimado para pagamento do valor constante da sentença judicial condenatória ou do acordo judicial homologado dentro do prazo legal;\r\n\r\nj) Caso a [%b%]SEGURADORA[%b%] receba ordem judicial que a obrigue a efetuar o pagamento de indenização relativa à(s) [%b%]APÓLICE[%b%](S) antes do trânsito em julgado de sentença judicial, ficará obrigada a comunicar imediatamente ao [%b%]TOMADOR[%b%], que deverá efetuar o pagamento exigido diretamente ao(s) [%b%]SEGURADO[%b%](s), no prazo determinado pelo juízo competente;\r\n\r\nk) Entregar à [%b%]SEGURADORA[%b%], assim que solicitadas, em caso de aviso formal de sinistro, garantias adicionais líquidas, ou antecipar o equivalente ao valor da indenização diretamente ao [%b%]SEGURADO[%b%];\r\n\r\nl) Ressarcir imediatamente a [%b%]SEGURADORA[%b%] de quaisquer [%b%]INDENIZAÇÕES[%b%], prejuízos e/ou despesas oriundas de avisos formais de sinistro, incluindo, sem limitação, custas e honorários sucumbências, honorários advocatícios e dos peritos contratados, bem como quaisquer outras despesas e encargos pagas ou incorridos, nos termos das [%b%]APÓLICES[%b%] e/ou no âmbito de procedimentos de análise de expectativa e/ou de regulação de sinistros;\r\n\r\nm) Informar prévia ou imediatamente à [%b%]SEGURADORA[%b%], conforme o caso, qualquer circunstância ou ocorrência que possa, ainda que potencialmente, vir a resultar no seu inadimplemento, total ou parcial, das obrigações objeto da garantia securitária;\r\n\r\nn) Repassar imediatamente à [%b%]SEGURADORA[%b%] qualquer comunicação de inadimplemento ou possível inadimplemento apresentada pelo [%b%]SEGURADO[%b%];\r\n\r\no) Praticar todos os atos e formalidades necessários para o exercício do direito de sub-rogação da [%b%]SEGURADORA[%b%], no caso do pagamento de qualquer indenização com base na(s) [%b%]APÓLICE[%b%](s), incluindo, sem limitação, formalidades necessárias para viabilizar o direito da [%b%]SEGURADORA[%b%] de concorrer proporcionalmente com as demais garantias;\r\n\r\np) Enviar todos os documentos necessários para instrução e efetivação da regulação de sinistro; e\r\n\r\nq) Cumprir com todas as obrigações decorrentes deste [%b%]CONTRATO[%b%].\r\n\r\n\r\n\r\n\r\n\r\n[%r0%]2.6. Havendo a inadimplência do [%b%]TOMADOR[%b%], em relação ao pagamento do [%b%]PRÊMIO[%b%], em parcela única ou fracionado, de qualquer [%b%]APÓLICE[%b%] ou [%b%]ENDOSSO[%b%] vigente, ocorrerá o vencimento antecipado das demais parcelas vincendas, podendo a [%b%]SEGURADORA[%b%] recorrer à execução parcial deste [%b%]CONTRATO[%b%], somente para a [%b%]APÓLICE[%b%] e/ou [%b%]ENDOSSO[%b%] com débitos em aberto, independentemente de interpelação judicial, extrajudicial, ou aviso prévio a qualquer uma das Partes. \r\n\r\n2.7. Caso a [%b%]SEGURADORA[%b%] decida, a seu critério, não dar continuidade à cobertura aos riscos segurados, diante do término da vigência indicada na(s) [%b%]APÓLICE[%b%](s), o [%b%]TOMADOR[%b%], desde já, se compromete a, imediatamente, desonerar a [%b%]SEGURADORA[%b%] das responsabilidades assumidas, bem como a solicitar a substituição da(s) [%b%]APÓLICE[%b%](s) emitida(s) por outras formas de garantia admitidas em lei ou em contrato, conforme o caso, no prazo máximo e improrrogável de até 90(noventa) dias antes do vencimento de cada [%b%]APÓLICE[%b%]. \r\n\r\n2.8. O [%b%]TOMADOR[%b%] deverá efetuar o(s) pagamento(s) do(s) prêmio(s) relativos às [%b%]APÓLICE[%b%](s) a partir da data de sua emissão e durante todos o período que vigorar o seguro garantia, bem como, os prêmios relativos aos endossos anuais automáticos de atualização monetária do limite máximo garantido dos seguros de garantia judicial, até a sua liberação expressa, nos termos deste instrumento e da legislação aplicável, ainda que tal liberação ocorra após o encerramento do período de vigência estabelecido na(s) [%b%]APÓLICE([%b%]s).\r\n\r\n2.9. Exceto se de outra forma especificado na [%b%]APÓLICE[%b%] o [%b%]TOMADOR[%b%] concorda ainda que as [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSOS[%b%](s) não possuem cláusula de atualização monetária da importância segurada e a cobrança adicional do prêmio será automática, cabendo assim o pagamento do(s) prêmio(s) relativo(s) a estas atualizações para que a cobertura seja aplicada.\r\n\r\n2.10. A atualização monetária do limite máximo garantido ocorrerá anualmente e de forma automática, mediante a emissão de endosso com cobrança do prêmio respectivo, e será efetuada com base no índice mencionado da [%b%]APÓLICE[%b%] e, na sua ausência, pela taxa Selic.\r\n\r\n2.11. Todos os valores devidos pelo [%b%]TOMADOR[%b%] para a [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%] ou da(s) [%b%]APÓLICE[%b%](s) serão pagos integralmente e livres de qualquer dedução ou retenção a qualquer título, incluindo, sem limitação, quaisquer tributos, custos, taxas ou outros encargos. Caso o [%b%]TOMADOR[%b%] seja proibido por qualquer disposição legal de realizar pagamentos à [%b%]SEGURADORA[%b%] sem deduções ou retenções, o [%b%]TOMADOR[%b%] pagará tal quantia adicional, de maneira a fazer com que o valor real e efetivamente recebido pela [%b%]SEGURADORA[%b%] seja igual à quantia integral devida à Seguradora, como se não houvesse deduções ou retenções.\r\n\r\n\r\n[%b%]CLÁUSULA TERCEIRA – PENALIDADES\r\n\r\n3.1. Ficam estabelecidas as seguintes penas convencionais, sem prejuízo uma das outras e bem assim das demais sanções previstas em lei, para promover-lhes a cobrança:\r\n\r\n[%r400%]a) Ocorrendo o inadimplemento de qualquer quantia devida à [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%], o débito em atraso ficará sujeito a correção monetária idêntica a atribuída ao índice que vier a ser instituído pelo Governo para as [%b%]APÓLICES[%b%] de Seguro, juros de mora à razão de 1% (um por cento) ao mês, calculados sobre o débito corrigido monetariamente, e multa irredutível de 2% (dois por cento) sobre o total devido na forma desta alínea; \r\n\r\nb) O inadimplemento de qualquer obrigação não pecuniária prevista neste [%b%]CONTRATO[%b%], sujeita o [%b%]TOMADOR[%b%] à multa de 2% (dois por cento) ao mês calculada sobre o valor do prêmio da(s) APÓLICE(s) em vigor, cobrada por dia decorrido até que a obrigação seja cumprida;\r\n\r\nc) Se a [%b%]SEGURADORA[%b%] tiver que ingressar em juízo ou em processo administrativo para a defesa dos direitos que decorrem deste [%b%]CONTRATO[%b%], fará jus a honorários advocatícios à razão de 20% (vinte por cento) sobre o valor da condenação.\r\n\r\n\r\n[%r0%][%b%]CLÁUSULA QUARTA – PRAZO E VALOR DO [%b%]CONTRATO[%b%]\r\n\r\n4.1. O presente [%b%]CONTRATO[%b%] será válido a partir da sua assinatura e permanecerá vigente até que sejam cumpridas todas as obrigações principais e acessórias do [%b%]TOMADOR[%b%] perante esta [%b%]SEGURADORA[%b%] estabelecidas neste instrumento e na(s) APÓLICE(S). O disposto nesta cláusula abrangerá também a obrigação do [%b%]TOMADOR[%b%] decorrente de reclamações de sinistros realizadas durante o respectivo prazo prescricional.\r\n\r\n4.2. O valor deste [%b%]CONTRATO[%b%] corresponde ao somatório dos limites máximos de garantia estabelecidos na(s) [%b%]APÓLICE[%b%](s) emitida(s), acrescidos dos índices de correção aplicáveis e de todas as despesas ou encargos razoáveis incorridos pela [%b%]SEGURADORA[%b%].\r\n\r\n4.3. Na hipótese de parcelamento de [%b%]PRÊMIO[%b%], o não pagamento pelo [%b%]TOMADOR[%b%] de qualquer parcela na data fixada poderá acarretar, a critério da [%b%]SEGURADORA[%b%], o vencimento imediato das demais parcelas e a imediata execução deste [%b%]CONTRATO[%b%], e das garantias porventura oferecidas, independentemente de notificação judicial ou extrajudicial.\r\n\r\n4.4.Na hipótese de ausência de sinistro ou de expectativa de sinistro e não havendo expirado o(s) prazo(s) de vigência indicado(s) na(s) APÓLICE(s), quando da extinção da(s) garantia(s) ou de sua expressa liberação, conforme os termos da(s) [%b%]APÓLICE[%b%](s), caberá a devolução proporcional de PRÊMIO ao [%b%]TOMADOR[%b%]. A liberação mencionada nesta cláusula deverá ser apresentada por declaração escrita e surtirá efeito a partir da data de sua entrega à [%b%]SEGURADORA[%b%], desde que acompanhada da documentação comprobatória aplicável.\r\n\r\n\r\n[%b%]CLÁUSULA QUINTA – SUB-ROGAÇÃO\r\n\r\n5.1. Paga a indenização, ou iniciado o cumprimento das obrigações inadimplidas pelo [%b%]TOMADOR[%b%], a [%b%]SEGURADORA[%b%] sub-rogar-se-á, automaticamente, na forma da lei e do [%b%]CONTRATO[%b%], nos direitos do(s) [%b%]SEGURADO[%b%](s) contra o [%b%]TOMADOR[%b%] e/ou contra terceiros, cujos atos ou fatos tenham dado causa ou contribuído para o sinistro, para recuperar toda e qualquer despesa ou pagamento que venha a comprovadamente efetuar em decorrência da(s) [%b%]APÓLICE[%b%](s) e do(s) [%b%]ENDOSSO[%b%](s) emitidas.\r\n\r\n[%r400%]5.1.1. O [%b%]TOMADOR[%b%] deverá efetuar o reembolso de todos os pagamentos feitos e despesas incorridas pela [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%] e das [%b%]APÓLICE[%b%](s), dentro do prazo improrrogável de 02 (dois) dias úteis, contados do recebimento de comunicação da [%b%]SEGURADORA[%b%] para pagamento.\r\n\r\n5.1.2. Para os fins do presente [%b%]CONTRATO[%b%], ordens de pagamento, transferências eletrônicas, recibos, notas fiscais ou outros instrumentos de pagamento e de comprovação de despesas realizadas ou incorridas pela [%b%]SEGURADORA[%b%] em razão da(s) [%b%]APÓLICE[%b%](s) serão evidências para reembolso da [%b%]SEGURADORA[%b%]. \r\n\r\n\r\n[%r0%][%b%]CLÁUSULA SEXTA – DISPOSIÇÕES GERAIS\r\n\r\n6.1. Caso a [%b%]SEGURADORA[%b%] tenha que cumprir no todo ou em parte as obrigações decorrentes deste [%b%]CONTRATO[%b%], o [%b%]TOMADOR[%b%] declara que não exigirá dela nenhuma protelação no pagamento do débito que for apresentado pelo(s) [%b%]SEGURADO[%b%](s) credor(es) seja a que título for nem poderá exigir que ela discuta com o(s) [%b%]SEGURADO[%b%](s) a certeza ou liquidez da dívida.\r\n\r\n[%r400%]6.1.1. Não obstante o estabelecido nesta Cláusula, a [%b%]SEGURADORA[%b%] se reserva no direito de, a seu juízo, fazer ao(s) [%b%]SEGURADO[%b%](s) as reservas e objeções que o [%b%]TOMADOR[%b%] considere pertinentes desde que este lhe comunique tempestivamente e que a [%b%]SEGURADORA[%b%] as julgue procedentes.\r\n\r\n[%r0%]6.2. No tocante à(s) [%b%]APÓLICE[%b%](s) emitida(s) na modalidade licitante, nos casos em que o [%b%]TOMADOR[%b%] lograr-se vencedor do certame licitatório, fica desde já convencionado entre as partes que a [%b%]SEGURADORA[%b%] não estará obrigada a emitir as [%b%]APÓLICES[%b%] de performance, as quais o instrumento contratual determinar.\r\n\r\n6.3. Qualquer omissão ou tolerância por parte da [%b%]SEGURADORA[%b%] em exigir o fiel cumprimento das obrigações deste [%b%]CONTRATO[%b%], não constituirá novação ou renúncia, nem afetará o seu direito de exigir o seu cumprimento a qualquer tempo. \r\n\r\n6.4. A [%b%]SEGURADORA[%b%] fica desde já autorizada pelo [%b%]TOMADOR[%b%] a emitir [%b%]APÓLICE[%b%](s) e/ou [%b%]ENDOSSO[%b%](s) de Seguro Garantia que venha(m) a ser solicitada(s) pelo(s) [%b%]TOMADOR[%b%](ES) quando este participe:\r\n\r\n[%r400%]a) Como consorciado, seja(m) a(s) [%b%]APÓLICE[%b%](s) e endosso(s) de Seguro-Garantia em nome do próprio consórcio ou do próprio consorciado visando assegurar a integralidade ou parte destas obrigações, independentemente de liderança no consórcio, ou  \r\n\r\nb) Como sócio de Sociedade de Propósito Específico (SPE) seja(m) a(s) [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) de Seguro-Garantia em nome da SPE ou do Sócio, visando assegurar a integralidade ou parte destas obrigações independentemente do percentual de participação na sociedade.\r\n\r\nc) Para a empresa para a qual o [%b%]TOMADOR[%b%] detenha participação societária, direta ou indireta, ou outras empresas expressamente indicadas. As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] de seguro-garantia poderão ser emitidos em nome do [%b%]TOMADOR[%b%] ou em nome das empresas expressamente indicadas, visando assegurar a integridade ou parte das obrigações assumidas pela referida empresa.\r\n\r\n\r\n\r\n[%r0%][%b%]Parágrafo 1º[%b%] – Caso as partes componentes de eventual Consórcio ou “SPE”, previstas nas hipóteses descritas nas alíneas “a” e “b” do caput desta cláusula, cuja(s) obrigação(ões) seja(m) garantida(s) por apólice(s) e/ou endosso(s) de seguro garantia emitidos pela [%b%]SEGURADORA[%b%] não estejam listadas no Cadastro Anual do [%b%]TOMADOR[%b%], a  [%b%]SEGURADORA[%b%] deverá prontamente notificar o [%b%]TOMADOR[%b%].  \r\n\r\n[%b%]Parágrafo 2º[%b%] - A [%b%]SEGURADORA[%b%] poderá utilizar-se deste [%b%]CONTRATO[%b%] para reaver qualquer valor referente à emissão e à satisfação pecuniária da(s) apólice(s) e do(s) endosso(s) citados nesta cláusula, reconhecendo-o como um título executivo extrajudicial, nos termos do artigo 784, III do Novo Código de Processo Civil.\r\n\r\n[%b%]Parágrafo 3º[%b%] -  Para as [%b%]APÓLICES[%b%] emitidas com previsão no caput dessa Cláusula, o [%b%]TOMADOR[%b%] assumirá em caráter irrevogável e irretratável a condição de [%b%]FIADOR[%b%] do(s) consórcio(s), consorciado(s), e da(s) empresa(s) controlada(s)/coligada(s), tornando-se responsável solidariamente por todas as obrigações assumidas perante o(s) seu(s) respectivo(s) [%b%]SEGURADO[%b%](s) a esta [%b%]SEGURADORA[%b%], sejam tais obrigações principais ou acessórias, compreendendo juros, correção monetária, penas convencionais, comissões, tributos, honorários advocatícios e quaisquer outras despesas ou encargos suportados pela [%b%]SEGURADORA[%b%] quando do pagamento da indenização securitária ou execução das obrigações do [%b%]TOMADOR[%b%] e das empresas mencionadas no caput, nos termos dos Artigos 821 e 822 do Código Civil, com a expressa renúncia aos benefícios de ordem e à faculdade contida nos Artigos 835 a 838 do referido Código, podendo se desonerar da fiança somente mediante declaração escrita emitida pela [%b%]SEGURADORA[%b%], a seu exclusivo critério.\r\n\r\n[%b%]Parágrafo 4º[%b%] - Ao assumir a condição de [%b%]FIADOR[%b%], nos termos desta Cláusula, obriga-se o [%b%]TOMADOR[%b%] a liquidar todas as obrigações devidas decorrentes da(s) [%b%]APÓLICE[%b%](S) emitida(s) no âmbito desta Clausula, no prazo máximo de 48 (quarenta e oito) horas, contados da comunicação escrita que a [%b%]SEGURADORA[%b%] lhe enviar, independentemente de qualquer outra formalidade, judicial ou extrajudicial, sob pena de constituição em mora e sujeição aos encargos previstos na Cláusula 3.1, alíneas ‘a’ e ‘c’.\r\n\r\n6.5. Exclusivamente para a(s) [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) na modalidade judicial, fica desde já acordado que o sinistro caracterizar-se-á no momento em que a [%b%]SEGURADORA[%b%] recepcionar qualquer notificação expedida pelo Juízo Segurado determinando o pagamento da importância segurada. Desta notificação, a [%b%]SEGURADORA[%b%] dará ciência ao [%b%]TOMADOR[%b%] por meio de correspondência eletrônica (e-mail) direcionada a(s) pessoa(s) por ele indicada(s), conforme os dados apresentados no Parágrafo 1º.\r\n\r\n[%b%]Parágrafo 1º[%b%] - Qualquer aviso, notificação, solicitação ou comunicação, relativa ao presente [%b%]CONTRATO[%b%] deverá ser enviada para os endereços indicados no cadastro do [%b%]TOMADOR[%b%], por meio de: (i) carta registrada, com comprovante de recebimento; ou (ii) entrega pessoal, com protocolo assinado pelo próprio destinatário ou, na sua ausência, por representante legal por ele indicado; ou, (iii) meio eletrônico, com comprovante de entrega ao destinatário.\r\n\r\n[%b%]Parágrafo 2º[%b%] - Caso qualquer dos dados do(s) representante(s) indicado(s) no Parágrafo primeiro acima seja modificado, a parte que promover a alteração deverá comunicar, por escrito, imediatamente à outra, sob pena de que a correspondência relativa ao presente [%b%]CONTRATO[%b%], enviada anteriormente à comunicação de modificação dos dados do(s) representante(s) indicado(s) seja considerada como válida inclusive para todos os fins de pagamento, citação inicial, notificação extrajudicial (na forma do artigo 160 e §§ da Lei n.º 6.015/1973), intimação e/ou ciência originados de atos administrativos ou judiciais, consoante os termos deste [%b%]CONTRATO[%b%].\r\n\r\n[%b%]Parágrafo 3º[%b%] - A presente cláusula compromete as Partes, herdeiros e sucessores do [%b%]TOMADOR[%b%], até o cumprimento integral da obrigação originária garantida pela(s) [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) de seguro acima mencionado(s).\r\n\r\n[%b%]Parágrafo 4º[%b%] - O [%b%]TOMADOR[%b%] em toda e qualquer hipótese de caracterização de sinistro deverá efetuar o pagamento da quantia até as 12 (doze) horas do último dia útil programado pelo Juízo para o efetivo pagamento, conforme correspondência eletrônica expedida pela [%b%]SEGURADORA[%b%]. A obrigação de pagamento é sempre de responsabilidade do [%b%]TOMADOR[%b%], motivo pelo qual referido pagamento deverá ser sempre espontâneo.\r\n\r\n[%b%]Parágrafo 5º[%b%] - Em caso de descumprimento ao disposto no parágrafo quarto desta cláusula, o [%b%]TOMADOR[%b%] obriga-se a efetuar o ressarcimento do valor oferecido pela [%b%]SEGURADORA[%b%] ao Juízo segurado, no prazo de 24 (vinte e quatro) horas, contadas do recebimento de notificação extrajudicial por ela enviada, observadas as condições constantes na cláusula 3.1, item “a” deste instrumento. Em caso de descumprimento do [%b%]TOMADOR[%b%] ao estabelecido neste parágrafo, fica desde já caracterizada sua inadimplência, independentemente de qualquer outra formalidade, podendo a [%b%]SEGURADORA[%b%] utilizar-se das medidas judiciais cabíveis para o imediato e completo reembolso.\r\n\r\n[%b%]Parágrafo 6º[%b%] Na ocorrência de pagamento em duplicidade do débito reclamado, obriga-se o [%b%]TOMADOR[%b%] a promover a devolução do(s) valor(es) pago(s) pela [%b%]SEGURADORA[%b%], no prazo de 24 (vinte e quatro) horas, sob pena de aplicação das penalidades previstas na cláusula 3ª, item “a” deste [%b%]CONTRATO[%b%].\r\n\r\n\r\n[%b%]Parágrafo 7º[%b%] -Fica desde já estabelecido e acordado que, nos casos de [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) nas modalidades Judicial, Judicial para Execução Fiscal, Parcelamento Administrativo Fiscal e Administrativo de Créditos Tributários, a [%b%]SEGURADORA[%b%] terá a faculdade de informar ao [%b%]TOMADOR[%b%], com a antecedência mínima de 120 (cento e vinte) dias, anteriores a data de final de vigência da(s) [%b%]APÓLICE[%b%](s) e/ou eventual(is) [%b%]ENDOSSO[%b%](s), através de um dos meios descritos no Parágrafo 1º, direcionado a(s) pessoa(s) por ele indicada(s), conforme os dados apresentados no referido Parágrafo, o não interesse pela renovação da garantia ora prestada. Nesta hipótese, o [%b%]TOMADOR[%b%] terá 60 (sessenta) dias para, alternativamente, antecipar à [%b%]SEGURADORA[%b%] o valor correspondente à importância segurada ou, substituí-la por outra garantia idônea e aceita pelo Juízo segurado, sob pena de não o fazendo, ter caracterizada sua inadimplência, independentemente de qualquer outra formalidade.\r\n\r\n6.6. O [%b%]TOMADOR[%b%] deverá enviar informações sobre os processos judiciais e administrativos garantidos pela(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s) emitido(s), para a análise da [%b%]SEGURADORA[%b%], sempre que solicitado.\r\n\r\n6.7. O [%b%]TOMADOR[%b%] se obriga a notificar a [%b%]SEGURADORA[%b%] em caso de intenção da celebração de acordo que implique o parcelamento da(s) dívida(s) discutida(s) em juízo ou em sede de discussão administrativa garantida pela(s) [%b%]APÓLICE[%b%](s), logo que o saiba, inclusive de sua intenção e interesse no pagamento à vista.\r\n\r\n6.8. O [%b%]TOMADOR[%b%] expressamente concorda e anui com a condição de que qualquer parcelamento de valor em discussão judicial ou administrativa garantida por [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) emitido(s) por esta [%b%]SEGURADORA[%b%] deverá ser expressamente notificado à [%b%]SEGURADORA[%b%], por escrito, sob pena de multa de 5% (cinco por cento)  sobre o valor da importância segurada na(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s), bem como consequente desoneração da garantia, no prazo de 60 (sessenta) dias, sem prejuízo das demais sanções previstas neste instrumento, especialmente as descritas na cláusula 3.1, item “b”.\r\n\r\n6.9. Em caso de parcelamento de débitos tributários, comunicados a esta [%b%]SEGURADORA[%b%], o [%b%]TOMADOR[%b%] deverá comprovar perante a Secretaria da Fazenda respectiva (Estadual ou Federal) no procedimento administrativo próprio, se houver, a garantia do débito executado com exigibilidade suspensa pelo parcelamento, através dos meios permitidos em lei.\r\n\r\n6.10. Sem prejuízo do disposto no parágrafo 7°, na hipótese de a [%b%]SEGURADORA[%b%], por conta do término da vigência indicada na(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s) e pela falta de garantia do juízo, optar, a seu exclusivo critério, por renovar a(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s), o [%b%]TOMADOR[%b%] desde já declara concordar expressamente com tal renovação, não podendo opor-se, sobretudo, com relação ao pagamento do prêmio adicional devido à [%b%]SEGURADORA[%b%], que será proporcional, pelo tempo da renovação, ao prêmio originalmente pago.\r\n\r\n6.11. Este [%b%]CONTRATO[%b%] obriga as partes, seus sucessores e cessionários a qualquer título, não podendo o [%b%]TOMADOR[%b%] transferir as obrigações assumidas neste [%b%]CONTRATO[%b%] a terceiros sem a autorização expressa e prévia da [%b%]SEGURADORA[%b%]. \r\n\r\n6.12. O [%b%]TOMADOR[%b%] através de seu(s) representante(s) legalmente constituído(s), declara que a(s) obrigação(ões) assumida(s) através deste [%b%]CONTRATO[%b%] de forma alguma contradizem as disposições de seu Contrato/Estatuto Social, ou de outros regulamentos, e declaram ainda que têm os poderes necessários para assumir tais obrigação(ões) e assumem os ônus decorrentes de quaisquer irregularidades.\r\n\r\n\r\n[%b%]CLÁUSULA SÉTIMA – DO VENCIMENTO ANTECIPADO\r\n\r\n7.1. A [%b%]SEGURADORA[%b%] poderá, independentemente de aviso, interpelação ou notificação, judicial ou extrajudicial, considerar antecipadamente vencido este [%b%]CONTRATO[%b%] e exigir do [%b%]TOMADOR[%b%] a(s) liberação(ões) da(s) obrigação(ões) assumida(s), quer através de pagamento imediato de valor equivalente e/ou impetrar medida preventiva sobre os bens do [%b%]TOMADOR[%b%] e/ou FIADOR(es),  nos seguintes casos:\r\n\r\n[%r400%]a) Quando ocorrer declaração inexata do [%b%]TOMADOR[%b%] ao solicitar o Seguro; \r\nb) Quando a [%b%]SEGURADORA[%b%] avaliar que a conduta ou solvência do [%b%]TOMADOR[%b%] evidencie incapacidade para cumprir as obrigações contraídas com o [%b%]SEGURADO[%b%];\r\nc) Quando o [%b%]TOMADOR[%b%] ou empresa a ele coligada ou por ele controlada estiver em recuperação judicial, requerer ou tiver requerida sua falência; \r\nd) Se ocorrer mudança de seu controle acionário sem prévia anuência da [%b%]SEGURADORA[%b%]; \r\ne) Quando o [%b%]TOMADOR[%b%] não cumprir com quaisquer das obrigações decorrentes deste [%b%]CONTRATO[%b%]; \r\nf) Quando ocorrer protesto de títulos ou for distribuída qualquer ação contra o [%b%]TOMADOR[%b%], desde que importem na redução de sua solvência e capacidade de liquidar as obrigações assumidas, e, em se tratando de protestos de títulos, desde que: (i) não sejam sustados no prazo legal; (ii) não ocorra o depósito ou pagamento; ou (iii) não decorram de comprovado erro ou dolo de terceiros.\r\ng) Nos demais casos previstos em lei. \r\n\r\n[%r0%][%b%]Parágrafo Único[%b%] - A [%b%]SEGURADORA[%b%] poderá, com intuito de fazer prevalecer seus direitos, iniciar as ações judiciais e extrajudiciais e, em especial, solicitar embargos, proibições especiais ou gerais e todas e quaisquer medidas preventivas que julgue necessárias, para as quais o [%b%]TOMADOR[%b%] desde já presta sua concordância, ficando entendido que as citadas medidas preventivas serão mantidas enquanto persistir a obrigação da [%b%]SEGURADORA[%b%] na(s) [%b%]APÓLICE[%b%](s) em vigor.\r\n\r\n\r\n[%b%]CLÁUSULA OITAVA - REFORÇO DE GARANTIAS\r\n\r\n8.1. Para assegurar o cabal cumprimento de todas as obrigações assumidas na(s) [%b%]APÓLICE[%b%](s) e de quaisquer importâncias decorrentes deste [%b%]CONTRATO[%b%], a [%b%]SEGURADORA[%b%] poderá exigir do [%b%]TOMADOR[%b%], em caso de deterioração do risco de crédito do [%b%]TOMADOR[%b%], insolvência, ou caso as circunstâncias evidenciem a incapacidade do [%b%]TOMADOR[%b%] de cumprir suas obrigações, ativos que deverão corresponder a, no mínimo, 130% (cento e trinta por cento) da(s) obrigação(ões) garantida(s), consubstanciados em:\r\n\r\n[%r400%](a). Garantia fidejussória (adicional, conforme o caso); \r\n(b). Garantia real; e/ou \r\n(c). Outras garantias que julgar pertinentes, incluindo, sem limitação, carta de fiança, emitida por banco de primeira linha; bem como penhor ou alienação fiduciária de ativos financeiros de liquidez imediata (títulos públicos ou CDB - Certificado de Depósito Bancário).\r\n\r\n\r\n[%r0%][%b%]CLÁUSULA NONA - PREVENÇÃO E COMBATE A “LAVAGEM DE DINHEIRO”\r\n\r\n9.1. O [%b%]TOMADOR[%b%] declara não ser Pessoa Politicamente Exposta (PPE) nos termos da legislação e regulamentação aplicáveis, comprometendo-se, desde já, a informar imediatamente à [%b%]SEGURADORA[%b%] qualquer alteração dessa condição, sob pena do vencimento antecipado deste [%b%]CONTRATO[%b%], sem prejuízo da incidência da multa aqui prevista. \r\n\r\n9.2. O [%b%]TOMADOR[%b%], neste ato, declara por si, seus representantes, empregados e prepostos: \r\n \r\n[%r400%]a) Não utilizar recursos para financiamento de atividades ilegais;  \r\n\r\nb) Não oferecer, dar ou comprometer-se a dar, direta ou indiretamente, vantagem indevida a agente público ou a terceira pessoa a ele relacionada, aceitar ou comprometer-se a aceitar, seja por conta própria ou de outrem, qualquer doação, pagamento, compensação, vantagens financeiras ou não financeiras ou, ainda, benefícios de qualquer espécie que constituam prática ilegal sob as leis brasileiras ou de qualquer outro país conforme definido no artigo 5º (incisos, letras e parágrafos) da Lei nº 12.846/2013, de forma relacionada, ou não, ao presente [%b%]CONTRATO[%b%] (“Obrigações contra Atos Lesivos); e\r\n\r\nc) Que todos os valores pagos ou dados em eventual garantia à [%b%]SEGURADORA[%b%] para viabilizar a emissão da(s) [%b%]APÓLICE[%b%](s), nos termos deste [%b%]CONTRATO[%b%], não constituem fraude à execução, a credores e/ou provém de atividade tipificada pela Lei nº 9.613/98.\r\n\r\n[%r0%]9.3. O [%b%]TOMADOR[%b%] se compromete a informar, de imediato e por escrito, à [%b%]SEGURADORA[%b%] a existência de quaisquer violações relativas às declarações e as Obrigações contra Atos Lesivos acima mencionados de que venha a tomar conhecimento. A obrigação ora assumida deverá ser rigorosamente cumprida até o término do presente instrumento.\r\n\r\n9.4. Todas infrações incorridas pelo [%b%]TOMADOR[%b%] ao disposto nesta cláusula implicam a sua imediata responsabilização perante a [%b%]SEGURADORA[%b%] pelas perdas e danos que esta vier a comprovadamente experimentar em decorrência de tais infrações.\r\n\r\n\r\n[%b%]CLÁUSULA DÉCIMA – FORO\r\n\r\n10.1. Fica eleito o foro central da Comarca de São Paulo para dirimir qualquer dúvida ou questão resultante deste Instrumento, com expressa renúncia de outro, por mais privilegiado que seja.\r\n"
+     }
+    ]
+   },
+   "TomadorDetalharCorretores": {
+    "Corretores": [
+     {
+      "id_garant_tomador_corretor": 21646,
+      "id_pessoa_corretor": 3127700,
+      "nm_pessoa_corretor": "MARSH CORRETORA DE SEGUROS LTDA.",
+      "cd_tp_comissao": 2,
+      "nm_tp_comissao": "Corretagem",
+      "pe_comissao": 8.000,
+      "dv_lider": true
+     }
+    ]
+   },
+   "TomadorDetalharVinculo": {
+    "Acionista": []
+   }
+  }
+ ]
+}
+=========================================================================================================
+
+{
+  "id_pessoa": "3129114"
+}
+
+{
+ "cd_retorno": 0,
+ "nm_retorno": "Código 0: Processamento efetuado com sucesso",
+ "Tomador": [
+  {
+   "id_pessoa": 3129114,
+   "nr_cnpj_cpf": 45543915000181.0,
+   "nm_pessoa": "CARREFOUR COMERCIO E INDUSTRIA LTDA",
+   "nm_tipo_pessoa": "Jurídica",
+   "nm_status": "Ativo",
+   "dv_ppe": "false",
+   "TomadorDetalharEndereco": {
+    "Endereco": [
+     {
+      "id_endereco": 13619,
+      "nm_endereco": "Rua George Eastman",
+      "nr_rua_endereco": "213",
+      "nm_bairro": "Vila Tramontano",
+      "nm_cidade": "São Paulo",
+      "cd_pais": 1,
+      "nm_pais": "Brasil",
+      "cd_uf": 1,
+      "nm_uf": "SP",
+      "nm_cep": "05690000",
+      "cd_tp_endereco": 5,
+      "nm_tp_endereco": "Cobrança",
+      "dv_endereco_padrao": true
+     }
+    ]
+   },
+   "TomadorDetalharMeioComunicacao": {
+    "MeioComunicacao": []
+   },
+   "TomadorDetalharContaCorrente": {
+    "ContaCorrente": []
+   },
+   "TomadorDetalharSituacao": {
+    "id_tomador": 1340,
+    "id_classe_risco": 15,
+    "nm_classe_risco": "M - Médio",
+    "vl_lim_credito_interno": 500000000.00,
+    "vl_taxa_risco": 0.10500000,
+    "vl_premio_minimo": 190.00,
+    "dt_validade": "2024-03-06T00:00:00",
+    "vl_acumulo": 438329408.94,
+    "vl_retencao": 16025.83,
+    "cd_status": 1601,
+    "nm_status": "Aprovado"
+   },
+   "TomadorDetalharSubLimite": {
+    "SubLimite": [
+     {
+      "id_grp_cobertura": 53,
+      "nm_grp_cobertura": "DEPÓSITO RECURSAL TRABALHISTA"
+     },
+     {
+      "id_grp_cobertura": 55,
+      "nm_grp_cobertura": "FINANCEIRA"
+     },
+     {
+      "id_grp_cobertura": 56,
+      "nm_grp_cobertura": "IMOBILIÁRIO"
+     },
+     {
+      "id_grp_cobertura": 59,
+      "nm_grp_cobertura": "OPERAÇÕES DE FUSÕES E AQUISIÇÕES"
+     },
+     {
+      "id_grp_cobertura": 61,
+      "nm_grp_cobertura": "PARCELAMENTO ADMINISTRATIVO FISCAL"
+     },
+     {
+      "id_grp_cobertura": 62,
+      "nm_grp_cobertura": "ANTECIPAÇÃO DE PAGAMENTO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 5142,
+      "id_grp_cobertura": 57,
+      "nm_grp_cobertura": "JUDICIAL",
+      "vl_taxa": 0.10500000
+     },
+     {
+      "id_grp_sub_limite_tomador": 42872,
+      "id_grp_cobertura": 43,
+      "nm_grp_cobertura": "ADIANTAMENTO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42873,
+      "id_grp_cobertura": 44,
+      "nm_grp_cobertura": "ADUANEIRO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42874,
+      "id_grp_cobertura": 45,
+      "nm_grp_cobertura": "CONSTRUÇÃO, FORNECIMENTO OU PRESTAÇÃO DE SERVIÇO"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42875,
+      "id_grp_cobertura": 46,
+      "nm_grp_cobertura": "EXECUTANTE CONSTRUTOR - TÉRMINO DE OBRA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42876,
+      "id_grp_cobertura": 47,
+      "nm_grp_cobertura": "LICITANTE"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42877,
+      "id_grp_cobertura": 48,
+      "nm_grp_cobertura": "MANUTENÇÃO CORRETIVA"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42878,
+      "id_grp_cobertura": 49,
+      "nm_grp_cobertura": "RETENÇÃO DE PAGAMENTOS"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42879,
+      "id_grp_cobertura": 50,
+      "nm_grp_cobertura": "ADMINISTRATIVO DE CRÉDITOS TRIBUTARIOS"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42880,
+      "id_grp_cobertura": 51,
+      "nm_grp_cobertura": "AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOM"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42881,
+      "id_grp_cobertura": 52,
+      "nm_grp_cobertura": "AGENTE FINANCIADOR (COMPLETION)"
+     },
+     {
+      "id_grp_sub_limite_tomador": 42882,
+      "id_grp_cobertura": 54,
+      "nm_grp_cobertura": "FIANÇA LOCATÍCIA",
+      "vl_taxa": 0.25000000
+     },
+     {
+      "id_grp_sub_limite_tomador": 53308,
+      "id_grp_cobertura": 60,
+      "nm_grp_cobertura": "PAGAMENTO",
+      "vl_taxa": 0.25000000
+     }
+    ]
+   },
+   "TomadorDetalharCCG": {
+    "CCG": [
+     {
+      "id_tomador_documento": 1206,
+      "id_documento": 50,
+      "nm_documento": "CCG",
+      "dt_solicitacao": "2021-02-25T00:00:00",
+      "cd_modelo": 3,
+      "nm_modelo": "CCG Sem Fiador",
+      "cd_status": 101,
+      "nm_status": "Formalizado",
+      "nm_texto_ccg": "[%b%][%r2500%]INSTRUMENTO PARTICULAR DE CONTRAGARANTIA\r\n\r\n\r\n\r\n[%r0%]Por este Instrumento particular de Contragarantia (“[%b%]CONTRATO[%b%]\"), de um lado, [%b%](%nm_SEGURADORA%)[%b%], com sede na Cidade de (%cidade_SEGURADORA%), Estado do (%estado_SEGURADORA%), na (%endereco_SEGURADORA%), (%nr_end_SEGURADORA%), inscrita no CNPJ/MF sob nº (%cnpj_SEGURADORA%), doravante denominada como [%b%]SEGURADORA[%b%], neste ato representada na forma de seu Estatuto Social, e de outro lado a empresa, [%b%](%nm_TOMADOR%)[%b%], sociedade com sede na Cidade de (%cidade_TOMADOR%), Estado de (%estado_TOMADOR%), na (%endereco_TOMADOR%), CEP (%cep_TOMADOR%), inscrita no CNPJ/MF sob o nº (%cnpj_TOMADOR%), neste ato representado na forma de seu Estatuto Social, doravante denominada como [%b%]TOMADOR[%b%], e, em conjunto com a [%b%]SEGURADORA[%b%], como \"Partes”.\r\n\r\nPelo presente [%b%]CONTRATO[%b%] e, na melhor forma de direito, as Partes designadas e firmadas neste instrumento avençam a emissão de [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] de seguro-garantia, visando a assegurar o fiel cumprimento das obrigações assumidas pelo [%b%]TOMADOR[%b%] perante terceiros, que reger-se-ão pelas cláusulas e condições a seguir estabelecidas, que mutuamente aceitam e pelas quais se obrigam:\r\n\r\n\r\n\r\n[%b%]CLÁUSULA PRIMEIRA – DEFINIÇÕES\r\n\r\n1.1. Aplicam-se a este [%b%]CONTRATO[%b%] e aos seus termos em letra maiúscula as definições constantes das condições gerais da Circular Susep nº 477, de 30 de setembro de 2013, inerentes ao seguro garantia (segurado – setor público e privado). \r\n\r\n\r\n[%b%]CLÁUSULA SEGUNDA- DIREITOS E OBRIGAÇÕES DAS PARTES CONTRATANTES\r\n\r\n2.1. A [%b%]SEGURADORA[%b%] garantirá as obrigações contratualmente assumidas pelo [%b%]TOMADOR[%b%] perante o(s) [%b%]SEGURADO[%b%](s) mediante emissão de [%b%]APÓLICE[%b%] e eventual(is) [%b%]ENDOSSO[%b%](s) na qual serão estabelecidas finalidades, valores, prazos e demais condições da cobertura do [%b%]SEGURO GARANTIA[%b%], de acordo a(s) obrigação(ões) garantida(s).\r\n\r\n[%r400%]2.1.1 - As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] emitidos fazem parte integrante deste [%b%]CONTRATO[%b%], para todos os fins e efeitos de direito.\r\n\r\n2.1.2. As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] serão emitidos mediante [%b%]PROPOSTAS[%b%] apresentadas pelo [%b%]TOMADOR[%b%], ou através de corretor de seguros devidamente habilitado, sendo que a [%b%]SEGURADORA[%b%] poderá, a seu exclusivo critério, negar-se a fazê-lo, exceto para os [%b%]ENDOSSOS[%b%] emitidos de forma automática, nos estritos termos da regulamentação aplicável.\r\n\r\n2.1.3. Aceita a proposta de seguro, com a consequente emissão da(s) [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%], esta(s) vigorará(ão) em conformidade com a Circular da Superintendência de Seguros Privados – SUSEP 477/2013 e condições especiais exigidas pelo Seguro e aceitas pela [%b%]SEGURADORA[%b%], nos termos da legislação aplicável.\r\n\r\n[%r0%]2.2. - Para todos os fins e efeitos de direito, fica certo e ajustado que este [%b%]CONTRATO[%b%] abrange todas as [%b%]APÓLICES[%b%] emitidas até a presente data, bem como aquelas que vierem a ser emitidas após a data de assinatura deste instrumento.\r\n\r\n2.3. O [%b%]TOMADOR[%b%] declara conhecer a extensão e a modalidade de cada [%b%]APÓLICE[%b%] que vier a solicitar da [%b%]SEGURADORA[%b%], estando de pleno acordo que a [%b%]SEGURADORA[%b%] a preste e a cumpra, conforme nela(s) se contém, independentemente de prévia anuência ou interferência dele, [%b%]TOMADOR[%b%], ou de qualquer formalidade judicial ou extrajudicial.\r\n\r\n2.4. Fica ressalvado que a [%b%]SEGURADORA[%b%] não responderá quando o descumprimento das obrigações contratuais do [%b%]TOMADOR[%b%] decorrer de uma ou mais das seguintes hipóteses:\r\n\r\n[%r400%]a)\tcasos fortuitos e de força maior, devidamente comprovados ou notoriamente conhecidos, nos termos do Código Civil Brasileiro;\r\nb) atos ou fatos de responsabilidade exclusiva do(s) SEGURADO(s);\r\nc) alteração(ões) ou modificação(ões) acordada(s) entre SEGURADO(s) e [%b%]TOMADOR[%b%] relacionadas ao objeto da apólice, sem prévia concordância da [%b%]SEGURADORA[%b%].\r\nd) atos ilícitos dolosos praticados pelo(s) [%b%]SEGURADO[%b%](s) ou por seu(s) representante(s) legal(is).\r\n\r\n\r\n\r\n\r\n[%r0%]2.5. O [%b%]TOMADOR[%b%] obriga-se a:\r\n\r\n[%r400%]a) Pagar o [%b%]PRÊMIO[%b%] do(s) seguro(s) contratado(s) junto à [%b%]SEGURADORA[%b%] por todo o período da garantia, conforme os termos da(s) respectiva(s) [%b%]APÓLICE[%b%](s) e deste [%b%]CONTRATO[%b%], nos respectivos prazos de vencimento. Na hipótese em que, por determinação legal, a [%b%]SEGURADORA[%b%] for obrigada a renovar a garantia e/ou prorrogar a sua vigência ou ainda, emitir nova(s) [%b%]APÓLICE[%b%](s) e/ou [%b%]ENDOSSO[%b%](s), o [%b%]TOMADOR[%b%] desde já autoriza a cobrança de prêmio adicional pelo risco assumido;\r\n\r\nb) Manter íntegras e suficientes as garantias oferecidas ao Seguro Garantia, livres e desembaraçadas de quaisquer ônus;\r\n\r\nc) Enviar à [%b%]SEGURADORA[%b%], no prazo de 10 (dez) dias corridos após a respectiva solicitação, informações de caráter econômico-financeiro, cadastral, fiscal e trabalhista, inclusive de suas controladas, controladoras e coligadas, que habilitem à correta e contínua avaliação do risco;\r\n\r\nd) Prestar à [%b%]SEGURADORA[%b%] sempre que solicitado, informações sobre o cumprimento da(s) obrigação(ões) garantida(s) pela(s) [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) de Seguro-Garantia;\r\n\r\ne) Informar previamente à [%b%]SEGURADORA[%b%], a existência ou não de pluralidade de garantias para o mesmo objeto garantido pela(s) Apólice(s), o que, em sendo efetiva, a [%b%]SEGURADORA[%b%] participará proporcionalmente;\r\n\r\nf) Apresentar informações exatas à [%b%]SEGURADORA[%b%], ao solicitar o seguro, não omitindo qualquer informação sobre a obrigação a ser garantida;\r\n\r\ng) Cumprir rigorosamente com todas as obrigações garantidas pela(s) Apólice(s) no tempo e modo fixados, evitando que qualquer inadimplemento de tais obrigações possa gerar uma expectativa ou aviso de sinistro;\r\n\r\nh) Informar previamente à [%b%]SEGURADORA[%b%] qualquer alteração no seu controle acionário; \r\n\r\ni) Efetuar o devido pagamento ao(s) SEGURADO(S) quando intimado para pagamento do valor constante da sentença judicial condenatória ou do acordo judicial homologado dentro do prazo legal;\r\n\r\nj) Caso a [%b%]SEGURADORA[%b%] receba ordem judicial que a obrigue a efetuar o pagamento de indenização relativa à(s) [%b%]APÓLICE[%b%](S) antes do trânsito em julgado de sentença judicial, ficará obrigada a comunicar imediatamente ao [%b%]TOMADOR[%b%], que deverá efetuar o pagamento exigido diretamente ao(s) [%b%]SEGURADO[%b%](s), no prazo determinado pelo juízo competente;\r\n\r\nk) Entregar à [%b%]SEGURADORA[%b%], assim que solicitadas, em caso de aviso formal de sinistro, garantias adicionais líquidas, ou antecipar o equivalente ao valor da indenização diretamente ao [%b%]SEGURADO[%b%];\r\n\r\nl) Ressarcir imediatamente a [%b%]SEGURADORA[%b%] de quaisquer [%b%]INDENIZAÇÕES[%b%], prejuízos e/ou despesas oriundas de avisos formais de sinistro, incluindo, sem limitação, custas e honorários sucumbências, honorários advocatícios e dos peritos contratados, bem como quaisquer outras despesas e encargos pagas ou incorridos, nos termos das [%b%]APÓLICES[%b%] e/ou no âmbito de procedimentos de análise de expectativa e/ou de regulação de sinistros;\r\n\r\nm) Informar prévia ou imediatamente à [%b%]SEGURADORA[%b%], conforme o caso, qualquer circunstância ou ocorrência que possa, ainda que potencialmente, vir a resultar no seu inadimplemento, total ou parcial, das obrigações objeto da garantia securitária;\r\n\r\nn) Repassar imediatamente à [%b%]SEGURADORA[%b%] qualquer comunicação de inadimplemento ou possível inadimplemento apresentada pelo [%b%]SEGURADO[%b%];\r\n\r\no) Praticar todos os atos e formalidades necessários para o exercício do direito de sub-rogação da [%b%]SEGURADORA[%b%], no caso do pagamento de qualquer indenização com base na(s) [%b%]APÓLICE[%b%](s), incluindo, sem limitação, formalidades necessárias para viabilizar o direito da [%b%]SEGURADORA[%b%] de concorrer proporcionalmente com as demais garantias;\r\n\r\np) Enviar todos os documentos necessários para instrução e efetivação da regulação de sinistro; e\r\n\r\nq) Cumprir com todas as obrigações decorrentes deste [%b%]CONTRATO[%b%].\r\n\r\n\r\n\r\n\r\n\r\n[%r0%]2.6. Havendo a inadimplência do [%b%]TOMADOR[%b%], em relação ao pagamento do [%b%]PRÊMIO[%b%], em parcela única ou fracionado, de qualquer [%b%]APÓLICE[%b%] ou [%b%]ENDOSSO[%b%] vigente, ocorrerá o vencimento antecipado das demais parcelas vincendas, podendo a [%b%]SEGURADORA[%b%] recorrer à execução parcial deste [%b%]CONTRATO[%b%], somente para a [%b%]APÓLICE[%b%] e/ou [%b%]ENDOSSO[%b%] com débitos em aberto, independentemente de interpelação judicial, extrajudicial, ou aviso prévio a qualquer uma das Partes. \r\n\r\n2.7. Caso a [%b%]SEGURADORA[%b%] decida, a seu critério, não dar continuidade à cobertura aos riscos segurados, diante do término da vigência indicada na(s) [%b%]APÓLICE[%b%](s), o [%b%]TOMADOR[%b%], desde já, se compromete a, imediatamente, desonerar a [%b%]SEGURADORA[%b%] das responsabilidades assumidas, bem como a solicitar a substituição da(s) [%b%]APÓLICE[%b%](s) emitida(s) por outras formas de garantia admitidas em lei ou em contrato, conforme o caso, no prazo máximo e improrrogável de até 90(noventa) dias antes do vencimento de cada [%b%]APÓLICE[%b%]. \r\n\r\n2.8. O [%b%]TOMADOR[%b%] deverá efetuar o(s) pagamento(s) do(s) prêmio(s) relativos às [%b%]APÓLICE[%b%](s) a partir da data de sua emissão e durante todos o período que vigorar o seguro garantia, bem como, os prêmios relativos aos endossos anuais automáticos de atualização monetária do limite máximo garantido dos seguros de garantia judicial, até a sua liberação expressa, nos termos deste instrumento e da legislação aplicável, ainda que tal liberação ocorra após o encerramento do período de vigência estabelecido na(s) [%b%]APÓLICE([%b%]s).\r\n\r\n2.9. Exceto se de outra forma especificado na [%b%]APÓLICE[%b%] o [%b%]TOMADOR[%b%] concorda ainda que as [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSOS[%b%](s) não possuem cláusula de atualização monetária da importância segurada e a cobrança adicional do prêmio será automática, cabendo assim o pagamento do(s) prêmio(s) relativo(s) a estas atualizações para que a cobertura seja aplicada.\r\n\r\n2.10. A atualização monetária do limite máximo garantido ocorrerá anualmente e de forma automática, mediante a emissão de endosso com cobrança do prêmio respectivo, e será efetuada com base no índice mencionado da [%b%]APÓLICE[%b%] e, na sua ausência, pela taxa Selic.\r\n\r\n2.11. Todos os valores devidos pelo [%b%]TOMADOR[%b%] para a [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%] ou da(s) [%b%]APÓLICE[%b%](s) serão pagos integralmente e livres de qualquer dedução ou retenção a qualquer título, incluindo, sem limitação, quaisquer tributos, custos, taxas ou outros encargos. Caso o [%b%]TOMADOR[%b%] seja proibido por qualquer disposição legal de realizar pagamentos à [%b%]SEGURADORA[%b%] sem deduções ou retenções, o [%b%]TOMADOR[%b%] pagará tal quantia adicional, de maneira a fazer com que o valor real e efetivamente recebido pela [%b%]SEGURADORA[%b%] seja igual à quantia integral devida à Seguradora, como se não houvesse deduções ou retenções.\r\n\r\n\r\n[%b%]CLÁUSULA TERCEIRA – PENALIDADES\r\n\r\n3.1. Ficam estabelecidas as seguintes penas convencionais, sem prejuízo uma das outras e bem assim das demais sanções previstas em lei, para promover-lhes a cobrança:\r\n\r\n[%r400%]a) Ocorrendo o inadimplemento de qualquer quantia devida à [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%], o débito em atraso ficará sujeito a correção monetária idêntica a atribuída ao índice que vier a ser instituído pelo Governo para as [%b%]APÓLICES[%b%] de Seguro, juros de mora à razão de 1% (um por cento) ao mês, calculados sobre o débito corrigido monetariamente, e multa irredutível de 2% (dois por cento) sobre o total devido na forma desta alínea; \r\n\r\nb) O inadimplemento de qualquer obrigação não pecuniária prevista neste [%b%]CONTRATO[%b%], sujeita o [%b%]TOMADOR[%b%] à multa de 2% (dois por cento) ao mês calculada sobre o valor do prêmio da(s) APÓLICE(s) em vigor, cobrada por dia decorrido até que a obrigação seja cumprida;\r\n\r\nc) Se a [%b%]SEGURADORA[%b%] tiver que ingressar em juízo ou em processo administrativo para a defesa dos direitos que decorrem deste [%b%]CONTRATO[%b%], fará jus a honorários advocatícios à razão de 20% (vinte por cento) sobre o valor da condenação.\r\n\r\n\r\n[%r0%][%b%]CLÁUSULA QUARTA – PRAZO E VALOR DO [%b%]CONTRATO[%b%]\r\n\r\n4.1. O presente [%b%]CONTRATO[%b%] será válido a partir da sua assinatura e permanecerá vigente até que sejam cumpridas todas as obrigações principais e acessórias do [%b%]TOMADOR[%b%] perante esta [%b%]SEGURADORA[%b%] estabelecidas neste instrumento e na(s) APÓLICE(S). O disposto nesta cláusula abrangerá também a obrigação do [%b%]TOMADOR[%b%] decorrente de reclamações de sinistros realizadas durante o respectivo prazo prescricional.\r\n\r\n4.2. O valor deste [%b%]CONTRATO[%b%] corresponde ao somatório dos limites máximos de garantia estabelecidos na(s) [%b%]APÓLICE[%b%](s) emitida(s), acrescidos dos índices de correção aplicáveis e de todas as despesas ou encargos razoáveis incorridos pela [%b%]SEGURADORA[%b%].\r\n\r\n4.3. Na hipótese de parcelamento de [%b%]PRÊMIO[%b%], o não pagamento pelo [%b%]TOMADOR[%b%] de qualquer parcela na data fixada poderá acarretar, a critério da [%b%]SEGURADORA[%b%], o vencimento imediato das demais parcelas e a imediata execução deste [%b%]CONTRATO[%b%], e das garantias porventura oferecidas, independentemente de notificação judicial ou extrajudicial.\r\n\r\n4.4.Na hipótese de ausência de sinistro ou de expectativa de sinistro e não havendo expirado o(s) prazo(s) de vigência indicado(s) na(s) APÓLICE(s), quando da extinção da(s) garantia(s) ou de sua expressa liberação, conforme os termos da(s) [%b%]APÓLICE[%b%](s), caberá a devolução proporcional de PRÊMIO ao [%b%]TOMADOR[%b%]. A liberação mencionada nesta cláusula deverá ser apresentada por declaração escrita e surtirá efeito a partir da data de sua entrega à [%b%]SEGURADORA[%b%], desde que acompanhada da documentação comprobatória aplicável.\r\n\r\n\r\n[%b%]CLÁUSULA QUINTA – SUB-ROGAÇÃO\r\n\r\n5.1. Paga a indenização, ou iniciado o cumprimento das obrigações inadimplidas pelo [%b%]TOMADOR[%b%], a [%b%]SEGURADORA[%b%] sub-rogar-se-á, automaticamente, na forma da lei e do [%b%]CONTRATO[%b%], nos direitos do(s) [%b%]SEGURADO[%b%](s) contra o [%b%]TOMADOR[%b%] e/ou contra terceiros, cujos atos ou fatos tenham dado causa ou contribuído para o sinistro, para recuperar toda e qualquer despesa ou pagamento que venha a comprovadamente efetuar em decorrência da(s) [%b%]APÓLICE[%b%](s) e do(s) [%b%]ENDOSSO[%b%](s) emitidas.\r\n\r\n[%r400%]5.1.1. O [%b%]TOMADOR[%b%] deverá efetuar o reembolso de todos os pagamentos feitos e despesas incorridas pela [%b%]SEGURADORA[%b%], nos termos deste [%b%]CONTRATO[%b%] e das [%b%]APÓLICE[%b%](s), dentro do prazo improrrogável de 02 (dois) dias úteis, contados do recebimento de comunicação da [%b%]SEGURADORA[%b%] para pagamento.\r\n\r\n5.1.2. Para os fins do presente [%b%]CONTRATO[%b%], ordens de pagamento, transferências eletrônicas, recibos, notas fiscais ou outros instrumentos de pagamento e de comprovação de despesas realizadas ou incorridas pela [%b%]SEGURADORA[%b%] em razão da(s) [%b%]APÓLICE[%b%](s) serão evidências para reembolso da [%b%]SEGURADORA[%b%]. \r\n\r\n\r\n[%r0%][%b%]CLÁUSULA SEXTA – DISPOSIÇÕES GERAIS\r\n\r\n6.1. Caso a [%b%]SEGURADORA[%b%] tenha que cumprir no todo ou em parte as obrigações decorrentes deste [%b%]CONTRATO[%b%], o [%b%]TOMADOR[%b%] declara que não exigirá dela nenhuma protelação no pagamento do débito que for apresentado pelo(s) [%b%]SEGURADO[%b%](s) credor(es) seja a que título for nem poderá exigir que ela discuta com o(s) [%b%]SEGURADO[%b%](s) a certeza ou liquidez da dívida.\r\n\r\n[%r400%]6.1.1. Não obstante o estabelecido nesta Cláusula, a [%b%]SEGURADORA[%b%] se reserva no direito de, a seu juízo, fazer ao(s) [%b%]SEGURADO[%b%](s) as reservas e objeções que o [%b%]TOMADOR[%b%] considere pertinentes desde que este lhe comunique tempestivamente e que a [%b%]SEGURADORA[%b%] as julgue procedentes.\r\n\r\n[%r0%]6.2. No tocante à(s) [%b%]APÓLICE[%b%](s) emitida(s) na modalidade licitante, nos casos em que o [%b%]TOMADOR[%b%] lograr-se vencedor do certame licitatório, fica desde já convencionado entre as partes que a [%b%]SEGURADORA[%b%] não estará obrigada a emitir as [%b%]APÓLICES[%b%] de performance, as quais o instrumento contratual determinar.\r\n\r\n6.3. Qualquer omissão ou tolerância por parte da [%b%]SEGURADORA[%b%] em exigir o fiel cumprimento das obrigações deste [%b%]CONTRATO[%b%], não constituirá novação ou renúncia, nem afetará o seu direito de exigir o seu cumprimento a qualquer tempo. \r\n\r\n6.4. A [%b%]SEGURADORA[%b%] fica desde já autorizada pelo [%b%]TOMADOR[%b%] a emitir [%b%]APÓLICE[%b%](s) e/ou [%b%]ENDOSSO[%b%](s) de Seguro Garantia que venha(m) a ser solicitada(s) pelo(s) [%b%]TOMADOR[%b%](ES) quando este participe:\r\n\r\n[%r400%]a) Como consorciado, seja(m) a(s) [%b%]APÓLICE[%b%](s) e endosso(s) de Seguro-Garantia em nome do próprio consórcio ou do próprio consorciado visando assegurar a integralidade ou parte destas obrigações, independentemente de liderança no consórcio, ou  \r\n\r\nb) Como sócio de Sociedade de Propósito Específico (SPE) seja(m) a(s) [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) de Seguro-Garantia em nome da SPE ou do Sócio, visando assegurar a integralidade ou parte destas obrigações independentemente do percentual de participação na sociedade.\r\n\r\nc) Para a empresa para a qual o [%b%]TOMADOR[%b%] detenha participação societária, direta ou indireta, ou outras empresas expressamente indicadas. As [%b%]APÓLICES[%b%] e [%b%]ENDOSSOS[%b%] de seguro-garantia poderão ser emitidos em nome do [%b%]TOMADOR[%b%] ou em nome das empresas expressamente indicadas, visando assegurar a integridade ou parte das obrigações assumidas pela referida empresa.\r\n\r\n\r\n\r\n[%r0%][%b%]Parágrafo 1º[%b%] – Caso as partes componentes de eventual Consórcio ou “SPE”, previstas nas hipóteses descritas nas alíneas “a” e “b” do caput desta cláusula, cuja(s) obrigação(ões) seja(m) garantida(s) por apólice(s) e/ou endosso(s) de seguro garantia emitidos pela [%b%]SEGURADORA[%b%] não estejam listadas no Cadastro Anual do [%b%]TOMADOR[%b%], a  [%b%]SEGURADORA[%b%] deverá prontamente notificar o [%b%]TOMADOR[%b%].  \r\n\r\n[%b%]Parágrafo 2º[%b%] - A [%b%]SEGURADORA[%b%] poderá utilizar-se deste [%b%]CONTRATO[%b%] para reaver qualquer valor referente à emissão e à satisfação pecuniária da(s) apólice(s) e do(s) endosso(s) citados nesta cláusula, reconhecendo-o como um título executivo extrajudicial, nos termos do artigo 784, III do Novo Código de Processo Civil.\r\n\r\n[%b%]Parágrafo 3º[%b%] -  Para as [%b%]APÓLICES[%b%] emitidas com previsão no caput dessa Cláusula, o [%b%]TOMADOR[%b%] assumirá em caráter irrevogável e irretratável a condição de [%b%]FIADOR[%b%] do(s) consórcio(s), consorciado(s), e da(s) empresa(s) controlada(s)/coligada(s), tornando-se responsável solidariamente por todas as obrigações assumidas perante o(s) seu(s) respectivo(s) [%b%]SEGURADO[%b%](s) a esta [%b%]SEGURADORA[%b%], sejam tais obrigações principais ou acessórias, compreendendo juros, correção monetária, penas convencionais, comissões, tributos, honorários advocatícios e quaisquer outras despesas ou encargos suportados pela [%b%]SEGURADORA[%b%] quando do pagamento da indenização securitária ou execução das obrigações do [%b%]TOMADOR[%b%] e das empresas mencionadas no caput, nos termos dos Artigos 821 e 822 do Código Civil, com a expressa renúncia aos benefícios de ordem e à faculdade contida nos Artigos 835 a 838 do referido Código, podendo se desonerar da fiança somente mediante declaração escrita emitida pela [%b%]SEGURADORA[%b%], a seu exclusivo critério.\r\n\r\n[%b%]Parágrafo 4º[%b%] - Ao assumir a condição de [%b%]FIADOR[%b%], nos termos desta Cláusula, obriga-se o [%b%]TOMADOR[%b%] a liquidar todas as obrigações devidas decorrentes da(s) [%b%]APÓLICE[%b%](S) emitida(s) no âmbito desta Clausula, no prazo máximo de 48 (quarenta e oito) horas, contados da comunicação escrita que a [%b%]SEGURADORA[%b%] lhe enviar, independentemente de qualquer outra formalidade, judicial ou extrajudicial, sob pena de constituição em mora e sujeição aos encargos previstos na Cláusula 3.1, alíneas ‘a’ e ‘c’.\r\n\r\n6.5. Exclusivamente para a(s) [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) na modalidade judicial, fica desde já acordado que o sinistro caracterizar-se-á no momento em que a [%b%]SEGURADORA[%b%] recepcionar qualquer notificação expedida pelo Juízo Segurado determinando o pagamento da importância segurada. Desta notificação, a [%b%]SEGURADORA[%b%] dará ciência ao [%b%]TOMADOR[%b%] por meio de correspondência eletrônica (e-mail) direcionada a(s) pessoa(s) por ele indicada(s), conforme os dados apresentados no Parágrafo 1º.\r\n\r\n[%b%]Parágrafo 1º[%b%] - Qualquer aviso, notificação, solicitação ou comunicação, relativa ao presente [%b%]CONTRATO[%b%] deverá ser enviada para os endereços indicados no cadastro do [%b%]TOMADOR[%b%], por meio de: (i) carta registrada, com comprovante de recebimento; ou (ii) entrega pessoal, com protocolo assinado pelo próprio destinatário ou, na sua ausência, por representante legal por ele indicado; ou, (iii) meio eletrônico, com comprovante de entrega ao destinatário.\r\n\r\n[%b%]Parágrafo 2º[%b%] - Caso qualquer dos dados do(s) representante(s) indicado(s) no Parágrafo primeiro acima seja modificado, a parte que promover a alteração deverá comunicar, por escrito, imediatamente à outra, sob pena de que a correspondência relativa ao presente [%b%]CONTRATO[%b%], enviada anteriormente à comunicação de modificação dos dados do(s) representante(s) indicado(s) seja considerada como válida inclusive para todos os fins de pagamento, citação inicial, notificação extrajudicial (na forma do artigo 160 e §§ da Lei n.º 6.015/1973), intimação e/ou ciência originados de atos administrativos ou judiciais, consoante os termos deste [%b%]CONTRATO[%b%].\r\n\r\n[%b%]Parágrafo 3º[%b%] - A presente cláusula compromete as Partes, herdeiros e sucessores do [%b%]TOMADOR[%b%], até o cumprimento integral da obrigação originária garantida pela(s) [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) de seguro acima mencionado(s).\r\n\r\n[%b%]Parágrafo 4º[%b%] - O [%b%]TOMADOR[%b%] em toda e qualquer hipótese de caracterização de sinistro deverá efetuar o pagamento da quantia até as 12 (doze) horas do último dia útil programado pelo Juízo para o efetivo pagamento, conforme correspondência eletrônica expedida pela [%b%]SEGURADORA[%b%]. A obrigação de pagamento é sempre de responsabilidade do [%b%]TOMADOR[%b%], motivo pelo qual referido pagamento deverá ser sempre espontâneo.\r\n\r\n[%b%]Parágrafo 5º[%b%] - Em caso de descumprimento ao disposto no parágrafo quarto desta cláusula, o [%b%]TOMADOR[%b%] obriga-se a efetuar o ressarcimento do valor oferecido pela [%b%]SEGURADORA[%b%] ao Juízo segurado, no prazo de 24 (vinte e quatro) horas, contadas do recebimento de notificação extrajudicial por ela enviada, observadas as condições constantes na cláusula 3.1, item “a” deste instrumento. Em caso de descumprimento do [%b%]TOMADOR[%b%] ao estabelecido neste parágrafo, fica desde já caracterizada sua inadimplência, independentemente de qualquer outra formalidade, podendo a [%b%]SEGURADORA[%b%] utilizar-se das medidas judiciais cabíveis para o imediato e completo reembolso.\r\n\r\n[%b%]Parágrafo 6º[%b%] Na ocorrência de pagamento em duplicidade do débito reclamado, obriga-se o [%b%]TOMADOR[%b%] a promover a devolução do(s) valor(es) pago(s) pela [%b%]SEGURADORA[%b%], no prazo de 24 (vinte e quatro) horas, sob pena de aplicação das penalidades previstas na cláusula 3ª, item “a” deste [%b%]CONTRATO[%b%].\r\n\r\n\r\n[%b%]Parágrafo 7º[%b%] -Fica desde já estabelecido e acordado que, nos casos de [%b%]APÓLICE[%b%](s) e eventual(is) [%b%]ENDOSSO[%b%](s) emitido(s) nas modalidades Judicial, Judicial para Execução Fiscal, Parcelamento Administrativo Fiscal e Administrativo de Créditos Tributários, a [%b%]SEGURADORA[%b%] terá a faculdade de informar ao [%b%]TOMADOR[%b%], com a antecedência mínima de 120 (cento e vinte) dias, anteriores a data de final de vigência da(s) [%b%]APÓLICE[%b%](s) e/ou eventual(is) [%b%]ENDOSSO[%b%](s), através de um dos meios descritos no Parágrafo 1º, direcionado a(s) pessoa(s) por ele indicada(s), conforme os dados apresentados no referido Parágrafo, o não interesse pela renovação da garantia ora prestada. Nesta hipótese, o [%b%]TOMADOR[%b%] terá 60 (sessenta) dias para, alternativamente, antecipar à [%b%]SEGURADORA[%b%] o valor correspondente à importância segurada ou, substituí-la por outra garantia idônea e aceita pelo Juízo segurado, sob pena de não o fazendo, ter caracterizada sua inadimplência, independentemente de qualquer outra formalidade.\r\n\r\n6.6. O [%b%]TOMADOR[%b%] deverá enviar informações sobre os processos judiciais e administrativos garantidos pela(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s) emitido(s), para a análise da [%b%]SEGURADORA[%b%], sempre que solicitado.\r\n\r\n6.7. O [%b%]TOMADOR[%b%] se obriga a notificar a [%b%]SEGURADORA[%b%] em caso de intenção da celebração de acordo que implique o parcelamento da(s) dívida(s) discutida(s) em juízo ou em sede de discussão administrativa garantida pela(s) [%b%]APÓLICE[%b%](s), logo que o saiba, inclusive de sua intenção e interesse no pagamento à vista.\r\n\r\n6.8. O [%b%]TOMADOR[%b%] expressamente concorda e anui com a condição de que qualquer parcelamento de valor em discussão judicial ou administrativa garantida por [%b%]APÓLICE[%b%](s) e [%b%]ENDOSSO[%b%](s) emitido(s) por esta [%b%]SEGURADORA[%b%] deverá ser expressamente notificado à [%b%]SEGURADORA[%b%], por escrito, sob pena de multa de 5% (cinco por cento)  sobre o valor da importância segurada na(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s), bem como consequente desoneração da garantia, no prazo de 60 (sessenta) dias, sem prejuízo das demais sanções previstas neste instrumento, especialmente as descritas na cláusula 3.1, item “b”.\r\n\r\n6.9. Em caso de parcelamento de débitos tributários, comunicados a esta [%b%]SEGURADORA[%b%], o [%b%]TOMADOR[%b%] deverá comprovar perante a Secretaria da Fazenda respectiva (Estadual ou Federal) no procedimento administrativo próprio, se houver, a garantia do débito executado com exigibilidade suspensa pelo parcelamento, através dos meios permitidos em lei.\r\n\r\n6.10. Sem prejuízo do disposto no parágrafo 7°, na hipótese de a [%b%]SEGURADORA[%b%], por conta do término da vigência indicada na(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s) e pela falta de garantia do juízo, optar, a seu exclusivo critério, por renovar a(s) [%b%]APÓLICE[%b%](s) e respectivo(s) [%b%]ENDOSSO[%b%](s), o [%b%]TOMADOR[%b%] desde já declara concordar expressamente com tal renovação, não podendo opor-se, sobretudo, com relação ao pagamento do prêmio adicional devido à [%b%]SEGURADORA[%b%], que será proporcional, pelo tempo da renovação, ao prêmio originalmente pago.\r\n\r\n6.11. Este [%b%]CONTRATO[%b%] obriga as partes, seus sucessores e cessionários a qualquer título, não podendo o [%b%]TOMADOR[%b%] transferir as obrigações assumidas neste [%b%]CONTRATO[%b%] a terceiros sem a autorização expressa e prévia da [%b%]SEGURADORA[%b%]. \r\n\r\n6.12. O [%b%]TOMADOR[%b%] através de seu(s) representante(s) legalmente constituído(s), declara que a(s) obrigação(ões) assumida(s) através deste [%b%]CONTRATO[%b%] de forma alguma contradizem as disposições de seu Contrato/Estatuto Social, ou de outros regulamentos, e declaram ainda que têm os poderes necessários para assumir tais obrigação(ões) e assumem os ônus decorrentes de quaisquer irregularidades.\r\n\r\n\r\n[%b%]CLÁUSULA SÉTIMA – DO VENCIMENTO ANTECIPADO\r\n\r\n7.1. A [%b%]SEGURADORA[%b%] poderá, independentemente de aviso, interpelação ou notificação, judicial ou extrajudicial, considerar antecipadamente vencido este [%b%]CONTRATO[%b%] e exigir do [%b%]TOMADOR[%b%] a(s) liberação(ões) da(s) obrigação(ões) assumida(s), quer através de pagamento imediato de valor equivalente e/ou impetrar medida preventiva sobre os bens do [%b%]TOMADOR[%b%] e/ou FIADOR(es),  nos seguintes casos:\r\n\r\n[%r400%]a) Quando ocorrer declaração inexata do [%b%]TOMADOR[%b%] ao solicitar o Seguro; \r\nb) Quando a [%b%]SEGURADORA[%b%] avaliar que a conduta ou solvência do [%b%]TOMADOR[%b%] evidencie incapacidade para cumprir as obrigações contraídas com o [%b%]SEGURADO[%b%];\r\nc) Quando o [%b%]TOMADOR[%b%] ou empresa a ele coligada ou por ele controlada estiver em recuperação judicial, requerer ou tiver requerida sua falência; \r\nd) Se ocorrer mudança de seu controle acionário sem prévia anuência da [%b%]SEGURADORA[%b%]; \r\ne) Quando o [%b%]TOMADOR[%b%] não cumprir com quaisquer das obrigações decorrentes deste [%b%]CONTRATO[%b%]; \r\nf) Quando ocorrer protesto de títulos ou for distribuída qualquer ação contra o [%b%]TOMADOR[%b%], desde que importem na redução de sua solvência e capacidade de liquidar as obrigações assumidas, e, em se tratando de protestos de títulos, desde que: (i) não sejam sustados no prazo legal; (ii) não ocorra o depósito ou pagamento; ou (iii) não decorram de comprovado erro ou dolo de terceiros.\r\ng) Nos demais casos previstos em lei. \r\n\r\n[%r0%][%b%]Parágrafo Único[%b%] - A [%b%]SEGURADORA[%b%] poderá, com intuito de fazer prevalecer seus direitos, iniciar as ações judiciais e extrajudiciais e, em especial, solicitar embargos, proibições especiais ou gerais e todas e quaisquer medidas preventivas que julgue necessárias, para as quais o [%b%]TOMADOR[%b%] desde já presta sua concordância, ficando entendido que as citadas medidas preventivas serão mantidas enquanto persistir a obrigação da [%b%]SEGURADORA[%b%] na(s) [%b%]APÓLICE[%b%](s) em vigor.\r\n\r\n\r\n[%b%]CLÁUSULA OITAVA - REFORÇO DE GARANTIAS\r\n\r\n8.1. Para assegurar o cabal cumprimento de todas as obrigações assumidas na(s) [%b%]APÓLICE[%b%](s) e de quaisquer importâncias decorrentes deste [%b%]CONTRATO[%b%], a [%b%]SEGURADORA[%b%] poderá exigir do [%b%]TOMADOR[%b%], em caso de deterioração do risco de crédito do [%b%]TOMADOR[%b%], insolvência, ou caso as circunstâncias evidenciem a incapacidade do [%b%]TOMADOR[%b%] de cumprir suas obrigações, ativos que deverão corresponder a, no mínimo, 130% (cento e trinta por cento) da(s) obrigação(ões) garantida(s), consubstanciados em:\r\n\r\n[%r400%](a). Garantia fidejussória (adicional, conforme o caso); \r\n(b). Garantia real; e/ou \r\n(c). Outras garantias que julgar pertinentes, incluindo, sem limitação, carta de fiança, emitida por banco de primeira linha; bem como penhor ou alienação fiduciária de ativos financeiros de liquidez imediata (títulos públicos ou CDB - Certificado de Depósito Bancário).\r\n\r\n\r\n[%r0%][%b%]CLÁUSULA NONA - PREVENÇÃO E COMBATE A “LAVAGEM DE DINHEIRO”\r\n\r\n9.1. O [%b%]TOMADOR[%b%] declara não ser Pessoa Politicamente Exposta (PPE) nos termos da legislação e regulamentação aplicáveis, comprometendo-se, desde já, a informar imediatamente à [%b%]SEGURADORA[%b%] qualquer alteração dessa condição, sob pena do vencimento antecipado deste [%b%]CONTRATO[%b%], sem prejuízo da incidência da multa aqui prevista. \r\n\r\n9.2. O [%b%]TOMADOR[%b%], neste ato, declara por si, seus representantes, empregados e prepostos: \r\n \r\n[%r400%]a) Não utilizar recursos para financiamento de atividades ilegais;  \r\n\r\nb) Não oferecer, dar ou comprometer-se a dar, direta ou indiretamente, vantagem indevida a agente público ou a terceira pessoa a ele relacionada, aceitar ou comprometer-se a aceitar, seja por conta própria ou de outrem, qualquer doação, pagamento, compensação, vantagens financeiras ou não financeiras ou, ainda, benefícios de qualquer espécie que constituam prática ilegal sob as leis brasileiras ou de qualquer outro país conforme definido no artigo 5º (incisos, letras e parágrafos) da Lei nº 12.846/2013, de forma relacionada, ou não, ao presente [%b%]CONTRATO[%b%] (“Obrigações contra Atos Lesivos); e\r\n\r\nc) Que todos os valores pagos ou dados em eventual garantia à [%b%]SEGURADORA[%b%] para viabilizar a emissão da(s) [%b%]APÓLICE[%b%](s), nos termos deste [%b%]CONTRATO[%b%], não constituem fraude à execução, a credores e/ou provém de atividade tipificada pela Lei nº 9.613/98.\r\n\r\n[%r0%]9.3. O [%b%]TOMADOR[%b%] se compromete a informar, de imediato e por escrito, à [%b%]SEGURADORA[%b%] a existência de quaisquer violações relativas às declarações e as Obrigações contra Atos Lesivos acima mencionados de que venha a tomar conhecimento. A obrigação ora assumida deverá ser rigorosamente cumprida até o término do presente instrumento.\r\n\r\n9.4. Todas infrações incorridas pelo [%b%]TOMADOR[%b%] ao disposto nesta cláusula implicam a sua imediata responsabilização perante a [%b%]SEGURADORA[%b%] pelas perdas e danos que esta vier a comprovadamente experimentar em decorrência de tais infrações.\r\n\r\n\r\n[%b%]CLÁUSULA DÉCIMA – FORO\r\n\r\n10.1. Fica eleito o foro central da Comarca de São Paulo para dirimir qualquer dúvida ou questão resultante deste Instrumento, com expressa renúncia de outro, por mais privilegiado que seja.\r\n"
+     }
+    ]
+   },
+   "TomadorDetalharCorretores": {
+    "Corretores": [
+     {
+      "id_garant_tomador_corretor": 903,
+      "id_pessoa_corretor": 3127700,
+      "nm_pessoa_corretor": "MARSH CORRETORA DE SEGUROS LTDA.",
+      "cd_tp_comissao": 2,
+      "nm_tp_comissao": "Corretagem",
+      "pe_comissao": 8.000,
+      "dv_lider": true
+     }
+    ]
+   },
+   "TomadorDetalharVinculo": {
+    "Acionista": []
+   }
+  }
+ ]
+}
