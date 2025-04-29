@@ -36,6 +36,10 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<Core.Entities.Component> Component { get; set; }
         public virtual DbSet<ProductComponent> ProductComponent { get; set; }
         public virtual DbSet<ProductComponentScreen> ProductComponentScreen { get; set; }
+        public virtual DbSet<LaborCourt> LaborCourt { get; set; }
+        public virtual DbSet<CivilCourt> CivilCourt { get; set; }
+        public virtual DbSet<LegalRecourseType> LegalRecourseType { get; set; }
+        public virtual DbSet<LegalRecourseTypeParameter> LegalRecourseTypeParameter { get; set; }
 
     }
 }
