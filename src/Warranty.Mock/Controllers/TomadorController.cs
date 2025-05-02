@@ -14,10 +14,8 @@ namespace Mock.Api.Controllers
         [ProducesResponseType(typeof(ListarTomadorModelResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ListarTomadorModelResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ListarTomadorModelResponse>> ListaTomadorAsync([FromBody] ListarTomadorRequest request)
-        {
-
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string caminhoArquivo = Path.Combine($"{currentDirectory}\\App_Data", "Tomador_Listar.json");
+        {   
+            string caminhoArquivo = Path.Combine(AppContext.BaseDirectory, "App_Data", "Tomador_Listar.json");
             if (!System.IO.File.Exists(caminhoArquivo))
             {
                 return NotFound("Arquivo JSON não encontrado.");
@@ -57,8 +55,8 @@ namespace Mock.Api.Controllers
         [ProducesResponseType(typeof(ListarTomadorModelResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<TomadoDetalheModelResponse>> TomadorDetalheAsync([FromBody] int id_pessoa)
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string caminhoArquivo = Path.Combine($"{currentDirectory}\\App_Data", "TomadorDetalhe.json");
+            
+            string caminhoArquivo = Path.Combine(AppContext.BaseDirectory, "App_Data", "TomadorDetalhe.json");
             if (!System.IO.File.Exists(caminhoArquivo))
             {
                 return NotFound("Arquivo JSON não encontrado.");

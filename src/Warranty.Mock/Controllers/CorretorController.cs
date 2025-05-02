@@ -14,9 +14,8 @@ namespace Warranty.Mock.Api.Controllers
         [ProducesResponseType(typeof(PesquisaCorretorModelResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<PesquisaCorretorModelResponse>> PesquisaCorretor([FromBody]PesquisaCorretorModelRequest request)
         {
-
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string caminhoArquivo = Path.Combine($"{currentDirectory}\\App_Data", "corretor_Listar.json");
+            
+            string caminhoArquivo = Path.Combine(AppContext.BaseDirectory, "App_Data", "corretor_Listar.json");
             if (!System.IO.File.Exists(caminhoArquivo))
             {
                 return NotFound("Arquivo JSON não encontrado.");

@@ -33,6 +33,5 @@ namespace InsuranceApi.Controllers.V1
 
             return base.ReturnSuccess(response);
         }
-
     }
 }

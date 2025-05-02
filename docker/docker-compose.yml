@@ -1,0 +1,27 @@
+services:
+    api-insurance:
+        image: api-insurance:latest
+        container_name: api-insurance
+        build:
+            context: ../
+            dockerfile: src/InsuranceApi/Dockerfile
+        ports:
+            - "5007:80"  # <- Mapeia a porta 80 do container (que está sendo usada) para 5007 no host            
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+            - ASPNETCORE_URLS=http://+:80
+        restart: unless-stopped
+        depends_on:
+            - api-warranty-mock            
+    api-warranty-mock:
+      image: api-warranty-mock:latest
+      container_name: api-warranty-mock
+      build:
+            context: ../
+            dockerfile: src/Warranty.Mock/Dockerfile
+      ports:
+            - "5008:80"  # <- Mapeia a porta 80 do container (que está sendo usada) para 5007 no host            
+      environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:80
+      restart: unless-stopped
