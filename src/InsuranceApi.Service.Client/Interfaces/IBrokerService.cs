@@ -2,7 +2,7 @@
 
 namespace InsuranceApi.Service.Client.Interfaces
 {
-    public interface IBrokerClientService
+    public interface IBrokerService
     {
         Task<Corretor?> GetByIdAsync(int brokerId);
         Task<IEnumerable<Corretor>?> GetByNameAsync(string name);

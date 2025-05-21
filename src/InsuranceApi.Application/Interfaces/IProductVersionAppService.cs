@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsuranceApi.Service.Client.Interfaces
+namespace InsuranceApi.Application.Interfaces
 {
-    internal interface ICalculationClientService
+    public interface IProductVersionAppService
     {
     }
 }

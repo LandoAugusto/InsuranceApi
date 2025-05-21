@@ -1,24 +1,23 @@
-﻿using Amazon.Runtime;
-using Component.Log.Interfaces;
-using Infrastructure.Logger.Logging;
+﻿using Component.Log.Interfaces;
 using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Infrastructure.Http;
 using InsuranceApi.Core.Model;
-using InsuranceApi.Service.Client.Interfaces;
-using InsuranceApi.Service.Client.Models;
+using InsuranceApi.Core.Models;
+using InsuranceApi.Service.Client.Interfaces.Product;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
-namespace InsuranceApi.Service.Client.Services
+namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class AuthenticationClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IAuthenticationClientService
+    internal class ProductService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IProductService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
-        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("Authentication"));
+        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("Product"));
 
-        public async Task<string> GetAsync(string login, string password)
+
+        public async Task<IEnumerable<ProductModel>?> GetAllAsync()
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -26,19 +25,14 @@ namespace InsuranceApi.Service.Client.Services
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/auth/token";
-                rawRequest.BodyObject = new
-                {
-                    login,
-                    password
-                };
-                rawResponse = await _httpClient.PostAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
-                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<TokenResponse>>(rawResponse.Conteudo);
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/Product/get-all";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<ProductModel>>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);
                 }
-                return response.Data.AccessToken;
+                return response.Data;
             }
             catch (Exception exception)
             {
@@ -54,4 +48,3 @@ namespace InsuranceApi.Service.Client.Services
         }
     }
 }
-

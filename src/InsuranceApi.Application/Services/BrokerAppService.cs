@@ -7,11 +7,11 @@ using InsuranceApi.Service.Client.Interfaces;
 
 namespace InsuranceApi.Application.Services
 {
-    internal class BrokerAppService(IMapper mapper, IBrokerRepository brokerRepository, IBrokerClientService brokerClientService) : IBrokerAppService
+    internal class BrokerAppService(IMapper mapper, IBrokerRepository brokerRepository, IBrokerService brokerClientService) : IBrokerAppService
     {
         private readonly IMapper _mapper = mapper;
         private readonly IBrokerRepository _brokerRepository = brokerRepository;
-        private readonly IBrokerClientService _brokerClientService = brokerClientService;
+        private readonly IBrokerService _brokerClientService = brokerClientService;
         public async Task<BrokerModel?> GetByIdAsync(int? brokerId, RecordStatusEnum recordStatus) =>
             _mapper.Map<BrokerModel>(await _brokerRepository.GetByIdAsync(brokerId, recordStatus));
 

@@ -6,21 +6,18 @@ using InsuranceApi.Service.Client.Interfaces;
 using InsuranceApi.Service.Client.Models;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using static InsuranceApi.Service.Client.Models.TakerResponseModel;
 
 namespace InsuranceApi.Service.Client.Services
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    internal class BorrowerClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IBorrowerClientService
+
+    internal class ZipCodeService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IZipCodeService
     {
 
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
-        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("InsuranceApiMockApi"));
+        private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("ZipCode"));
 
-        public async Task<IEnumerable<RetornoTomadorDetalheListaDTO>?> ListAsync(int brokerId, string? name)
+        public async Task<ZipCodeModel> GetAsync(string zipcode)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -28,23 +25,20 @@ namespace InsuranceApi.Service.Client.Services
             try
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+                rawRequest.RequestUri = $"{_endpont.Url}/ws/{zipcode}/json/";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<ZipCodeResponseModel>(rawResponse.Conteudo);
 
-                rawRequest.RequestUri = $"{_endpont.Url}/lista-tomador";
-                rawRequest.BodyObject = new
+                return new ZipCodeModel()
                 {
-                    id_corretor = brokerId,
-                    nm_tomador = name
+                    ZipCode = response.ZipCode,
+                    State = response.State,
+                    StateUf = response.StateUf,
+                    District = response.District,
+                    Complement = response.Complement,
+                    City = response.City,
+                    StreetName = response.City
                 };
-
-                rawResponse = await _httpClient.PostAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
-                var response = JsonConvert.DeserializeObject<TakerResponseModel>(rawResponse.Conteudo);
-                if (response?.cd_retorno > 0 && response.cd_retorno != 130001884)
-                {
-                    throw new BusinessException(response.nm_retorno);
-                }
-
-
-                return response?.ListaTomadorTable1;
             }
             catch (Exception exception)
             {
@@ -60,3 +54,4 @@ namespace InsuranceApi.Service.Client.Services
         }
     }
 }
+

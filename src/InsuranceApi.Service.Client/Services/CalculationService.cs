@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace InsuranceApi.Service.Client.Services
 {
-    internal class ProductClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IProductClientService
+    internal class CalculationService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ICalculationService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;

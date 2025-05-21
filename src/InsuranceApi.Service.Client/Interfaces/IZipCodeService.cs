@@ -2,7 +2,7 @@
 
 namespace InsuranceApi.Service.Client.Interfaces
 {
-    public interface IZipCodeClientService
+    public interface IZipCodeService
     {
         Task<ZipCodeModel> GetAsync(string zipcode);
     }

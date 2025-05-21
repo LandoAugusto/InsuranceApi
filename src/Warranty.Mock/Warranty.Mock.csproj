@@ -16,9 +16,9 @@
   </ItemGroup>
   
     <!-- 👇 Adicionado para incluir App_Data e arquivos JSON no publish -->
- <ItemGroup>
-  <None Update="App_Data\**\*">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </None>
-</ItemGroup>
+	 <ItemGroup>
+	  <None Update="App_Data\**\*">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
 </Project>

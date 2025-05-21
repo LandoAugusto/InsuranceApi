@@ -9,6 +9,7 @@ using InsuranceApi.Core.Infrastructure.Mapper;
 using InsuranceApi.Core.Models.Validators;
 using InsuranceApi.Filters;
 using InsuranceApi.Interceptor;
+using InsuranceApi.Service.Client.Handlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -66,12 +67,18 @@ namespace InsuranceApi.Extensions
                 return;
             }
 
+            services.AddTransient<AutenticacaoTokenHandler>();
             foreach (HttpConfig configurationHttp in apiConfig.Configurations)
             {
                 services.AddHttpClient(configurationHttp.Name, client =>
                 {
                     client.BaseAddress = new Uri(configurationHttp.Url);
                     client.DefaultRequestHeaders.Accept.Clear();
+                })
+                .AddHttpMessageHandler(provider =>
+                {
+                    var handler = provider.GetRequiredService<AutenticacaoTokenHandler>();
+                    return handler;
                 })
                 .AddPolicyHandler((Func<HttpRequestMessage, IAsyncPolicy<HttpResponseMessage>>)delegate
                 {

@@ -1,11 +1,11 @@
 ﻿using Component.Log.Interfaces;
 using InsuranceApi.Core.Infrastructure.Configuration;
-using InsuranceApi.Service.Client.Interfaces;
+using InsuranceApi.Service.Client.Interfaces.Product;
 using Microsoft.Extensions.Options;
 
-namespace InsuranceApi.Service.Client.Services
+namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class CalculationClientService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ICalculationClientService
+    internal class ProductVersionService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) :IProductVersionService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;

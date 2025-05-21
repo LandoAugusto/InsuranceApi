@@ -2,12 +2,11 @@
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces;
 
-
 namespace InsuranceApi.Application.Services
 {
-    internal class AuthenticationAppService(IAuthenticationClientService authenticationService) : IAuthenticationAppService
+    internal class AuthenticationAppService(IAuthenticationService authenticationService) : IAuthenticationAppService
     {
-        private readonly IAuthenticationClientService _authenticationService = authenticationService;
+        private readonly IAuthenticationService _authenticationService = authenticationService;
 
         public async Task<TokenModelResponse> GetAsync(string login, string password)
         {
