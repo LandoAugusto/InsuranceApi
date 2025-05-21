@@ -19,6 +19,7 @@ namespace InsuranceApi.Service.Client.Extensions
 
 
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductVersionService, ProductVersionService>();
             services.AddScoped<ICommonService, CommonService>();
 
             return services;

@@ -20,6 +20,7 @@ namespace InsuranceApi.Application.Extensions
             services.AddScoped<ICivilCourtService, CivilCourtService>();
             services.AddScoped<IMenuAppService, MenuAppService>();
             services.AddScoped<IProductAppService, ProductAppService>();
+            services.AddScoped<IProductVersionAppService, ProductVersionAppService>();
             services.AddScoped<ILegalRecourseTypeService, LegalRecourseTypeService>();
             services.AddScoped<IProductComponentScreenAppService, ProductComponentScreenAppService>();
 

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InsuranceApi.Core.Models;
 
 namespace InsuranceApi.Application.Interfaces
 {
     public interface IProductVersionAppService
     {
+        Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productId, int profileId);
     }
 }
