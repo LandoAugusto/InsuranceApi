@@ -29,6 +29,10 @@ namespace InsuranceApi.Service.Client.Services.Product
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<ProductModel>>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
                     throw new BusinessException(response.TransactionStatus.Message);
                 }
                 return response.Data;
@@ -59,6 +63,10 @@ namespace InsuranceApi.Service.Client.Services.Product
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<ProductComponentScreenModel>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
                     throw new BusinessException(response.TransactionStatus.Message);
                 }
                 return response.Data;

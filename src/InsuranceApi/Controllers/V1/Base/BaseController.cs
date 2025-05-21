@@ -1,6 +1,5 @@
 ﻿using Asp.Versioning;
 using InsuranceApi.Core.Model;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceApi.Controllers.V1.Base
@@ -41,7 +40,8 @@ namespace InsuranceApi.Controllers.V1.Base
             {
                 TransactionStatus = new StatusResponseModel
                 {
-                    Code = (int)StatusCodes.Status404NotFound
+                    Code = (int)StatusCodes.Status404NotFound,
+                    Message = "Não encontrado nenhum registro para os parametros informados."
                 }
             });
         }

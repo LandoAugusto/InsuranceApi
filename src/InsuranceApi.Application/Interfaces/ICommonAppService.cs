@@ -9,5 +9,8 @@ namespace InsuranceApi.Application.Interfaces
         Task<ZipCodeModel?> GetZipCodeAsync(string zipCode);
         Task<IEnumerable<StateModel?>> GetStateAsync();
         Task<IEnumerable<RecordStatusModel?>> GetStatusAsync();
+        Task<IEnumerable<AddressTypeModel>> GetAddressTypeAsync();
+        Task<IEnumerable<DocumenTypeModel>> GetDocumentypeAsync();
+        Task<IEnumerable<InsuredTypeModel>> GetInsuredTypeAsync();
     }
 }

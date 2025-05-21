@@ -43,5 +43,29 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+
+        public async Task<IEnumerable<AddressTypeModel>> GetAddressTypeAsync()
+        {
+            var response = await _commonService.GetAddressTypeAsync();
+            if (!response.IsAny<AddressTypeModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<DocumenTypeModel>> GetDocumentypeAsync()
+        {
+            var response = await _commonService.GetDocumentypeAsync();
+            if (!response.IsAny<DocumenTypeModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<InsuredTypeModel>> GetInsuredTypeAsync()
+        {
+            var response = await _commonService.GetInsuredTypeAsync();
+            if (!response.IsAny<InsuredTypeModel>()) return null;
+
+            return response;
+        }
     }
 }
