@@ -10,10 +10,11 @@ namespace InsuranceApi.Controllers.V1
     /// 
     /// </summary>
     /// <param name="productAppService"></param>
-    public class ProductController(IProductAppService productAppService) : BaseController
+    /// <param name="productComponentScreenAppService"></param>
+    public class ProductController(IProductAppService productAppService, IProductComponentScreenAppService productComponentScreenAppService) : BaseController
     {
         private readonly IProductAppService _productAppService = productAppService;
-
+        private readonly IProductComponentScreenAppService _productComponentScreenAppService = productComponentScreenAppService;
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +23,7 @@ namespace InsuranceApi.Controllers.V1
         [Route("get-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetProductAsync()
+        public async Task<IActionResult> GetAsync()
         {
             var response = await _productAppService.GetAllAsync();
             if (response == null)
@@ -30,6 +31,21 @@ namespace InsuranceApi.Controllers.V1
 
             return base.ReturnSuccess(response);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-component-screen/{code}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetComponentScreenAsync(int code)
+        {
+            var response = await _productComponentScreenAppService.GetComponentScreenAsync(code);
+            if (response == null)
+                return ReturnNotFound();
 
+            return base.ReturnSuccess(response);
+        }
     }
 }
