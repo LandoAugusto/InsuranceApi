@@ -11,9 +11,28 @@ namespace InsuranceApi.Controllers.V1
     /// 
     /// </summary>
     /// <param name="civilCourtService"></param>
-    public class CivilCourtController(ICivilCourtService civilCourtService) : BaseController
+    public class CivilCourtController(ICivilCourtAppService civilCourtService) : BaseController
     {
-        private readonly ICivilCourtService _civilCourtService = civilCourtService;
+        private readonly ICivilCourtAppService _civilCourtService = civilCourtService;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-all")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var response = await _civilCourtService.GetAllAsync();
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
 
         /// <summary>
         /// 

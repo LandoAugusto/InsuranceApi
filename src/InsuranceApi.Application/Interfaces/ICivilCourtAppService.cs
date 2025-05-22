@@ -1,10 +1,10 @@
-﻿using InsuranceApi.Core.Entities.Enumerators;
-using InsuranceApi.Core.Models;
+﻿using InsuranceApi.Core.Models;
 
 namespace InsuranceApi.Application.Interfaces
 {
-    public interface ICivilCourtService
+    public interface ICivilCourtAppService
     {
+        Task<IEnumerable<CivilCourtModel>?> GetAllAsync();
         Task<IEnumerable<CivilCourtModel>?> ListAsync(CivilCourtFilterModel filter);        
     }
 }

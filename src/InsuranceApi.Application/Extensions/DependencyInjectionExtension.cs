@@ -14,14 +14,13 @@ namespace InsuranceApi.Application.Extensions
             services.AddScoped<IBrokerAppService, BrokerAppService>();
             services.AddScoped<IBorrowerAppService, BorrowerAppService>();
             services.AddScoped<ICommonAppService, CommonAppService>();
-            services.AddScoped<IAuthenticationAppService, AuthenticationAppService>();
-            services.AddScoped<IProductComponetAppService, ProductComponetAppService>();
-            services.AddScoped<ILaborCourtService, LaborCourtService>();
-            services.AddScoped<ICivilCourtService, CivilCourtService>();
+            services.AddScoped<IAuthenticationAppService, AuthenticationAppService>();            
+            services.AddScoped<ILaborCourtAppService, LaborCourtAppService>();
+            services.AddScoped<ICivilCourtAppService, CivilCourtAppService>();
             services.AddScoped<IMenuAppService, MenuAppService>();
             services.AddScoped<IProductAppService, ProductAppService>();
             services.AddScoped<IProductVersionAppService, ProductVersionAppService>();
-            services.AddScoped<ILegalRecourseTypeService, LegalRecourseTypeService>();
+            services.AddScoped<ILegalRecourseTypeAppService, LegalRecourseTypeAppService>();
             services.AddScoped<IProductComponentScreenAppService, ProductComponentScreenAppService>();
 
             

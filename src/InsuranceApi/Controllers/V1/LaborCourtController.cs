@@ -11,9 +11,28 @@ namespace InsuranceApi.Controllers.V1
     /// 
     /// </summary>
     /// <param name="laborCourtService"></param>
-    public class LaborCourtController(ILaborCourtService laborCourtService) : BaseController
+    public class LaborCourtController(ILaborCourtAppService laborCourtService) : BaseController
     {
-        private readonly ILaborCourtService _laborCourtService = laborCourtService;
+        private readonly ILaborCourtAppService _laborCourtService = laborCourtService;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-all")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<LaborCourtModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<LaborCourtModel>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<LaborCourtModel>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var response = await _laborCourtService.GetAllAsync();
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
 
 
         /// <summary>

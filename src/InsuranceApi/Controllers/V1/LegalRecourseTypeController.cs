@@ -1,6 +1,5 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
-using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,9 +10,9 @@ namespace InsuranceApi.Api.Controllers.V1
     /// 
     /// </summary>
     /// <param name="legalRecourseType"></param>
-    public class LegalRecourseTypeController(ILegalRecourseTypeService legalRecourseType) : BaseController
+    public class LegalRecourseTypeController(ILegalRecourseTypeAppService legalRecourseType) : BaseController
     {
-        private readonly ILegalRecourseTypeService _legalRecourseType = legalRecourseType;
+        private readonly ILegalRecourseTypeAppService _legalRecourseType = legalRecourseType;
 
         /// <summary>
         /// 
@@ -26,7 +25,7 @@ namespace InsuranceApi.Api.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<LegalRecourseTypeModel>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAllAsync()
         {
-            var response = await _legalRecourseType.GetAllAsync(RecordStatusEnum.Ativo);
+            var response = await _legalRecourseType.GetAllAsync();
             if (response == null)
                 return ReturnNotFound();
 
