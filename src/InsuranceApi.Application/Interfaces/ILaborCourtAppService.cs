@@ -6,5 +6,6 @@ namespace InsuranceApi.Application.Interfaces
     {
         Task<IEnumerable<LaborCourtModel>?> GetAllAsync();
         Task<IEnumerable<LaborCourtModel>?> ListAsync(LaborCourtFilterModel filter);
+        Task<UpdateLaborCourtResponseModel> UpdateLaborCourtAsync(string legalCasenumber);
     }
 }

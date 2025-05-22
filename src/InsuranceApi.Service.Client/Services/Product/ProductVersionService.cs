@@ -50,7 +50,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             }
         }
 
-        public async Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionId)
+        public async Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionCoverageId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -58,7 +58,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-insured-object/{productVersionId}";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-insured-object/{productVersionCoverageId}";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<InsuredObjectModel>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)

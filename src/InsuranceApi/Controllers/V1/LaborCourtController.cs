@@ -10,10 +10,10 @@ namespace InsuranceApi.Controllers.V1
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="laborCourtService"></param>
-    public class LaborCourtController(ILaborCourtAppService laborCourtService) : BaseController
+    /// <param name="laborCourtAppService"></param>
+    public class LaborCourtController(ILaborCourtAppService laborCourtAppService) : BaseController
     {
-        private readonly ILaborCourtAppService _laborCourtService = laborCourtService;
+        private readonly ILaborCourtAppService _laborCourtAppService = laborCourtAppService;
 
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<LaborCourtModel>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAllAsync()
         {
-            var response = await _laborCourtService.GetAllAsync();
+            var response = await _laborCourtAppService.GetAllAsync();
             if (response == null)
                 return ReturnNotFound();
 
@@ -46,11 +46,25 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ListAsync(LaborCourtFilterModel request)
         {
-            var response = await _laborCourtService.ListAsync(request);
+            var response = await _laborCourtAppService.ListAsync(request);
             if (response == null)
                 return ReturnNotFound();
 
             return base.ReturnSuccess(response);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="legalCasenumber"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("update-labor-court/{legalCasenumber}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CivilCourtModel>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> UpdateLaborCourtAsync(string legalCasenumber)
+        {
+            return base.ReturnSuccess(await _laborCourtAppService.UpdateLaborCourtAsync(legalCasenumber));
         }
     }
 }

@@ -164,7 +164,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-term-type";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-insured-type";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<InsuredTypeModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
