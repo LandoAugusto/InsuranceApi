@@ -22,8 +22,8 @@ namespace InsuranceApi.Application.Extensions
             services.AddScoped<IProductVersionAppService, ProductVersionAppService>();
             services.AddScoped<ILegalRecourseTypeAppService, LegalRecourseTypeAppService>();
             services.AddScoped<IProductComponentScreenAppService, ProductComponentScreenAppService>();
+            services.AddScoped<IVehicleAppService, VehicleAppService>();
 
-            
         }
     }
 }
