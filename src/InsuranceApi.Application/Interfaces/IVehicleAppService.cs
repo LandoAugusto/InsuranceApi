@@ -7,5 +7,6 @@ namespace InsuranceApi.Application.Interfaces
         Task<IEnumerable<VehicleBrandModel>?> GetSearchBrandAsync(string name);
         Task<IEnumerable<VehicleVersionModel>?> GetVehicleVersionAsync(int vehicleModelId, string? name);
         Task<IEnumerable<VehicleModelModel>?> GetVehicleModelAsync(int vehicleBranchId, string? name);
+        Task<IEnumerable<VehicleYearModel>?> GetVehicleYearAsync();
     }
 }

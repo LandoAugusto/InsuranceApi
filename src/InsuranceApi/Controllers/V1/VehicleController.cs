@@ -75,5 +75,24 @@ namespace InsuranceApi.Controllers.V1
 
             return base.ReturnSuccess(response);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>     
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("get-vehicle-year")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetVehicleYearAsync()
+        {
+            var response = await _vehicleAppService.GetVehicleYearAsync();
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
     }
 }

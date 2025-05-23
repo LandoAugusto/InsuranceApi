@@ -36,5 +36,15 @@ namespace InsuranceApi.Application.Services
             }
             return response;
         }
+
+        public async Task<IEnumerable<VehicleYearModel>?> GetVehicleYearAsync()
+        {
+            var response = await _vehicleService.GetVehicleYearAsync();
+            if (response == null || !response.Any())
+            {
+                return null;
+            }
+            return response;
+        }
     }
 }

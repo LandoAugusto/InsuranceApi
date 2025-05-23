@@ -15,6 +15,7 @@ namespace InsuranceApi.Service.Client.Services.Product
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
         private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("Product"));
+
         public async Task<IEnumerable<VehicleBrandModel>?> GetVehicleBrandAsync(string name)
         {
             var rawRequest = new RawRequest();
@@ -90,6 +91,35 @@ namespace InsuranceApi.Service.Client.Services.Product
                 }
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<VehicleVersionModel>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<VehicleYearModel>?> GetVehicleYearAsync()
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/vehicle/get-vehicle-year";
+               
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<VehicleYearModel>>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);
