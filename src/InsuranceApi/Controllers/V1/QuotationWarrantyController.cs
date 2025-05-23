@@ -23,8 +23,8 @@ namespace InsuranceApi.Controllers.V1
         [HttpPost]
         [Route("save-update")]
         [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> SaveUpdateAsync([FromBody] QuotationWarrantyRequestModel request)
         {
             var response = await _quotationWarrantyAppService.SaveUpdateAsync(request);
@@ -43,8 +43,8 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("update-labor-court/{legalCasenumber}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<UpdateLaborCourtResponseModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<UpdateLaborCourtResponseModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<UpdateLaborCourtResponseModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> UpdateLaborCourtAsync(string legalCasenumber)
         {
             return base.ReturnSuccess(await _quotationWarrantyAppService.UpdateLaborCourtAsync(legalCasenumber));

@@ -23,9 +23,10 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpPost("token")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<TokenModelResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<ActionResult> GetAsync(TokenModelRequest request)
         {
             return base.ReturnSuccess(await _authenticationAppService.GetAsync(request.Login, request.Password));

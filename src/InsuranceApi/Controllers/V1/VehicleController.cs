@@ -22,9 +22,8 @@ namespace InsuranceApi.Controllers.V1
         [AllowAnonymous]
         [HttpGet]
         [Route("get-vehicle-brand/{name}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetSearchBrandAsync(string name)
         {
             var response = await _vehicleAppService.GetSearchBrandAsync(name);
@@ -43,9 +42,8 @@ namespace InsuranceApi.Controllers.V1
         [AllowAnonymous]
         [HttpGet]
         [Route("get-vehicle-model/{vehicleBranchId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetSearchBrandAsync(int vehicleBranchId, string? name)
         {
             var response = await _vehicleAppService.GetVehicleModelAsync(vehicleBranchId, name);
@@ -64,9 +62,8 @@ namespace InsuranceApi.Controllers.V1
         [AllowAnonymous]
         [HttpGet]
         [Route("get-vehicle-version/{vehicleModelId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetVehicleVersionAsync(int vehicleModelId, string? name)
         {
             var response = await _vehicleAppService.GetVehicleVersionAsync(vehicleModelId, name);
@@ -83,9 +80,7 @@ namespace InsuranceApi.Controllers.V1
         [AllowAnonymous]
         [HttpGet]
         [Route("get-vehicle-year")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>?>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]     
         public async Task<IActionResult> GetVehicleYearAsync()
         {
             var response = await _vehicleAppService.GetVehicleYearAsync();

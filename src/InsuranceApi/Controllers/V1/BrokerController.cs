@@ -22,8 +22,9 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-user-broker/{legacyCode}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetUserBrokerAsync(int legacyCode)
         {
             var response = await _brokerAppService.GetByIdAsync(legacyCode, Core.Entities.Enumerators.RecordStatusEnum.Ativo);
@@ -44,8 +45,9 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-broker-id/{brokerId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<BrokerModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByIdAsync(int brokerId)
         {
             var response = await _brokerAppService.GetByIdAsync(brokerId);

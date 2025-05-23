@@ -4,7 +4,7 @@ using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InsuranceApi.Api.Controllers.V1
+namespace InsuranceApi.Controllers.V1
 {
     /// <summary>
     /// 
@@ -20,9 +20,10 @@ namespace InsuranceApi.Api.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-all")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<LegalRecourseTypeModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<LegalRecourseTypeModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<LegalRecourseTypeModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<LegalRecourseTypeModel>?>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAllAsync()
         {
             var response = await _legalRecourseType.GetAllAsync();

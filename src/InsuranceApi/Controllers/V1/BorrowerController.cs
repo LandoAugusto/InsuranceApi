@@ -23,8 +23,10 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-borrower/{brokerId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status200OK)]        
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAsync(int brokerId, string name)
         {
             var response = await _borrowerAppService.ListAsync(brokerId, name, Core.Entities.Enumerators.RecordStatusEnum.Ativo);
@@ -43,8 +45,10 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-taker/{brokerId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status200OK)]        
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<BorrowerModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetTakerAsync(int brokerId, string? name)
         {
             var response = await _borrowerAppService.ListAsync(brokerId, name);

@@ -22,6 +22,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-role-menu")]
+
         public async Task<ActionResult> GetAsync([FromQuery, Required] string roleName)
         {
             var response = await _menuAppService.GetMenuAsync(roleName);    

@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceApi.Controllers.V1
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="flexRateAppService"></param>
     public class FlexRateController(IFlexRateAppService flexRateAppService) : BaseController
     {
         private readonly IFlexRateAppService _flexRateAppService = flexRateAppService;
@@ -23,8 +27,9 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-flexRate/{id}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAsync(int id)
         {
             var response = await _flexRateAppService.GetAsync(id);
@@ -43,8 +48,9 @@ namespace InsuranceApi.Controllers.V1
         [HttpPost]
         [Route("get-flexRate-all/{productVersionId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAllAsync(FlexRateMixFilterModel request)
         {
             var response = await _flexRateAppService.ListAsync(request);
@@ -62,8 +68,9 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpPost("simulation-flex-rate-mix")]
         [ProducesResponseType(typeof(BaseDataResponseModel<SimulationModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<SimulationModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<SimulationModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> SimulationAsync(SimulationFilterModel request)
         {
             var response = await _flexRateAppService.SimulationMixAsync(request);

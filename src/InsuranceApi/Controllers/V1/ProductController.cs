@@ -22,7 +22,8 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAsync()
         {
             var response = await _productAppService.GetAllAsync();
@@ -38,7 +39,8 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-component-screen/{code}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<ProductModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetComponentScreenAsync(int code)
         {
             var response = await _productComponentScreenAppService.GetComponentScreenAsync(code);

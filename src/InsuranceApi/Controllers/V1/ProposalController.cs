@@ -23,8 +23,8 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-version{quotationNumber}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByNumberAsync(int quotationNumber)
         {
             var response = await _quotationAppService.GetByNumberAsync(quotationNumber);
