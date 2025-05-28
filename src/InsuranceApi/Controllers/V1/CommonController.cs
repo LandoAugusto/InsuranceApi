@@ -24,7 +24,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-zipCode/{zipCode}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<ZipCodeModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetZipCodelAsync(string zipCode)
         {
@@ -42,7 +42,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-state-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<StateModel?>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetStateAsync()
         {
@@ -60,7 +60,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-status-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<RecordStatusModel?>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetStatusAsync()
         {
@@ -77,7 +77,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-term-type-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<TermTypeModel?>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetTermTypeAsync()
         {
@@ -95,7 +95,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-address-type")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<AddressTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAddressTypeAsync()
         {
@@ -113,7 +113,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-document-type")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<DocumenTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetDocumentypeAsync()
         {
@@ -132,7 +132,7 @@ namespace InsuranceApi.Controllers.V1
         [HttpGet]
         [Route("get-insured-type")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<InsuredTypeModel>>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]        
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetInsuredTypeModelAsync()
         {
@@ -215,6 +215,7 @@ namespace InsuranceApi.Controllers.V1
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="useTypeId"></param>
         /// <returns></returns>
         [HttpGet]
         [Route("get-property-structure/{useTypeId}")]
@@ -229,6 +230,12 @@ namespace InsuranceApi.Controllers.V1
             return base.ReturnSuccess(response);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="constructionTypeId"></param>
+        /// <param name="profileId"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-use-type/{constructionTypeId}/{profileId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
@@ -236,6 +243,24 @@ namespace InsuranceApi.Controllers.V1
         public async Task<IActionResult> GetUseTypeAsync(int constructionTypeId, int profileId)
         {
             var response = await _commonAppService.GetUseTypeAsync(constructionTypeId, profileId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-person-type")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PersonTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPersonTypeAsync()
+        {
+            var response = await _commonAppService.GetPersonTypeAsync();
             if (response == null)
                 return ReturnNotFound();
 

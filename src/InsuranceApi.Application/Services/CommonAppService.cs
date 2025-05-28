@@ -115,5 +115,13 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+
+        public async Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync()
+        {
+            var response = await _commonService.GetPersonTypeAsync();
+            if (!response.IsAny<PersonTypeModel>()) return null;
+
+            return response;
+        }
     }
 }
