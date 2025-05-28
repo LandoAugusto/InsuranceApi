@@ -10,7 +10,8 @@ using Newtonsoft.Json;
 
 namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class CommonService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ICommonService
+    internal class CommonService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) 
+        : ICommonService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
@@ -363,6 +364,35 @@ namespace InsuranceApi.Service.Client.Services.Product
                 rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-person-type";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PersonTypeModel>?>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+
+        public async Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync()
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-quotation-status";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<QuotationStatusModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);

@@ -7,7 +7,8 @@ using InsuranceApi.Service.Client.Models;
 
 namespace InsuranceApi.Application.Services
 {
-    public class CommonAppService(IZipCodeService zipCodeService, ICommonService commonService) : ICommonAppService
+    public class CommonAppService(IZipCodeService zipCodeService, ICommonService commonService)
+        : ICommonAppService
     {
         private readonly IZipCodeService _zipCodeService = zipCodeService;
         private readonly ICommonService _commonService = commonService;
@@ -120,6 +121,14 @@ namespace InsuranceApi.Application.Services
         {
             var response = await _commonService.GetPersonTypeAsync();
             if (!response.IsAny<PersonTypeModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync()
+        {
+            var response = await _commonService.GetQuotationStatusAsync();
+            if (!response.IsAny<QuotationStatusModel>()) return null;
 
             return response;
         }

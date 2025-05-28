@@ -17,5 +17,6 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int useTypeId);
         Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId);
         Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync();
+        Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync();
     }
 }
