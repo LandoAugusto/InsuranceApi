@@ -80,7 +80,8 @@ namespace InsuranceApi.Controllers.V1
         [AllowAnonymous]
         [HttpGet]
         [Route("get-vehicle-year")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]     
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetVehicleYearAsync()
         {
             var response = await _vehicleAppService.GetVehicleYearAsync();

@@ -67,5 +67,53 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+
+        public async Task<IEnumerable<InsuranceTypeModel>?> GetInsuranceTypeAsync()
+        {
+            var response = await _commonService.GetInsuranceTypeAsync();
+            if (!response.IsAny<InsuranceTypeModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<InsurerModel>?> GetInsurerAsync()
+        {
+            var response = await _commonService.GetInsurerAsync();
+            if (!response.IsAny<InsurerModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ClaimsExperienceBonusModel>?> GetClaimsExperienceBonusAsync()
+        {
+            var response = await _commonService.GetClaimsExperienceBonusAsync();
+            if (!response.IsAny<ClaimsExperienceBonusModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<BuildingsContentsModel>?> GetBuildingsContentsAsync()
+        {
+            var response = await _commonService.GetBuildingsContentsAsync();
+            if (!response.IsAny<BuildingsContentsModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int useTypeId)
+        {
+            var response = await _commonService.GetPropertyStructureAsync(useTypeId);
+            if (!response.IsAny<PropertyStructureModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId)
+        {
+            var response = await _commonService.GetUseTypeAsync(constructionTypeId, profileId);
+            if (!response.IsAny<UseTypeModel>()) return null;
+
+            return response;
+        }
     }
 }

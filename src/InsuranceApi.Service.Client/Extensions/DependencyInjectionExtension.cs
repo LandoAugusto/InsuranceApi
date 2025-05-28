@@ -13,7 +13,7 @@ namespace InsuranceApi.Service.Client.Extensions
             services.AddScoped<IZipCodeService, ZipCodeService>();
             services.AddScoped<IBorrowerClientService, BorrowerService>();
             services.AddScoped<IBrokerService, BrokerService>();
-            services.AddScoped<ICalculationService, CalculationService>();
+            services.AddScoped<ICalculationService, CalculationTypeService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductVersionService, ProductVersionService>();

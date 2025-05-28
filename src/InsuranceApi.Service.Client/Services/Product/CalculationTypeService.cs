@@ -3,9 +3,9 @@ using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Service.Client.Interfaces;
 using Microsoft.Extensions.Options;
 
-namespace InsuranceApi.Service.Client.Services
+namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class CalculationService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ICalculationService
+    internal class CalculationTypeService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : ICalculationService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;

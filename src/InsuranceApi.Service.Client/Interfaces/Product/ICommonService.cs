@@ -10,5 +10,11 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<AddressTypeModel>?> GetAddressTypeAsync();
         Task<IEnumerable<DocumenTypeModel>?> GetDocumentypeAsync();
         Task<IEnumerable<InsuredTypeModel>?> GetInsuredTypeAsync();
+        Task<IEnumerable<InsuranceTypeModel>?> GetInsuranceTypeAsync();
+        Task<IEnumerable<InsurerModel>?> GetInsurerAsync();
+        Task<IEnumerable<ClaimsExperienceBonusModel>?> GetClaimsExperienceBonusAsync();
+        Task<IEnumerable<BuildingsContentsModel>?> GetBuildingsContentsAsync();
+        Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int useTypeId);
+        Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId);
     }
 }

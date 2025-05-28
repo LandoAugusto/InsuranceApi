@@ -1,5 +1,6 @@
 ﻿using Asp.Versioning;
 using InsuranceApi.Core.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InsuranceApi.Controllers.V1.Base
@@ -7,7 +8,7 @@ namespace InsuranceApi.Controllers.V1.Base
     /// <summary>
     /// 
     /// </summary>
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
