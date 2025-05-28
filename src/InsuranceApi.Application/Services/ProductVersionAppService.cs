@@ -1,6 +1,7 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces.Product;
+using Nest;
 
 namespace InsuranceApi.Application.Services
 {
@@ -10,51 +11,121 @@ namespace InsuranceApi.Application.Services
 
         public async Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productId, int profileId)
         {
-            return await _productVersionService.GetAcceptanceAsync(productId, profileId);
+            var response = await _productVersionService.GetAcceptanceAsync(productId, profileId);
+            if (response == null) return null;
+
+            return response;
         }
 
         public async Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionId)
         {
-            return await _productVersionService.GetInsuredObjectAsync(productVersionId);
+            var response = await _productVersionService.GetInsuredObjectAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
 
         public async Task<CoverageModel?> GetByCoverageIdAsync(int productVersionId, int coverageId)
         {
-            return await _productVersionService.GetByCoverageIdAsync(productVersionId, coverageId);
+            var response = await _productVersionService.GetByCoverageIdAsync(productVersionId, coverageId);
+            if (response == null) return null;
+
+            return response;
         }
 
-        public async Task<IEnumerable<CoverageModel?>> ListCoverageAsync(int productVersionId)
+        public async Task<IEnumerable<CoverageModel>?> ListCoverageAsync(int productVersionId)
         {
-            return await _productVersionService.ListCoverageAsync(productVersionId);
+            var response = await _productVersionService.ListCoverageAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
 
         public async Task<IEnumerable<ProductVersionClauseModel?>> ListClauseAsync(int productVersionId, decimal insuredAmountValue)
         {
-            return await _productVersionService.ListClauseAsync(productVersionId, insuredAmountValue);
+            var response = await _productVersionService.ListClauseAsync(productVersionId, insuredAmountValue);
+            if (response == null) return null;
+
+            return response;
         }
 
-        public async Task<IEnumerable<TermTypeModel?>> ListTermTypeAsync(int productVersionId)
+        public async Task<IEnumerable<TermTypeModel>?> ListTermTypeAsync(int productVersionId)
         {
-            return await _productVersionService.ListTermTypeAsync(productVersionId);
+            var response = await _productVersionService.ListTermTypeAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
 
-        public async Task<IEnumerable<LawsuitTypeModel?>> ListLawsuitTypeAsync(int productVersionId)
+        public async Task<IEnumerable<LawsuitTypeModel>?> ListLawsuitTypeAsync(int productVersionId)
         {
-            return await _productVersionService.ListLawsuitTypeAsync(productVersionId);
+            var response = await _productVersionService.ListLawsuitTypeAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
-        public async Task<IEnumerable<PaymentMethodModel?>> ListPaymentMethodAsync(int productVersionId)
+        public async Task<IEnumerable<PaymentMethodModel>?> ListPaymentMethodAsync(int productVersionId)
         {
-            return await _productVersionService.ListPaymentMethodAsync(productVersionId);
+            var response = await _productVersionService.ListPaymentMethodAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
 
-        public async Task<IEnumerable<PaymentFrequencyModel?>> ListPaymentFrequencyAsync(int productVersionId)
+        public async Task<IEnumerable<PaymentFrequencyModel>?> ListPaymentFrequencyAsync(int productVersionId)
         {
-            return await _productVersionService.ListPaymentFrequencyAsync(productVersionId);
+            var response = await _productVersionService.ListPaymentFrequencyAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
 
-        public async Task<IEnumerable<PaymentInstallmentModel?>> ListPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
+        public async Task<IEnumerable<PaymentInstallmentModel>?> ListPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
         {
-            return await _productVersionService.ListPaymentInstallmentAsync(productVersionId, paymentMethodId);
+            var response = await _productVersionService.ListPaymentInstallmentAsync(productVersionId, paymentMethodId);
+            if (response == null) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<CalculationTypeModel>?> GetProductVersionCalculationTypeAsync(int productVersionId, int profileId)
+        {
+            var response = await _productVersionService.ListCalculationTypeAsync(productVersionId, profileId);
+            if (response == null) return null;
+
+            return response;
+        }
+
+        public async Task<CalculationTypeAcceptanceModel?> GetProductVersionCalculationTypeAcceptanceAsync(int productVersionId, int profileId, int calculationTypeId)
+        {
+            var response = await _productVersionService.GetCalculationTypeAcceptanceAsync(productVersionId, profileId, calculationTypeId);
+            if (response == null) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ConstructionTypeModel>?> GetProductVersionConstructionTypeAsync(int productVersionId)
+        {
+            var response = await _productVersionService.ListConstructionTypeAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ActivityModel>?> GetProductVersionActivityAsync(int productVersionId, int profileId, string? name)
+        {
+            var response = await _productVersionService.ListActivityAsync(productVersionId, profileId, name);
+            if (response == null) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ContractTypeModel>?> GetProductVersionContractTypeAsync(int productVersionId)
+        {
+            var response = await _productVersionService.ListContractTypeAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
         }
     }
 }

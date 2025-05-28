@@ -1,6 +1,5 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
-using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -211,6 +210,106 @@ namespace InsuranceApi.Controllers.V1
         public async Task<IActionResult> ListPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
         {
             var response = await _productVersionAppService.ListPaymentInstallmentAsync(productVersionId, paymentMethodId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-contract-type/{productVersionId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ContractTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProductVersionContractTypeAsync(int productVersionId)
+        {
+            var response = await _productVersionAppService.GetProductVersionContractTypeAsync(productVersionId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="profileId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-calculation-type/{productVersionId}/{profileId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<CalculationTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProductVersionCalculationTypeAsync(int productVersionId, int profileId)
+        {
+            var response = await _productVersionAppService.GetProductVersionCalculationTypeAsync(productVersionId, profileId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="profileId"></param>
+        /// <param name="calculationTypeId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-calculation-type-acceptance/{productVersionId}/{profileId}/{calculationTypeId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<CalculationTypeAcceptanceModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProductVersionCalculationTypeAcceptanceAsync(int productVersionId, int profileId, int calculationTypeId)
+        {
+            var response = await _productVersionAppService.GetProductVersionCalculationTypeAcceptanceAsync(productVersionId, profileId, calculationTypeId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-construction-type/{productVersionId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ConstructionTypeModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProductVersionConstructionTypeAsync(int productVersionId)
+        {
+            var response = await _productVersionAppService.GetProductVersionConstructionTypeAsync(productVersionId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="profileid"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-activity/{productVersionId}/{profileid}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ActivityModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProductVersionActivityAsync(int productVersionId, int profileid, string? name)
+        {
+            var response = await _productVersionAppService.GetProductVersionActivityAsync(productVersionId, profileid, name);
             if (response == null)
                 return ReturnNotFound();
 

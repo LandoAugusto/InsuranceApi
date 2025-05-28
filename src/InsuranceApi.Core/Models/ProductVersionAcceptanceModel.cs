@@ -3,6 +3,8 @@
     public class ProductVersionAcceptanceModel
     {
         public int ProductVersionId { get; set; }
+        public required string Name { get; set; }
+        public required string InsuranceBranch { get; set; }
         public decimal CommissionDefaultValue { get; set; }
         public decimal CommissionMinValue { get; set; }
         public decimal CommissionMaxValue { get; set; }
