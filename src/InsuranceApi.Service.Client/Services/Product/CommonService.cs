@@ -381,7 +381,6 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-
         public async Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync()
         {
             var rawRequest = new RawRequest();
