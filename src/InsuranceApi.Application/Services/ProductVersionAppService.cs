@@ -135,6 +135,13 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+        public async Task<IEnumerable<Localization>?> GetLocalizationAsync(int productVersionId)
+        {
+            var response = await _productVersionService.GetLocalizationAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
+        }
 
         public async Task<IEnumerable<PlanCoverageActivityLimit>?> GetPlanCoverageActivityAsync(int productVersionId, int planId, int activityId, int profileId)
         {

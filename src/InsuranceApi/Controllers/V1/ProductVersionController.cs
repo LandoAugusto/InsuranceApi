@@ -357,5 +357,24 @@ namespace InsuranceApi.Controllers.V1
 
             return base.ReturnSuccess(response);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-localizatio/{productVersionId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<Localization>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetLocalizationAsync(int productVersionId)
+        {
+            var response = await _productVersionAppService.GetLocalizationAsync(productVersionId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
     }
 }
