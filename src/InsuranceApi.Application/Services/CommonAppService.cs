@@ -1,4 +1,5 @@
 ﻿using InsuranceApi.Application.Interfaces;
+using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Extensions;
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces;
@@ -129,6 +130,22 @@ namespace InsuranceApi.Application.Services
         {
             var response = await _commonService.GetQuotationStatusAsync();
             if (!response.IsAny<QuotationStatusModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesFireAsync(ProtectiveDevicesTypeEnum protectiveDevicesType)
+        {
+            var response = await _commonService.GetProtectiveDevicesAsync(protectiveDevicesType);
+            if (!response.IsAny<ProtectiveDevicesModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesTheftAsync(ProtectiveDevicesTypeEnum protectiveDevicesType)
+        {
+            var response = await _commonService.GetProtectiveDevicesAsync(protectiveDevicesType);
+            if (!response.IsAny<ProtectiveDevicesModel>()) return null;
 
             return response;
         }

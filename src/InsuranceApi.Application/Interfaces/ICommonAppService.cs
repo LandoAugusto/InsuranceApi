@@ -1,4 +1,5 @@
-﻿using InsuranceApi.Core.Models;
+﻿using InsuranceApi.Core.Entities.Enumerators;
+using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Models;
 
 namespace InsuranceApi.Application.Interfaces
@@ -20,6 +21,9 @@ namespace InsuranceApi.Application.Interfaces
         Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId);
         Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync();
         Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync();
+        Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesFireAsync(ProtectiveDevicesTypeEnum protectiveDevicesType);
+
+        Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesTheftAsync(ProtectiveDevicesTypeEnum protectiveDevicesType);
 
     }
 }

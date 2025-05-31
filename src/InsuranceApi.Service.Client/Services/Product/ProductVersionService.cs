@@ -10,7 +10,8 @@ using Newtonsoft.Json;
 
 namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class ProductVersionService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) : IProductVersionService
+    internal class ProductVersionService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option)
+        : IProductVersionService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
@@ -215,7 +216,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<PaymentFrequencyModel?>> ListPaymentFrequencyAsync(int productVersionId)
+        public async Task<IEnumerable<PaymentFrequencyModel?>> GetPaymentFrequencyAsync(int productVersionId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -248,7 +249,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<PaymentInstallmentModel?>> ListPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
+        public async Task<IEnumerable<PaymentInstallmentModel?>> GetPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -282,7 +283,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<PaymentMethodModel?>> ListPaymentMethodAsync(int productVersionId)
+        public async Task<IEnumerable<PaymentMethodModel?>> GetPaymentMethodAsync(int productVersionId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -295,7 +296,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PaymentMethodModel?>>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
-                    if(response.TransactionStatus.Code == 404)
+                    if (response.TransactionStatus.Code == 404)
                     {
                         return null;
                     }
@@ -349,7 +350,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<CalculationTypeModel?>> ListCalculationTypeAsync(int productVersionId, int profileId)
+        public async Task<IEnumerable<CalculationTypeModel?>> GetCalculationTypeAsync(int productVersionId, int profileId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -417,7 +418,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<ConstructionTypeModel?>> ListConstructionTypeAsync(int productVersionId)
+        public async Task<IEnumerable<ConstructionTypeModel?>> GetConstructionTypeAsync(int productVersionId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -451,7 +452,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<ActivityModel?>> ListActivityAsync(int productVersionId, int profileid, string? name)
+        public async Task<IEnumerable<ActivityModel?>> GetActivityAsync(int productVersionId, int profileid, string? name)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -489,7 +490,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<ContractTypeModel?>> ListContractTypeAsync(int productVersionId)
+        public async Task<IEnumerable<ContractTypeModel?>> GetContractTypeAsync(int productVersionId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -497,9 +498,111 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-contract-type/{productVersionId}";               
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-contract-type/{productVersionId}";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<ContractTypeModel?>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
+
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<PlanModel?>> GetPlanActivityAsync(int productVersionId, int activityId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-plan-activity/{productVersionId}/{activityId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PlanModel?>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
+
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<PlanCoverageModel?>> GetPlanCoverageAsync(int productVersionId, int planId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-plan-coverage/{productVersionId}/{planId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PlanCoverageModel?>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
+
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<CoverageActivityLimitModel?> GetCoverageActivityLimitAsync(int productVersionId, int coverageId, int activityId, int profile)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-coverage-activity-limit/{productVersionId}/{coverageId}/{activityId}/{profile}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<CoverageActivityLimitModel?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     if (response.TransactionStatus.Code == 404)

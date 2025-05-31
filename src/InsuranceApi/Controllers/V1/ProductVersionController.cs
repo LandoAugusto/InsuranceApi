@@ -3,6 +3,7 @@ using InsuranceApi.Controllers.V1.Base;
 using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace InsuranceApi.Controllers.V1
 {
@@ -170,7 +171,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ListPaymentMethodAsync(int productVersionId)
         {
-            var response = await _productVersionAppService.ListPaymentMethodAsync(productVersionId);
+            var response = await _productVersionAppService.GetPaymentMethodAsync(productVersionId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -189,7 +190,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PaymentFrequencyModel>?>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ListPaymentFrequencyAsync(int productVersionId)
         {
-            var response = await _productVersionAppService.ListPaymentFrequencyAsync(productVersionId);
+            var response = await _productVersionAppService.GetPaymentFrequencyAsync(productVersionId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -209,7 +210,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PaymentInstallmentModel?>>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> ListPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
         {
-            var response = await _productVersionAppService.ListPaymentInstallmentAsync(productVersionId, paymentMethodId);
+            var response = await _productVersionAppService.GetPaymentInstallmentAsync(productVersionId, paymentMethodId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -228,7 +229,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProductVersionContractTypeAsync(int productVersionId)
         {
-            var response = await _productVersionAppService.GetProductVersionContractTypeAsync(productVersionId);
+            var response = await _productVersionAppService.GetContractTypeAsync(productVersionId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -248,7 +249,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProductVersionCalculationTypeAsync(int productVersionId, int profileId)
         {
-            var response = await _productVersionAppService.GetProductVersionCalculationTypeAsync(productVersionId, profileId);
+            var response = await _productVersionAppService.GetCalculationTypeAsync(productVersionId, profileId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -269,7 +270,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProductVersionCalculationTypeAcceptanceAsync(int productVersionId, int profileId, int calculationTypeId)
         {
-            var response = await _productVersionAppService.GetProductVersionCalculationTypeAcceptanceAsync(productVersionId, profileId, calculationTypeId);
+            var response = await _productVersionAppService.GetCalculationTypeAcceptanceAsync(productVersionId, profileId, calculationTypeId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -288,7 +289,7 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProductVersionConstructionTypeAsync(int productVersionId)
         {
-            var response = await _productVersionAppService.GetProductVersionConstructionTypeAsync(productVersionId);
+            var response = await _productVersionAppService.GetConstructionTypeAsync(productVersionId);
             if (response == null)
                 return ReturnNotFound();
 
@@ -309,7 +310,48 @@ namespace InsuranceApi.Controllers.V1
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProductVersionActivityAsync(int productVersionId, int profileid, string? name)
         {
-            var response = await _productVersionAppService.GetProductVersionActivityAsync(productVersionId, profileid, name);
+            var response = await _productVersionAppService.GetActivityAsync(productVersionId, profileid, name);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="activityId"></param>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-plan-activity/{productVersionId}/{activityId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ActivityModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPlanActivityAsync(int productVersionId, int activityId)
+        {
+            var response = await _productVersionAppService.GetPlanActivityAsync(productVersionId, activityId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="planId"></param>        
+        /// <param name="activityId"></param>
+        /// <param name="profileId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-plan-coverage-activity/{productVersionId}/{planId}/{activityId}/{profileId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ActivityModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPlanCoverageActivityAsync(int productVersionId, int planId, int activityId, int profileId)
+        {
+            var response = await _productVersionAppService.GetPlanCoverageActivityAsync(productVersionId, planId, activityId, profileId);
             if (response == null)
                 return ReturnNotFound();
 
