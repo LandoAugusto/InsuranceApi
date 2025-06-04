@@ -135,6 +135,7 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+
         public async Task<IEnumerable<Localization>?> GetLocalizationAsync(int productVersionId)
         {
             var response = await _productVersionService.GetLocalizationAsync(productVersionId);
@@ -143,9 +144,9 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<PlanCoverageActivityLimit>?> GetPlanCoverageActivityAsync(int productVersionId, int planId, int activityId, int profileId)
+        public async Task<IEnumerable<PlanCoverageActivityModel>?> GetPlanCoverageActivityAsync(int productVersionId, int planId, int activityId, int profileId)
         {
-            var response = new List<PlanCoverageActivityLimit>();
+            var response = new List<PlanCoverageActivityModel>();
             var coverages = await _productVersionService.GetPlanCoverageAsync(productVersionId, planId);
             if (coverages == null) return null;
 
@@ -156,8 +157,7 @@ namespace InsuranceApi.Application.Services
                 {
                     throw new BusinessException($"Não encontrado os percetual de limite para a cobertura {item.Name} ");
                 }
-
-                var coverage = new PlanCoverageActivityLimit()
+                var coverage = new PlanCoverageActivityModel()
                 {
                     CoverageId = item.CoverageId,
                     Name = item.Name,
@@ -166,12 +166,24 @@ namespace InsuranceApi.Application.Services
                     CoverageGroupId = item.CoverageGroupId,
                     CoverageBasic = item.CoverageBasic,
                     CoverageRestricted = item.CoverageRestricted,                    
-                    Limit = limit
+                    Limit = limit                                  
                 };
+
+                var franchise = await _productVersionService.GetCoverageFranchiseAsync(productVersionId, item.CoverageId);
+                if(franchise.Any())
+                {   
+                    franchise.ToList().ForEach(item =>
+                    {       
+                        coverage.Franchise.Add(item);
+                    }); 
+                }   
+
                 response.Add(coverage);
             }
 
             return response;
         }
+
+        
     }
 }

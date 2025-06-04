@@ -290,7 +290,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-protective-devices-fire")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<QuotationStatusModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ProtectiveDevicesModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProtectiveDevicesFireAsync()
         {
@@ -307,7 +307,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-protective-devices-theft")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<QuotationStatusModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ProtectiveDevicesModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProtectiveDevicesTheftAsync()
         {

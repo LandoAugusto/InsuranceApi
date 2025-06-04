@@ -1,5 +1,6 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
+using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -325,7 +326,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [HttpGet]
         [Route("get-product-version-plan-activity/{productVersionId}/{activityId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ActivityModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetPlanActivityAsync(int productVersionId, int activityId)
@@ -364,7 +365,7 @@ namespace InsuranceApi.Controllers.V1
         /// <param name="productVersionId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("get-product-version-localizatio/{productVersionId}")]
+        [Route("get-product-version-localization/{productVersionId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<Localization>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
@@ -375,6 +376,6 @@ namespace InsuranceApi.Controllers.V1
                 return ReturnNotFound();
 
             return base.ReturnSuccess(response);
-        }
+        }        
     }
 }
