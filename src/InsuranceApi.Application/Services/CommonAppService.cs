@@ -102,9 +102,9 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int useTypeId)
+        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId)
         {
-            var response = await _commonService.GetPropertyStructureAsync(useTypeId);
+            var response = await _commonService.GetPropertyStructureAsync(constructionTypeId, useTypeId, profileId);
             if (!response.IsAny<PropertyStructureModel>()) return null;
 
             return response;

@@ -212,18 +212,20 @@ namespace InsuranceApi.Controllers.V1
             return base.ReturnSuccess(response);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="useTypeId"></param>
-        /// <returns></returns>
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="constructionTypeId"></param>
+       /// <param name="useTypeId"></param>
+       /// <param name="profileId"></param>
+       /// <returns></returns>
         [HttpGet]
-        [Route("get-property-structure/{useTypeId}")]
+        [Route("get-property-structure/{constructionTypeId}/{useTypeId}/{profileId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetPropertyStructureAsync(int useTypeId)
+        public async Task<IActionResult> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId)
         {
-            var response = await _commonAppService.GetPropertyStructureAsync(useTypeId);
+            var response = await _commonAppService.GetPropertyStructureAsync(constructionTypeId, useTypeId, profileId);
             if (response == null)
                 return ReturnNotFound();
 

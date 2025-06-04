@@ -298,7 +298,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int useTypeId)
+        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -306,7 +306,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-property-structure/{useTypeId}";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-property-structure/{constructionTypeId}/{useTypeId}/{profileId}";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PropertyStructureModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
