@@ -132,9 +132,7 @@ namespace InsuranceApi.Extensions
             {
                 options.AddPolicy("AllowSpecificOrigins", delegate (CorsPolicyBuilder builder)
                 {
-                    builder.WithOrigins("http://localhost:4200")                    
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
         }

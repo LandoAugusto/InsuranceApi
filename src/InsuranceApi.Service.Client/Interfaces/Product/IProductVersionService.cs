@@ -4,8 +4,9 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
 {
     public interface IProductVersionService
     {
+        Task<ProductVersionModel?> GetAsync(int productId);
         Task<IEnumerable<ProductVersionClauseModel?>> ListClauseAsync(int productVersionId, decimal insuredAmountValue);
-        Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productId, int profileId);
+        Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productVersionId, int profileId);
         Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionId);
         Task<CoverageModel?> GetByCoverageIdAsync(int productVersionId, int coverageId);
         Task<IEnumerable<CoverageModel?>> ListCoverageAsync(int productVersionId);

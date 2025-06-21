@@ -1,10 +1,8 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
-using InsuranceApi.Core.Entities.Enumerators;
 using InsuranceApi.Core.Model;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 
 namespace InsuranceApi.Controllers.V1
 {
@@ -14,21 +12,42 @@ namespace InsuranceApi.Controllers.V1
     public class ProductVersionController(IProductVersionAppService productVersionAppService) : BaseController
     {
         private readonly IProductVersionAppService _productVersionAppService = productVersionAppService;
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="productId"></param>        
+        /// <param name="productId"></param>     
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version/{productId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<ProductVersionModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAsync(int productId)
+        {
+            var response = await _productVersionAppService.GetAsync(productId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>        
         /// <param name="profileId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("get-product-version-acceptance/{productId}/{profileId}")]
+        [Route("get-product-version-acceptance/{productVersionId}/{profileId}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<ProductVersionAcceptanceModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetAcceptanceAsync(int productId, int coverageId, int profileId)
+        public async Task<IActionResult> GetAcceptanceAsync(int productVersionId, int profileId)
         {
-            var response = await _productVersionAppService.GetAcceptanceAsync(productId, profileId);
+            var response = await _productVersionAppService.GetAcceptanceAsync(productVersionId, profileId);
             if (response == null)
                 return ReturnNotFound();
 

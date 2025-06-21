@@ -9,9 +9,17 @@ namespace InsuranceApi.Application.Services
     internal class ProductVersionAppService(IProductVersionService productVersionService) : IProductVersionAppService
     {
         private readonly IProductVersionService _productVersionService = productVersionService;
-        public async Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productId, int profileId)
+
+        public async Task<ProductVersionModel?> GetAsync(int productId)
         {
-            var response = await _productVersionService.GetAcceptanceAsync(productId, profileId);
+            var response = await _productVersionService.GetAsync(productId);
+            if (response == null) return null;
+
+            return response;
+        }
+        public async Task<ProductVersionAcceptanceModel?> GetAcceptanceAsync(int productVersionId, int profileId)
+        {
+            var response = await _productVersionService.GetAcceptanceAsync(productVersionId, profileId);
             if (response == null) return null;
 
             return response;
