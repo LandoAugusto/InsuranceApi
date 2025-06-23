@@ -41,7 +41,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet]
-        [Route("get-vehicle-model/{vehicleBranchId}")]
+        [Route("get-vehicle-model/{vehicleBranchId}/{name}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]        
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetSearchBrandAsync(int vehicleBranchId, string? name)
@@ -61,7 +61,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet]
-        [Route("get-vehicle-version/{vehicleModelId}")]
+        [Route("get-vehicle-version/{vehicleModelId}/{name}")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<VehicleBrandModel>>), StatusCodes.Status200OK)]        
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetVehicleVersionAsync(int vehicleModelId, string? name)

@@ -8,7 +8,7 @@ namespace InsuranceApi.Controllers.V1.Base
     /// <summary>
     /// 
     /// </summary>
-  //  [Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]

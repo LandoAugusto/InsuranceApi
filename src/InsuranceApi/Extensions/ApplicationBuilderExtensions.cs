@@ -17,14 +17,20 @@ namespace InsuranceApi.Extensions
     {
 
         const string SwaggerRoutePrefix = "api/swagger";
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="application"></param>
+        /// <param name="configuration"></param>
         public static void UseApi(this IApplicationBuilder application, IConfiguration configuration)
         {
-            
+
             ApiConfig apiConfig = configuration.GetSection("ApiConfig").Get<ApiConfig>();
-            application.UseCors("AllowSpecificOrigins");
+
             application.UseSwagger(apiConfig);
             application.UseApiExceptionHandler();
             application.UseResponseCompression();
+            application.UseCors("AllowSpecificOrigin");
             application.UseRoutingAndHttpsRedirection();
             application.UseAuthAndAuthor(apiConfig);
             application.UseEndpoint(apiConfig);
@@ -116,7 +122,6 @@ namespace InsuranceApi.Extensions
                 application.UseAuthentication();
                 application.UseAuthorization();
             }
-
             application.Use(next => context =>
             {
                 context.Request.EnableBuffering();

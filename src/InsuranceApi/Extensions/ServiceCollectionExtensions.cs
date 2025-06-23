@@ -43,10 +43,11 @@ namespace InsuranceApi.Extensions
             services.Configure<ApiConfig>(section);
             var apiConfig = section.Get<ApiConfig>();
             services.AddSingleton((IServiceProvider sp) => sp.GetRequiredService<IOptions<ApiConfig>>().Value);
-            services.ConfigControllersPipeline();
-            services.AddResponseCompression(apiConfig);
             services.AddUseCors();
             services.AddRoutings();
+            services.ConfigControllersPipeline();
+            services.AddResponseCompression(apiConfig);          
+           
             services.AddApiVersion();
             services.AddSwagger(apiConfig);
             services.AddAutoMapper(typeof(ConfigurarationMapping));
@@ -128,11 +129,13 @@ namespace InsuranceApi.Extensions
         }
         private static void AddUseCors(this IServiceCollection services)
         {
-            services.AddCors(delegate (CorsOptions options)
+            services.AddCors(options =>
             {
-                options.AddPolicy("AllowSpecificOrigins", delegate (CorsPolicyBuilder builder)
+                options.AddPolicy("DevCors", builder =>
                 {
-                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
                 });
             });
         }
