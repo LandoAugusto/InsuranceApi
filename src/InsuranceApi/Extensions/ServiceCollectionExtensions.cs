@@ -131,7 +131,7 @@ namespace InsuranceApi.Extensions
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("DevCors", builder =>
+                options.AddPolicy("AllowSpecificOrigin", builder =>
                 {
                     builder.AllowAnyOrigin()
                            .AllowAnyHeader()

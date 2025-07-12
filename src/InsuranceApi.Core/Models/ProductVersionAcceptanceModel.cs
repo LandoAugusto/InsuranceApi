@@ -22,6 +22,7 @@
         public decimal DiscountDefaultValue { get; set; }
         public decimal DiscountMinValue { get; set; }
         public decimal DiscountMaxValue { get; set; }
+        public int CalculationNumberDays { get; set; }        
         public bool RequiresRecalculationIfExpired { get; set; }
     }
 }

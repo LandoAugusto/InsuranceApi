@@ -17,7 +17,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<PaymentInstallmentModel?>> GetPaymentInstallmentAsync(int productVersionId, int paymentMethodId);
         Task<IEnumerable<CalculationTypeModel?>> GetCalculationTypeAsync(int productVersionId, int profileId);
         Task<CalculationTypeAcceptanceModel?> GetCalculationTypeAcceptanceAsync(int productVersionId, int profileId, int calculationTypeId);
-        Task<IEnumerable<ConstructionTypeModel?>> GetConstructionTypeAsync(int productVersionId);
+        Task<IEnumerable<ConstructionTypeModel?>> GetConstructionTypeAsync(int productVersionId, int profileId);
         Task<IEnumerable<ActivityModel?>> GetActivityAsync(int productVersionId, int profileid, string? name);
         Task<IEnumerable<ContractTypeModel?>> GetContractTypeAsync(int productVersionId);
         Task<IEnumerable<PlanModel?>> GetPlanActivityAsync(int productVersionId, int activityId);

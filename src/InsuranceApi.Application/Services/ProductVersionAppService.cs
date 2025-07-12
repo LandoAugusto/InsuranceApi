@@ -112,9 +112,9 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<ConstructionTypeModel>?> GetConstructionTypeAsync(int productVersionId)
+        public async Task<IEnumerable<ConstructionTypeModel>?> GetConstructionTypeAsync(int productVersionId, int profileId)
         {
-            var response = await _productVersionService.GetConstructionTypeAsync(productVersionId);
+            var response = await _productVersionService.GetConstructionTypeAsync(productVersionId, profileId);
             if (response == null) return null;
 
             return response;
@@ -152,46 +152,58 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<PlanCoverageActivityModel>?> GetPlanCoverageActivityAsync(int productVersionId, int planId, int activityId, int profileId)
+        public async Task<IEnumerable<PlanCoverageActivityModel>?> GetPlanCoverageActivityAsync(PlanCoverageActivityFilterModel request)
         {
             var response = new List<PlanCoverageActivityModel>();
-            var coverages = await _productVersionService.GetPlanCoverageAsync(productVersionId, planId);
+            var coverages = await _productVersionService.GetPlanCoverageAsync(request.ProductVersionId, request.PlanId);
             if (coverages == null) return null;
 
-            foreach (var item in coverages)
+            foreach (var cob in coverages.OrderBy(cob => cob?.CoverageId).ThenBy(cob => cob?.CoverageBasic))
             {
-                var limit = await _productVersionService.GetCoverageActivityLimitAsync(productVersionId, item.CoverageId, activityId, profileId);
+                var limit = await _productVersionService.GetCoverageActivityLimitAsync(request.ProductVersionId, cob.CoverageId, request.ActivityId, request.ProfileId);
                 if (limit == null)
                 {
-                    throw new BusinessException($"Não encontrado os percetual de limite para a cobertura {item.Name} ");
+                    throw new BusinessException($"Não encontrado os percentual de limite para a cobertura {cob.Name} ");
                 }
+
+                if (cob.CoverageBasic)
+                {
+                    if(request.InsuredAmountValue < limit.InsuredAmountMin)
+                    {
+                        throw new BusinessException($"A Cobertura {cob.Name}  possui o valor minimo para a IS é de R$:{limit.InsuredAmountMin:N2}.");
+                    }
+                    if (request.InsuredAmountValue > limit.InsuredAmountMax)
+                    {
+                        throw new BusinessException($"A Cobertura {cob.Name} possui o valor máximo paraa IS  é de R$:{limit.InsuredAmountMax:N2}. ");
+                    }
+                }
+
                 var coverage = new PlanCoverageActivityModel()
                 {
-                    CoverageId = item.CoverageId,
-                    Name = item.Name,
-                    Description = item.Description,
-                    BranchId = item.BranchId,
-                    CoverageGroupId = item.CoverageGroupId,
-                    CoverageBasic = item.CoverageBasic,
-                    CoverageRestricted = item.CoverageRestricted,                    
-                    Limit = limit                                  
+                    CoverageId = cob.CoverageId,
+                    Name = cob.Name,
+                    Description = cob.Description,
+                    BranchId = cob.BranchId,
+                    CoverageGroupId = cob.CoverageGroupId,
+                    CoverageBasic = cob.CoverageBasic,
+                    CoverageRestricted = cob.CoverageRestricted,
+                    InsuredAmountMin = limit.InsuredAmountMin,
+                    InsuredAmountMax = limit.InsuredAmountMax
                 };
 
-                var franchise = await _productVersionService.GetCoverageFranchiseAsync(productVersionId, item.CoverageId);
-                if(franchise.Any())
-                {   
+                var franchise = await _productVersionService.GetCoverageFranchiseAsync(request.ProductVersionId, cob.CoverageId);
+                if (franchise.Any())
+                {
                     franchise.ToList().ForEach(item =>
-                    {       
+                    {
                         coverage.Franchise.Add(item);
-                    }); 
-                }   
+                    });
+                }
 
                 response.Add(coverage);
             }
 
             return response;
         }
-
-        
     }
 }
