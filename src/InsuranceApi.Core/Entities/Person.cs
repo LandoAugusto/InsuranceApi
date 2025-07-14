@@ -1,11 +1,11 @@
-﻿using InsuranceApi.Core.Entities.Interfaces;
+﻿
+using InsuranceApi.Core.Entities.Interfaces;
 
 namespace InsuranceApi.Core.Entities
 {
     public class Person : IIdentityEntity
     {
-        public long PersonId { get; set; }
-        public int PersonTypeId { get; set; }
+        public int PersonId { get; set; }        
         public int DocumentTypeId { get; set; }
         public string? Document { get; set; }
         public string Name { get; set; }
@@ -18,12 +18,9 @@ namespace InsuranceApi.Core.Entities
         public DateTime InclusionDate { get; set; }
         public int? LastChangeUserId { get; set; }
         public DateTime? LastChangeDate { get; set; }
-        public virtual PersonType PersonType { get; set; } = null!;
-
-        //Foreing key
-        public virtual ICollection<PersonAddress> PersonAddress { get; set; } = new HashSet<PersonAddress>();
+        public virtual DocumentType DocumentType { get; set; } = null!;
+        public virtual ICollection<Address> Address { get; set; } = new HashSet<Address>();
         public virtual ICollection<Broker> Broker { get; set; } = new HashSet<Broker>();
-        public virtual ICollection<Borrower> Borrower { get; set; } = new HashSet<Borrower>();
-        public virtual ICollection<PersonEntityType> PersonEntityType { get; set; } = new HashSet<PersonEntityType>();
+        public virtual ICollection<Borrower> Borrower { get; set; } = new HashSet<Borrower>();        
     }
 }

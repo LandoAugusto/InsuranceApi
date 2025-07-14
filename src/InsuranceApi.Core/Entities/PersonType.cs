@@ -10,7 +10,6 @@ namespace InsuranceApi.Core.Entities
         public string Abbreviation { get; set; }
         public RecordStatusEnum? Status { get; set; }
         public int UserId { get; set; }
-        public DateTime DateUtc { get; set; }
-        public virtual ICollection<Person> Person { get; set; } = new HashSet<Person>();
+        public DateTime DateUtc { get; set; }      
     }
 }

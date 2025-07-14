@@ -361,18 +361,16 @@ namespace InsuranceApi.Controllers.V1
         /// 
         /// </summary>
         /// <param name="productVersionId"></param>
-        /// <param name="planId"></param>        
-        /// <param name="activityId"></param>
-        /// <param name="profileId"></param>
+        /// <param name="planId"></param>                
         /// <returns></returns>
         [HttpPost]
-        [Route("get-product-version-plan-coverage-activity/{productVersionId}/{planId}/{activityId}/{profileId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanCoverageActivityModel>>), StatusCodes.Status200OK)]
+        [Route("get-product-version-plan-coverage-franchise/{productVersionId}/{planId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanCoverageFranchiseModel>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetPlanCoverageActivityAsync(PlanCoverageActivityFilterModel request)
+        public async Task<IActionResult> GetPlanCoverageAsync(int productVersionId, int planId)
         {
-            var response = await _productVersionAppService.GetPlanCoverageActivityAsync(request);
+            var response = await _productVersionAppService.GetPlanCoverageFranchiseAsync(productVersionId, planId);
             if (response == null)
                 return ReturnNotFound();
 

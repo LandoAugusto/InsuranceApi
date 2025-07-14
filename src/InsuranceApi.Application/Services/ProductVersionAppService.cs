@@ -1,4 +1,5 @@
-﻿using InsuranceApi.Application.Interfaces;
+﻿using AutoMapper;
+using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces.Product;
@@ -49,7 +50,7 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<ProductVersionClauseModel?>> ListClauseAsync(int productVersionId, decimal insuredAmountValue)
+        public async Task<IEnumerable<ProductVersionClauseModel>?> ListClauseAsync(int productVersionId, decimal insuredAmountValue)
         {
             var response = await _productVersionService.ListClauseAsync(productVersionId, insuredAmountValue);
             if (response == null) return null;
@@ -152,33 +153,15 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<PlanCoverageActivityModel>?> GetPlanCoverageActivityAsync(PlanCoverageActivityFilterModel request)
+        public async Task<IEnumerable<PlanCoverageFranchiseModel>?> GetPlanCoverageFranchiseAsync(int productVersionId, int planId)
         {
-            var response = new List<PlanCoverageActivityModel>();
-            var coverages = await _productVersionService.GetPlanCoverageAsync(request.ProductVersionId, request.PlanId);
+            var response = new List<PlanCoverageFranchiseModel>();
+            var coverages = await _productVersionService.GetPlanCoverageAsync(productVersionId, planId);
             if (coverages == null) return null;
 
             foreach (var cob in coverages.OrderBy(cob => cob?.CoverageId).ThenBy(cob => cob?.CoverageBasic))
             {
-                var limit = await _productVersionService.GetCoverageActivityLimitAsync(request.ProductVersionId, cob.CoverageId, request.ActivityId, request.ProfileId);
-                if (limit == null)
-                {
-                    throw new BusinessException($"Não encontrado os percentual de limite para a cobertura {cob.Name} ");
-                }
-
-                if (cob.CoverageBasic)
-                {
-                    if(request.InsuredAmountValue < limit.InsuredAmountMin)
-                    {
-                        throw new BusinessException($"A Cobertura {cob.Name}  possui o valor minimo para a IS é de R$:{limit.InsuredAmountMin:N2}.");
-                    }
-                    if (request.InsuredAmountValue > limit.InsuredAmountMax)
-                    {
-                        throw new BusinessException($"A Cobertura {cob.Name} possui o valor máximo paraa IS  é de R$:{limit.InsuredAmountMax:N2}. ");
-                    }
-                }
-
-                var coverage = new PlanCoverageActivityModel()
+                var coverage = new PlanCoverageFranchiseModel()
                 {
                     CoverageId = cob.CoverageId,
                     Name = cob.Name,
@@ -187,11 +170,9 @@ namespace InsuranceApi.Application.Services
                     CoverageGroupId = cob.CoverageGroupId,
                     CoverageBasic = cob.CoverageBasic,
                     CoverageRestricted = cob.CoverageRestricted,
-                    InsuredAmountMin = limit.InsuredAmountMin,
-                    InsuredAmountMax = limit.InsuredAmountMax
                 };
 
-                var franchise = await _productVersionService.GetCoverageFranchiseAsync(request.ProductVersionId, cob.CoverageId);
+                var franchise = await _productVersionService.GetCoverageFranchiseAsync(productVersionId, cob.CoverageId);
                 if (franchise.Any())
                 {
                     franchise.ToList().ForEach(item =>

@@ -130,7 +130,7 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
-        public async Task<IEnumerable<DocumenTypeModel>?> GetDocumentypeAsync()
+        public async Task<IEnumerable<DocumentTypeModel>?> GetDocumentypeAsync()
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -140,7 +140,7 @@ namespace InsuranceApi.Service.Client.Services.Product
 
                 rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-term-type";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
-                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<DocumenTypeModel>?>>(rawResponse.Conteudo);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<DocumentTypeModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);

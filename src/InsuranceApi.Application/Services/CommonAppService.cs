@@ -54,10 +54,10 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<DocumenTypeModel>> GetDocumentypeAsync()
+        public async Task<IEnumerable<DocumentTypeModel>> GetDocumentypeAsync()
         {
             var response = await _commonService.GetDocumentypeAsync();
-            if (!response.IsAny<DocumenTypeModel>()) return null;
+            if (!response.IsAny<DocumentTypeModel>()) return null;
 
             return response;
         }

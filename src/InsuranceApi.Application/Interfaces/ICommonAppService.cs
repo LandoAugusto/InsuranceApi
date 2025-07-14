@@ -11,7 +11,7 @@ namespace InsuranceApi.Application.Interfaces
         Task<IEnumerable<StateModel?>> GetStateAsync();
         Task<IEnumerable<RecordStatusModel?>> GetStatusAsync();
         Task<IEnumerable<AddressTypeModel>> GetAddressTypeAsync();
-        Task<IEnumerable<DocumenTypeModel>> GetDocumentypeAsync();
+        Task<IEnumerable<DocumentTypeModel>> GetDocumentypeAsync();
         Task<IEnumerable<InsuredTypeModel>> GetInsuredTypeAsync();
         Task<IEnumerable<InsuranceTypeModel>?> GetInsuranceTypeAsync();
         Task<IEnumerable<InsurerModel>?> GetInsurerAsync();

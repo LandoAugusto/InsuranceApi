@@ -14,6 +14,24 @@ namespace InsuranceApi.Controllers.V1
     {
         private readonly IQuotationAppService _quotationAppService = quotationAppService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("create-quotation-residence")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<QuotationModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> CreateQuotationAsync(CreateQuotationModel request)
+        {
+            var response = await _quotationAppService.CreateQuotationAsync(1, request);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
 
         /// <summary>
         /// 

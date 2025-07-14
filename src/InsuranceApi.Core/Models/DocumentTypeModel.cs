@@ -1,8 +1,8 @@
 ﻿namespace InsuranceApi.Core.Models
 {
-    public class DocumenTypeModel
+    public class DocumentTypeModel
     {
-        public int DocumenTypeId { get; set; }
+        public int DocumentTypeId { get; set; }
         public required string Name { get; set; }
     }
 }

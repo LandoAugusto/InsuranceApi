@@ -1,12 +1,55 @@
 ﻿using InsuranceApi.Application.Interfaces;
+using InsuranceApi.Core.Entities;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Models;
+using InsuranceApi.Infra.Data.Interfaces;
 
 namespace InsuranceApi.Application.Services
 {
-    internal class QuotationAppService(IProductVersionAppService productVersionAppService) : IQuotationAppService
+    internal class QuotationAppService(IPersonAppService personAppService, IProductVersionAppService productVersionAppService,
+        IQuotationRepository quotationRepository)
+        : IQuotationAppService
     {
         private readonly IProductVersionAppService _productVersionAppService = productVersionAppService;
+        private readonly IQuotationRepository _quotationRepository = quotationRepository;
+        private readonly IPersonAppService _personAppService = personAppService;
+
+        public async Task<QuotationModel> CreateQuotationAsync(int userId, CreateQuotationModel request)
+        {
+            var person = await _personAppService.GetByDocumentAsync(1, request.Insured.Document);
+            if (person == null)
+            {
+
+            }
+            else
+            {
+            }
+
+            var quotation = new Quotation
+            {
+
+                VersionNumber = 1,
+                EndorsementId = request.EndorsementId ?? 0,
+                QuotationNumber = request.QuotationNumber ?? 0,
+                BrokerId = request.BrokerId,
+                InsuranceTypeId = request.InsuranceTypeId,
+                StartCoverage = request.StartCoverage,
+                EndCoverage = request.EndCoverage,
+                ProductVersionId = request.ProductVersionId,
+                CalculationTypeId = request.CalculationTypeId,
+                ExpirationDate = request.ExpirationDate,
+                InclusionDate = DateTime.Now,
+                InclusionUserId = userId,
+                Status = request.QuotationStatusId,
+                PercentageCommission = request.PercentageCommission,
+                PercentageDiscount = request.PercentageDiscount,
+            };
+
+            var ddddddd = await _quotationRepository.AddAsync(quotation);
+
+            return await Task.FromResult<QuotationModel?>(null);
+        }
+
         public async Task<IEnumerable<QuotationModel>?> GetByNumberAsync(int quotationNumber)
         {
             return await Task.FromResult<IEnumerable<QuotationModel>?>(null);

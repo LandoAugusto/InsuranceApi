@@ -2,9 +2,9 @@
 
 namespace InsuranceApi.Core.Entities
 {
-    public class PersonAddress : IIdentityEntity
+    public class Address : IIdentityEntity
     {
-        public int PersonAddressId { get; set; }
+        public int AddressId { get; set; }
         public int PersonId { get; set; }
         public bool IsMainAddress { get; set; }
         public int AddressTypeId { get; set; }
@@ -13,7 +13,8 @@ namespace InsuranceApi.Core.Entities
         public string Number { get; set; }
         public string Complement { get; set; }
         public string District { get; set; }
-        public int CityId { get; set; }        
+        public string City { get; set; }
+        public int StateId { get; set; }
         public int Status { get; set; }
         public int InclusionUserId { get; set; }
         public DateTime InclusionDate { get; set; }

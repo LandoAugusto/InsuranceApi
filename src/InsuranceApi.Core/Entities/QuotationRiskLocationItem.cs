@@ -6,6 +6,7 @@ namespace InsuranceApi.Core.Entities
     {
         public int QuotationRiskLocationItemId { get; set; }
         public int QuotationItemId { get; set; }
+        public int InsuranceTypeId { get; set; }
         public virtual QuotationItem QuotationItem { get; set; } = null!;
     }
 }

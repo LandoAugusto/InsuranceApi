@@ -9,7 +9,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<StateModel>?> GetStateModelAsync();
         Task<IEnumerable<RecordStatusModel>?> GetRecordStatusAsync();
         Task<IEnumerable<AddressTypeModel>?> GetAddressTypeAsync();
-        Task<IEnumerable<DocumenTypeModel>?> GetDocumentypeAsync();
+        Task<IEnumerable<DocumentTypeModel>?> GetDocumentypeAsync();
         Task<IEnumerable<InsuredTypeModel>?> GetInsuredTypeAsync();
         Task<IEnumerable<InsuranceTypeModel>?> GetInsuranceTypeAsync();
         Task<IEnumerable<InsurerModel>?> GetInsurerAsync();

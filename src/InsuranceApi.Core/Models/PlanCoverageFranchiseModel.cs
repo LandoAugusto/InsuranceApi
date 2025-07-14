@@ -1,6 +1,6 @@
 ﻿namespace InsuranceApi.Core.Models
 {
-    public class PlanCoverageActivityModel
+    public class PlanCoverageFranchiseModel
     {    
         public int CoverageId { get; set; }
         public  string Name { get; set; }

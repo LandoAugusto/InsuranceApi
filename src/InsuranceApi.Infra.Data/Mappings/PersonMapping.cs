@@ -17,8 +17,9 @@ namespace InsuranceApi.Infra.Data.Mappings
 
             builder
             .Property(x => x.Document);
+
             builder
-            .Property(x => x.PersonTypeId);
+           .Property(x => x.DocumentTypeId);
 
             builder
             .Property(x => x.BornDate);

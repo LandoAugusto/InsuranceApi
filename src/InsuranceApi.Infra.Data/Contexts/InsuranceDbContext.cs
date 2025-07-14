@@ -31,7 +31,8 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<FlexRateBroker> FlexRateBroker { get; set; }
         public virtual DbSet<FlexRateProfile> FlexRateProfile { get; set; }
         public virtual DbSet<Person> Person { get; set; }
-        public virtual DbSet<PersonAddress> PersonAddress { get; set; }
+        public virtual DbSet<DocumentType> DocumentType { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<PersonType> PersonType { get; set; }
         public virtual DbSet<Core.Entities.Component> Component { get; set; }
         public virtual DbSet<ProductComponent> ProductComponent { get; set; }
