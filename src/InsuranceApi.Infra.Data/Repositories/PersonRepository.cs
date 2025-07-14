@@ -17,8 +17,7 @@ namespace InsuranceApi.Infra.Data.Repositories
                             filter: (filtr => filtr.Document == document
                             && filtr.DocumentTypeId.Equals(documentTypeId)),
                             includeProperties: source =>
-                                    source
-                                    .Include(item => item.DocumentType)
+                                    source                                    
                                     .Include(item => item.Address)));
 
             return query.FirstOrDefault();

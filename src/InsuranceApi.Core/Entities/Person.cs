@@ -17,8 +17,7 @@ namespace InsuranceApi.Core.Entities
         public int InclusionUserId { get; set; }
         public DateTime InclusionDate { get; set; }
         public int? LastChangeUserId { get; set; }
-        public DateTime? LastChangeDate { get; set; }
-        public virtual DocumentType DocumentType { get; set; } = null!;
+        public DateTime? LastChangeDate { get; set; }        
         public virtual ICollection<Address> Address { get; set; } = new HashSet<Address>();
         public virtual ICollection<Broker> Broker { get; set; } = new HashSet<Broker>();
         public virtual ICollection<Borrower> Borrower { get; set; } = new HashSet<Borrower>();        
