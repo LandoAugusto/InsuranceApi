@@ -19,12 +19,18 @@ namespace InsuranceApi.Application.Services
             var response = await _zipCodeService.GetAsync(zipCode);
             if (response == null) return null;
 
+            var state = await _commonService.GetStateAsync(response.StateUf);
+            if (state.Any())
+            {
+                response.StateId = state.First().StateId;
+            }
+
             return response;
         }
 
         public async Task<IEnumerable<StateModel?>> GetStateAsync()
         {
-            var response = await _commonService.GetStateModelAsync();
+            var response = await _commonService.GetStateAsync();
             if (!response.IsAny<StateModel>()) return null;
 
             return response;

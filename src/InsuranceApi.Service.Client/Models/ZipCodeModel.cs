@@ -8,6 +8,7 @@
         public string? District { get; set; }
         public string State { get; set; }
         public string StateUf { get; set; }
+        public int  StateId { get; set; }
         public string City { get; set; }
     }
 }

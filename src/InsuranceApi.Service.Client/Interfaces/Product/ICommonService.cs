@@ -6,7 +6,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
     public interface ICommonService
     {
         Task<IEnumerable<TermTypeModel>?> GetTermTypeAsync();
-        Task<IEnumerable<StateModel>?> GetStateModelAsync();
+        Task<IEnumerable<StateModel>?> GetStateAsync(string? stateId = null);
         Task<IEnumerable<RecordStatusModel>?> GetRecordStatusAsync();
         Task<IEnumerable<AddressTypeModel>?> GetAddressTypeAsync();
         Task<IEnumerable<DocumentTypeModel>?> GetDocumentypeAsync();

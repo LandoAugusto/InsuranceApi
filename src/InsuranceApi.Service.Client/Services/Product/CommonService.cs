@@ -11,14 +11,14 @@ using Newtonsoft.Json;
 
 namespace InsuranceApi.Service.Client.Services.Product
 {
-    internal class CommonService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option) 
+    internal class CommonService(ILogWriter logWriter, IHttpClientFactory httpClientFactory, IOptions<ApiConfig> option)
         : ICommonService
     {
         private readonly ILogWriter _logWriter = logWriter;
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
         private readonly HttpConfig _endpont = option.Value.Configurations.First(x => x.Name.Equals("Product"));
 
-        public async Task<IEnumerable<StateModel>?> GetStateModelAsync()
+        public async Task<IEnumerable<StateModel>?> GetStateAsync(string? stateId = null)
         {
             var rawRequest = new RawRequest();
             var rawResponse = new RawResponse();
@@ -26,7 +26,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-state";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-state?stateId={stateId}";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<StateModel>>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
