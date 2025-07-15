@@ -37,7 +37,7 @@ namespace InsuranceApi.Service.Client.Services
                     District = response.District,
                     Complement = response.Complement,
                     City = response.City,
-                    StreetName = response.City
+                    StreetName = response.StreetName
                 };
             }
             catch (Exception exception)

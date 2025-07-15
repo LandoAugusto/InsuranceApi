@@ -17,6 +17,25 @@ namespace InsuranceApi.Controllers.V1
     {
         private readonly ICommonAppService _commonAppService = commonAppService;
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-public-body")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<PublicBodyModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPublicBodyAsync()
+        {
+            var response = await _commonAppService.GetPublicBodyAsync();
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
         /// <summary>
         /// 
         /// </summary>

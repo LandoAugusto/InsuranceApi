@@ -14,17 +14,37 @@ namespace InsuranceApi.Application.Services
         private readonly IZipCodeService _zipCodeService = zipCodeService;
         private readonly ICommonService _commonService = commonService;
 
+        public Task<IEnumerable<PublicBodyModel>> GetPublicBodyAsync()
+        {
+            var response = new List<PublicBodyModel>() {
+
+                new()
+                {
+                    PublicBodyId= 1,
+                    Name = "SIM",
+                },
+                new()
+                {
+                    PublicBodyId= 0,
+                    Name = "NÂO",
+                }
+            };
+
+            return Task.FromResult<IEnumerable<PublicBodyModel>>(response);
+        }
+
         public async Task<ZipCodeModel?> GetZipCodeAsync(string zipCode)
         {
             var response = await _zipCodeService.GetAsync(zipCode);
             if (response == null) return null;
 
             var state = await _commonService.GetStateAsync(response.StateUf);
-            if (state.Any())
+            if (!state.Any())
             {
-                response.StateId = state.First().StateId;
+                return response;
             }
 
+            response.StateId = state.First().StateId;
             return response;
         }
 

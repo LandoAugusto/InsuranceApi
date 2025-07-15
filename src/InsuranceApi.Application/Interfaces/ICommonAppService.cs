@@ -6,6 +6,7 @@ namespace InsuranceApi.Application.Interfaces
 {
     public interface ICommonAppService
     {
+        Task<IEnumerable<PublicBodyModel>> GetPublicBodyAsync();
         Task<IEnumerable<TermTypeModel?>> GetTermTypeAsync();
         Task<ZipCodeModel?> GetZipCodeAsync(string zipCode);
         Task<IEnumerable<StateModel?>> GetStateAsync();
