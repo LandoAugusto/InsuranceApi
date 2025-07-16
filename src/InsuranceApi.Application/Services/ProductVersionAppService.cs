@@ -25,7 +25,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionId)
         {
             var response = await _productVersionService.GetInsuredObjectAsync(productVersionId);
@@ -33,7 +32,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<CoverageModel?> GetByCoverageIdAsync(int productVersionId, int coverageId)
         {
             var response = await _productVersionService.GetByCoverageIdAsync(productVersionId, coverageId);
@@ -41,7 +39,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<CoverageModel>?> ListCoverageAsync(int productVersionId)
         {
             var response = await _productVersionService.ListCoverageAsync(productVersionId);
@@ -49,7 +46,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<ProductVersionClauseModel>?> ListClauseAsync(int productVersionId, decimal insuredAmountValue)
         {
             var response = await _productVersionService.ListClauseAsync(productVersionId, insuredAmountValue);
@@ -57,7 +53,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<TermTypeModel>?> ListTermTypeAsync(int productVersionId)
         {
             var response = await _productVersionService.ListTermTypeAsync(productVersionId);
@@ -65,7 +60,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<LawsuitTypeModel>?> ListLawsuitTypeAsync(int productVersionId)
         {
             var response = await _productVersionService.ListLawsuitTypeAsync(productVersionId);
@@ -80,7 +74,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<PaymentFrequencyModel>?> GetPaymentFrequencyAsync(int productVersionId)
         {
             var response = await _productVersionService.GetPaymentFrequencyAsync(productVersionId);
@@ -88,7 +81,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<PaymentInstallmentModel>?> GetPaymentInstallmentAsync(int productVersionId, int paymentMethodId)
         {
             var response = await _productVersionService.GetPaymentInstallmentAsync(productVersionId, paymentMethodId);
@@ -96,7 +88,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<CalculationTypeModel>?> GetCalculationTypeAsync(int productVersionId, int profileId)
         {
             var response = await _productVersionService.GetCalculationTypeAsync(productVersionId, profileId);
@@ -104,7 +95,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<CalculationTypeAcceptanceModel?> GetCalculationTypeAcceptanceAsync(int productVersionId, int profileId, int calculationTypeId)
         {
             var response = await _productVersionService.GetCalculationTypeAcceptanceAsync(productVersionId, profileId, calculationTypeId);
@@ -112,7 +102,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<ConstructionTypeModel>?> GetConstructionTypeAsync(int productVersionId, int profileId)
         {
             var response = await _productVersionService.GetConstructionTypeAsync(productVersionId, profileId);
@@ -120,7 +109,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<ActivityModel>?> GetActivityAsync(int productVersionId, int profileId, string? name)
         {
             var response = await _productVersionService.GetActivityAsync(productVersionId, profileId, name);
@@ -128,7 +116,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<ContractTypeModel>?> GetContractTypeAsync(int productVersionId)
         {
             var response = await _productVersionService.GetContractTypeAsync(productVersionId);
@@ -136,7 +123,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<PlanModel>?> GetPlanActivityAsync(int productVersionId, int activityId)
         {
             var response = await _productVersionService.GetPlanActivityAsync(productVersionId, activityId);
@@ -144,7 +130,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<Localization>?> GetLocalizationAsync(int productVersionId)
         {
             var response = await _productVersionService.GetLocalizationAsync(productVersionId);
@@ -152,7 +137,6 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
-
         public async Task<IEnumerable<PlanCoverageFranchiseModel>?> GetPlanCoverageFranchiseAsync(int productVersionId, int planId)
         {
             var response = new List<PlanCoverageFranchiseModel>();
@@ -185,6 +169,13 @@ namespace InsuranceApi.Application.Services
             }
 
             return response;
+        }
+        public async Task<IEnumerable<AssistanceModel>?> GetPlanAssistanceAsync(int productVersionId, int planId)
+        {
+            var model = await _productVersionService.GetPlanAssistanceAsync(productVersionId, planId);
+            if (model == null) return null;
+
+            return model;
         }
     }
 }

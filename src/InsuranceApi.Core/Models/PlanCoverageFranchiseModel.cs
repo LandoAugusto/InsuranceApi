@@ -11,7 +11,7 @@
         public int? CoverageRestricted { get; set; }
         public decimal InsuredAmountMin { get; set; }
         public decimal InsuredAmountMax { get; set; }
-        public List<FranchiseModel> Franchise { get; set; } = [];
+        public List<FranchiseModel> Franchise { get; set; } = [];        
 
     }
 }
