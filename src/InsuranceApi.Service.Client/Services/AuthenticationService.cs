@@ -2,7 +2,7 @@
 using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Infrastructure.Http;
-using InsuranceApi.Core.Model;
+
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces;
 using InsuranceApi.Service.Client.Models;

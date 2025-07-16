@@ -1,7 +1,7 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
 using InsuranceApi.Core.Entities.Enumerators;
-using InsuranceApi.Core.Model;
+
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces.Product;
 using InsuranceApi.Service.Client.Models;

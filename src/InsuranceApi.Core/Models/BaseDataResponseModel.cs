@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace InsuranceApi.Core.Model
+namespace InsuranceApi.Core.Models
 {
 
     /// <summary>

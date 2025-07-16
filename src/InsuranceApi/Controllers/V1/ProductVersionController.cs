@@ -1,6 +1,6 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
-using InsuranceApi.Core.Model;
+
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -409,6 +409,24 @@ namespace InsuranceApi.Controllers.V1
         public async Task<IActionResult> GetLocalizationAsync(int productVersionId)
         {
             var response = await _productVersionAppService.GetLocalizationAsync(productVersionId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-questionnaire/{productVersionId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<QuestionnaireModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetQuestionnaireAsync(int productVersionId)
+        {
+            var response = await _productVersionAppService.GetQuestionnaireAsync(productVersionId);
             if (response == null)
                 return ReturnNotFound();
 

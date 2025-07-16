@@ -177,5 +177,12 @@ namespace InsuranceApi.Application.Services
 
             return model;
         }
+        public async Task<IEnumerable<QuestionnaireModel>?> GetQuestionnaireAsync(int productVersionId)
+        {
+            var model = await _productVersionService.GetQuestionnaireAsync(productVersionId);
+            if (model == null) return null;
+
+            return model;
+        }
     }
 }

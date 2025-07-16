@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using InsuranceApi.Core.Infrastructure.Exceptions;
 using InsuranceApi.Core.Infrastructure.Interfaces;
-using InsuranceApi.Core.Model;
+
 using System.Net;
+using InsuranceApi.Core.Models;
 
 namespace InsuranceApi.Filters
 {

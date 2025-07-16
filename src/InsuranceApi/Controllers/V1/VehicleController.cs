@@ -1,6 +1,6 @@
 ﻿using InsuranceApi.Application.Interfaces;
 using InsuranceApi.Controllers.V1.Base;
-using InsuranceApi.Core.Model;
+
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

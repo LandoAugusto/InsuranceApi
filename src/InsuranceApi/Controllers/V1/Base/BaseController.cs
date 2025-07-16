@@ -1,5 +1,5 @@
 ﻿using Asp.Versioning;
-using InsuranceApi.Core.Model;
+using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
