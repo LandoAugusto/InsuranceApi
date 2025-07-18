@@ -591,6 +591,40 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
+        public async Task<IEnumerable<PlanModel?>> GetPlanUsepropertyStructure(int productVersionId, int useTypeId, int propertyStructureId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-plan-useType-propertyStructure/{productVersionId}/{useTypeId}/{propertyStructureId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PlanModel?>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
+
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
         public async Task<IEnumerable<PlanCoverageModel>?> GetPlanCoverageAsync(int productVersionId, int planId)
         {
             var rawRequest = new RawRequest();
@@ -792,6 +826,62 @@ namespace InsuranceApi.Service.Client.Services.Product
                     throw ex;
                 }
 
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int productVersionId, int constructionTypeId, int useTypeId, int profileId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/productVersion/get-property-structure/{productVersionId}/{constructionTypeId}/{useTypeId}/{profileId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PropertyStructureModel>?>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int productVersionId, int constructionTypeId, int profileId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/productVersion/get-use-type/{productVersionId}/{constructionTypeId}/{profileId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<UseTypeModel>?>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }

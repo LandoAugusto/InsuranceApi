@@ -13,6 +13,11 @@ namespace InsuranceApi.Controllers.V1
     {
         private readonly ICoverageAppService _coverageAppService = coverageAppService;  
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("get-coverage-limit-activity")]
         [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanCoverageFranchiseModel>>), StatusCodes.Status200OK)]

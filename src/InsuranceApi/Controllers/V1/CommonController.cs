@@ -231,46 +231,6 @@ namespace InsuranceApi.Controllers.V1
             return base.ReturnSuccess(response);
         }
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="constructionTypeId"></param>
-       /// <param name="useTypeId"></param>
-       /// <param name="profileId"></param>
-       /// <returns></returns>
-        [HttpGet]
-        [Route("get-property-structure/{constructionTypeId}/{useTypeId}/{profileId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId)
-        {
-            var response = await _commonAppService.GetPropertyStructureAsync(constructionTypeId, useTypeId, profileId);
-            if (response == null)
-                return ReturnNotFound();
-
-            return base.ReturnSuccess(response);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="constructionTypeId"></param>
-        /// <param name="profileId"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("get-use-type/{constructionTypeId}/{profileId}")]
-        [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetUseTypeAsync(int constructionTypeId, int profileId)
-        {
-            var response = await _commonAppService.GetUseTypeAsync(constructionTypeId, profileId);
-            if (response == null)
-                return ReturnNotFound();
-
-            return base.ReturnSuccess(response);
-        }
-
-
         /// <summary>
         /// 
         /// </summary>

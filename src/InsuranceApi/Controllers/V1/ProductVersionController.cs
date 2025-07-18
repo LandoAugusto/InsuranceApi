@@ -1,4 +1,5 @@
 ﻿using InsuranceApi.Application.Interfaces;
+using InsuranceApi.Application.Services;
 using InsuranceApi.Controllers.V1.Base;
 
 using InsuranceApi.Core.Models;
@@ -320,6 +321,47 @@ namespace InsuranceApi.Controllers.V1
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="productVersionId"></param> 
+        /// <param name="constructionTypeId"></param>
+        /// <param name="useTypeId"></param>
+        /// <param name="profileId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-property-structure/{productVersionId}/{constructionTypeId}/{useTypeId}/{profileId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPropertyStructureAsync(int productVersionId, int constructionTypeId, int useTypeId, int profileId)
+        {
+            var response = await _productVersionAppService.GetPropertyStructureAsync(productVersionId, constructionTypeId, useTypeId, profileId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param> 
+        /// <param name="constructionTypeId"></param>
+        /// <param name="profileId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-use-type/{productVersionId}/{constructionTypeId}/{profileId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<PropertyStructureModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetUseTypeAsync(int productVersionId, int constructionTypeId, int profileId)
+        {
+            var response = await _productVersionAppService.GetUseTypeAsync(productVersionId, constructionTypeId, profileId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="productVersionId"></param>
         /// <param name="profileid"></param>
         /// <param name="name"></param>
@@ -352,6 +394,26 @@ namespace InsuranceApi.Controllers.V1
         public async Task<IActionResult> GetPlanActivityAsync(int productVersionId, int activityId)
         {
             var response = await _productVersionAppService.GetPlanActivityAsync(productVersionId, activityId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>
+        /// <param name="activityId"></param>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-plan-useType-propertyStructure/{productVersionId}/{useTypeId}/{propertyStructureId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanUsepropertyStructureModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPlanUsepropertyStructure(int productVersionId, int useTypeId, int propertyStructureId)
+        {
+            var response = await _productVersionAppService.GetPlanUsepropertyStructure(productVersionId, useTypeId, propertyStructureId);
             if (response == null)
                 return ReturnNotFound();
 

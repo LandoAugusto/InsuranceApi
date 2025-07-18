@@ -128,21 +128,6 @@ namespace InsuranceApi.Application.Services
             return response;
         }
 
-        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId)
-        {
-            var response = await _commonService.GetPropertyStructureAsync(constructionTypeId, useTypeId, profileId);
-            if (!response.IsAny<PropertyStructureModel>()) return null;
-
-            return response;
-        }
-
-        public async Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId)
-        {
-            var response = await _commonService.GetUseTypeAsync(constructionTypeId, profileId);
-            if (!response.IsAny<UseTypeModel>()) return null;
-
-            return response;
-        }
 
         public async Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync()
         {

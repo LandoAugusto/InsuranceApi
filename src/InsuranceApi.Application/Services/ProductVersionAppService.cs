@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using InsuranceApi.Application.Interfaces;
-using InsuranceApi.Core.Infrastructure.Exceptions;
+using InsuranceApi.Core.Extensions;
 using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces.Product;
-using Nest;
 
 namespace InsuranceApi.Application.Services
 {
-    internal class ProductVersionAppService(IProductVersionService productVersionService) : IProductVersionAppService
+    internal class ProductVersionAppService(IMapper mapper ,IProductVersionService productVersionService) : IProductVersionAppService
     {
+        private readonly IMapper _mapper = mapper;
         private readonly IProductVersionService _productVersionService = productVersionService;
 
         public async Task<ProductVersionModel?> GetAsync(int productId)
@@ -130,6 +130,15 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+        public async Task<IEnumerable<PlanUsepropertyStructureModel>?> GetPlanUsepropertyStructure(int productVersionId, int useTypeId, int propertyStructureId)
+        {
+            var response = await _productVersionService.GetPlanUsepropertyStructure(productVersionId, useTypeId, propertyStructureId);            
+            if (response.IsAny<PlanModel>()) return null;
+                        
+            var planUsePropertyStructure = new List<PlanUsepropertyStructureModel>();   
+            return planUsePropertyStructure;
+        }
+
         public async Task<IEnumerable<Localization>?> GetLocalizationAsync(int productVersionId)
         {
             var response = await _productVersionService.GetLocalizationAsync(productVersionId);
@@ -183,6 +192,20 @@ namespace InsuranceApi.Application.Services
             if (model == null) return null;
 
             return model;
+        }
+        public async Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int productVersionId, int constructionTypeId, int useTypeId, int profileId)
+        {
+            var response = await _productVersionService.GetPropertyStructureAsync(productVersionId, constructionTypeId, useTypeId, profileId);
+            if (!response.IsAny<PropertyStructureModel>()) return null;
+
+            return response;
+        }
+        public async Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int productVersionId, int constructionTypeId, int profileId)
+        {
+            var response = await _productVersionService.GetUseTypeAsync(productVersionId, constructionTypeId, profileId);
+            if (!response.IsAny<UseTypeModel>()) return null;
+
+            return response;
         }
     }
 }

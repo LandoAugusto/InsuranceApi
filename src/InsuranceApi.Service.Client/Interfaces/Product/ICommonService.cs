@@ -14,9 +14,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<InsuranceTypeModel>?> GetInsuranceTypeAsync();
         Task<IEnumerable<InsurerModel>?> GetInsurerAsync();
         Task<IEnumerable<ClaimsExperienceBonusModel>?> GetClaimsExperienceBonusAsync();
-        Task<IEnumerable<BuildingsContentsModel>?> GetBuildingsContentsAsync();
-        Task<IEnumerable<PropertyStructureModel>?> GetPropertyStructureAsync(int constructionTypeId, int useTypeId, int profileId);
-        Task<IEnumerable<UseTypeModel>?> GetUseTypeAsync(int constructionTypeId, int profileId);
+        Task<IEnumerable<BuildingsContentsModel>?> GetBuildingsContentsAsync();     
         Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync();
         Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync();
         Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesAsync(ProtectiveDevicesTypeEnum protectiveDevicesType);
