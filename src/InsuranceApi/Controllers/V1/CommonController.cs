@@ -298,5 +298,40 @@ namespace InsuranceApi.Controllers.V1
 
             return base.ReturnSuccess(response);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-gender")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<GenderModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetGenderAsync()
+        {
+            var response = await _commonAppService.GetGenderAsync();
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-profession-by-name")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<ProfessionModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetProfessionAsync(string? name)
+        {
+            var response = await _commonAppService.GetProfessionAsync(name);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
     }
 }

@@ -160,5 +160,21 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+
+        public async Task<IEnumerable<GenderModel>?> GetGenderAsync()
+        {
+            var response = await _commonService.GetGenderAsync();
+            if (!response.IsAny<GenderModel>()) return null;
+
+            return response;
+        }
+
+        public async Task<IEnumerable<ProfessionModel>?> GetProfessionAsync(string? name)
+        {
+            var response = await _commonService.GetProfessionAsync(name);
+            if (!response.IsAny<ProfessionModel>()) return null;
+
+            return response;
+        }
     }
 }

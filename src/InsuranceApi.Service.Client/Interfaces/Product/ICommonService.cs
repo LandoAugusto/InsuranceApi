@@ -18,5 +18,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<PersonTypeModel>?> GetPersonTypeAsync();
         Task<IEnumerable<QuotationStatusModel>?> GetQuotationStatusAsync();
         Task<IEnumerable<ProtectiveDevicesModel>?> GetProtectiveDevicesAsync(ProtectiveDevicesTypeEnum protectiveDevicesType);
+        Task<IEnumerable<GenderModel>?> GetGenderAsync();
+        Task<IEnumerable<ProfessionModel>?> GetProfessionAsync(string? name);
     }
 }

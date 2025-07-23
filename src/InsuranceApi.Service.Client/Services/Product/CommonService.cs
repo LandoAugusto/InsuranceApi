@@ -8,6 +8,7 @@ using InsuranceApi.Core.Models;
 using InsuranceApi.Service.Client.Interfaces.Product;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace InsuranceApi.Service.Client.Services.Product
 {
@@ -365,6 +366,66 @@ namespace InsuranceApi.Service.Client.Services.Product
                 rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-protective-devices/{(int)protectiveDevicesType}";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<ProtectiveDevicesModel>?>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<GenderModel>?> GetGenderAsync()
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-gender";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<GenderModel>?>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
+        public async Task<IEnumerable<ProfessionModel>?> GetProfessionAsync(string? name)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-profession-by-name";
+                if (!string.IsNullOrEmpty(name))
+                {
+                    rawRequest.RequestUri = $"{rawRequest.RequestUri}?name={name}";
+                }   
+               
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<ProfessionModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);
