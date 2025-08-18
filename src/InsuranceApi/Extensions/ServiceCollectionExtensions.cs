@@ -8,10 +8,8 @@ using InsuranceApi.Core.Infrastructure.Interfaces;
 using InsuranceApi.Core.Infrastructure.Mapper;
 using InsuranceApi.Core.Models.Validators;
 using InsuranceApi.Filters;
-using InsuranceApi.Interceptor;
 using InsuranceApi.Service.Client.Handlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -99,13 +97,17 @@ namespace InsuranceApi.Extensions
 
         private static IServiceCollection ConfigControllersPipeline(this IServiceCollection services)
         {
-            services.AddValidatorsFromAssemblyContaining<SimulationFilterValidator>();
-            services.AddTransient<IValidatorInterceptor, CustomValidatorInterceptor>();
+            services.AddFluentValidationAutoValidation(fv =>
+            {
+                fv.DisableDataAnnotationsValidation = true;
+            });
+            services.AddValidatorsFromAssemblyContaining<SimulationFilterValidator>();         
 
             services.AddScoped<IApiWorkContext, ApiWorkContext>();
             services.AddControllers(mvcOptions =>
             {
-                mvcOptions.Filters.Add<ExceptionFilter>(order: 0);
+                mvcOptions.Filters.Add<ValidationFilter>(order: 0); // Filtro assíncrono
+                mvcOptions.Filters.Add<ExceptionFilter>(order: 1);
             });
 
             return services;

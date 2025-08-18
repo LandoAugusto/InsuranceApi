@@ -8,7 +8,7 @@ namespace InsuranceApi.Core.Models.Validators
         {
              RuleFor(x => x.FlexRateMixId)
             .NotNull()
-            .WithMessage("FlexRateMixId is required.");
+            .WithMessage("FlexRateMixId is obrigatorio.");
 
              RuleFor(x => x.StartOfTerm)
             .NotNull()

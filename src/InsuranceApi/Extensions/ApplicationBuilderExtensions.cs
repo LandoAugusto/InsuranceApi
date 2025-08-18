@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
 using InsuranceApi.Core.Infrastructure.Configuration;
 using InsuranceApi.Core.Infrastructure.Exceptions;
-
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Net;
