@@ -6,7 +6,7 @@ using InsuranceApi.Service.Client.Interfaces.Product;
 
 namespace InsuranceApi.Application.Services
 {
-    internal class ProductVersionAppService(IMapper mapper ,IProductVersionService productVersionService) : IProductVersionAppService
+    internal class ProductVersionAppService(IMapper mapper, IProductVersionService productVersionService) : IProductVersionAppService
     {
         private readonly IMapper _mapper = mapper;
         private readonly IProductVersionService _productVersionService = productVersionService;
@@ -139,10 +139,10 @@ namespace InsuranceApi.Application.Services
         }
         public async Task<IEnumerable<PlanUsepropertyStructureModel>?> GetPlanUsepropertyStructure(int productVersionId, int useTypeId, int propertyStructureId)
         {
-            var response = await _productVersionService.GetPlanUsepropertyStructure(productVersionId, useTypeId, propertyStructureId);            
+            var response = await _productVersionService.GetPlanUsepropertyStructure(productVersionId, useTypeId, propertyStructureId);
             if (response.IsAny<PlanModel>()) return null;
-                        
-            var planUsePropertyStructure = new List<PlanUsepropertyStructureModel>();   
+
+            var planUsePropertyStructure = new List<PlanUsepropertyStructureModel>();
             return planUsePropertyStructure;
         }
 
@@ -171,9 +171,17 @@ namespace InsuranceApi.Application.Services
                     CoverageBasic = cob.CoverageBasic,
                     CoverageRestricted = cob.CoverageRestricted,
                 };
+                var IndemnityPeriod = await _productVersionService.GetIndemnityPeriodAsync(productVersionId, cob.CoverageId);
+                if (IndemnityPeriod != null && IndemnityPeriod.Any())
+                {
+                    IndemnityPeriod.ToList().ForEach(item =>
+                    {
+                        coverage.IndemnityPeriod.Add(item);
+                    });
+                }
 
-                var franchise = await _productVersionService.GetCoverageFranchiseAsync(productVersionId, cob.CoverageId);
-                if (franchise.Any())
+                var franchise = await _productVersionService.GetFranchiseAsync(productVersionId, cob.CoverageId);
+                if (franchise != null && franchise.Any())
                 {
                     franchise.ToList().ForEach(item =>
                     {
