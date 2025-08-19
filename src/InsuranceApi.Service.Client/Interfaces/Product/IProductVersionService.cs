@@ -22,6 +22,7 @@ namespace InsuranceApi.Service.Client.Interfaces.Product
         Task<IEnumerable<ContractTypeModel>?> GetContractTypeAsync(int productVersionId);
         Task<IEnumerable<PlanModel?>> GetPlanActivityAsync(int productVersionId, int activityId);
         Task<IEnumerable<PlanModel?>> GetPlanUsepropertyStructure(int productVersionId, int useTypeId, int propertyStructureId);
+        Task<IEnumerable<PlanModel?>> GetPlanAsync(int productVersionId);
         Task<IEnumerable<PlanCoverageModel?>> GetPlanCoverageAsync(int productVersionId, int planId);
         Task<IEnumerable<AssistanceModel>?> GetPlanAssistanceAsync(int productVersionId, int planId);
         Task<CoverageActivityLimitModel?> GetCoverageActivityLimitAsync(int productVersionId, int coverageId, int activityId, int profile);

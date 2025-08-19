@@ -123,6 +123,13 @@ namespace InsuranceApi.Application.Services
 
             return response;
         }
+        public async Task<IEnumerable<PlanModel>?> GetPlanAsync(int productVersionId)
+        {
+            var response = await _productVersionService.GetPlanAsync(productVersionId);
+            if (response == null) return null;
+
+            return response;
+        }
         public async Task<IEnumerable<PlanModel>?> GetPlanActivityAsync(int productVersionId, int activityId)
         {
             var response = await _productVersionService.GetPlanActivityAsync(productVersionId, activityId);

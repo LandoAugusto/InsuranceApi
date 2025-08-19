@@ -557,6 +557,40 @@ namespace InsuranceApi.Service.Client.Services.Product
                 throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
             }
         }
+        public async Task<IEnumerable<PlanModel?>> GetPlanAsync(int productVersionId)
+        {
+            var rawRequest = new RawRequest();
+            var rawResponse = new RawResponse();
+            try
+            {
+                var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
+
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/ProductVersion/get-product-version-plan/{productVersionId}";
+                rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<PlanModel?>>>(rawResponse.Conteudo);
+                if (!response.TransactionStatus.Sucess)
+                {
+                    if (response.TransactionStatus.Code == 404)
+                    {
+                        return null;
+                    }
+
+                    throw new BusinessException(response.TransactionStatus.Message);
+                }
+                return response.Data;
+            }
+            catch (Exception exception)
+            {
+                _logWriter.Error(message: exception.Message);
+
+                if (exception is BusinessException ex)
+                {
+                    throw ex;
+                }
+
+                throw new ServiceUnavailableException($"Erro na chamada do serviço '{rawRequest.RequestUri}': {exception.Message}", exception);
+            }
+        }
         public async Task<IEnumerable<PlanModel?>> GetPlanActivityAsync(int productVersionId, int activityId)
         {
             var rawRequest = new RawRequest();

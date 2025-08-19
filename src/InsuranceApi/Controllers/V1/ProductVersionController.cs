@@ -380,6 +380,26 @@ namespace InsuranceApi.Controllers.V1
             return base.ReturnSuccess(response);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productVersionId"></param>        
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-product-version-plan/{productVersionId}")]
+        [ProducesResponseType(typeof(BaseDataResponseModel<IEnumerable<PlanModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetPlanAsync(int productVersionId)
+        {
+            var response = await _productVersionAppService.GetPlanAsync(productVersionId);
+            if (response == null)
+                return ReturnNotFound();
+
+            return base.ReturnSuccess(response);
+        }
+
         /// <summary>
         /// 
         /// </summary>

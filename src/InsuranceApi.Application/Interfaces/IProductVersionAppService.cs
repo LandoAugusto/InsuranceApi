@@ -4,6 +4,7 @@ namespace InsuranceApi.Application.Interfaces
 {
     public interface IProductVersionAppService
     {
+        Task<IEnumerable<PlanModel>?> GetPlanAsync(int productVersionId);
         Task<ProductVersionModel?> GetAsync(int productId);
         Task<InsuredObjectModel?> GetInsuredObjectAsync(int productVersionId);
         Task<CoverageModel?> GetByCoverageIdAsync(int productVersionId, int coverageId);

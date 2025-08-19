@@ -3,7 +3,6 @@ using FluentValidation.Results;
 using InsuranceApi.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
 using System.Net;
 
 namespace InsuranceApi.Filters
@@ -61,12 +60,12 @@ namespace InsuranceApi.Filters
                             StatusCode = httpStatusCode
                         };
 
-                        return; // interrompe o pipeline
+                        return; 
                     }
                 }
             }
 
-            await next(); // continua a execução da action
+            await next(); 
         }
     }
 }
