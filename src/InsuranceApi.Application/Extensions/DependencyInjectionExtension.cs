@@ -26,6 +26,7 @@ namespace InsuranceApi.Application.Extensions
             services.AddScoped<IPersonAppService, PersonAppService>();
             services.AddScoped<IBorrowerAppealFeeAppService, BorrowerAppealFeeAppService>();
             services.AddScoped<IAppealFeeAppService, AppealFeeAppService>();
+            services.AddScoped<IUserAppService, UserAppService>();
         }
     }
 }
