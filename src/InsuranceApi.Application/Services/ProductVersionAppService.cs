@@ -6,9 +6,8 @@ using InsuranceApi.Service.Client.Interfaces.Product;
 
 namespace InsuranceApi.Application.Services
 {
-    internal class ProductVersionAppService(IMapper mapper, IProductVersionService productVersionService) : IProductVersionAppService
-    {
-        private readonly IMapper _mapper = mapper;
+    internal class ProductVersionAppService( IProductVersionService productVersionService) : IProductVersionAppService
+    {        
         private readonly IProductVersionService _productVersionService = productVersionService;
 
         public async Task<ProductVersionModel?> GetAsync(int productId)
@@ -145,7 +144,6 @@ namespace InsuranceApi.Application.Services
             var planUsePropertyStructure = new List<PlanUsepropertyStructureModel>();
             return planUsePropertyStructure;
         }
-
         public async Task<IEnumerable<Localization>?> GetLocalizationAsync(int productVersionId)
         {
             var response = await _productVersionService.GetLocalizationAsync(productVersionId);

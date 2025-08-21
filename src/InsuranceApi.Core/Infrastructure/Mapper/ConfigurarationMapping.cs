@@ -23,6 +23,10 @@ namespace InsuranceApi.Core.Infrastructure.Mapper
             .ForMember(dest => dest.LegalRecourseTypeId, m => m.MapFrom(a => a.LegalRecourseTypeId))
             .ForMember(dest => dest.Name, m => m.MapFrom(a => a.Name))
             .ForMember(dest => dest.Status, m => m.MapFrom(a => a.Status)).ReverseMap();
+
+            CreateMap<AppealFeeModel, AppealFee>().ReverseMap();
+            CreateMap<BorrowerAppealFeeTakerModel, Borrower>().ReverseMap()
+           .ForMember(dest => dest.Name, m => m.MapFrom(a => a.Person.Name)).ReverseMap();
         }
     }
 }

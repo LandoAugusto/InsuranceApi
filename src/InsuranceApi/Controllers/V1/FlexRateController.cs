@@ -46,7 +46,7 @@ namespace InsuranceApi.Controllers.V1
         /// <returns></returns>
 
         [HttpPost]
-        [Route("get-flexRate-all/{productVersionId}")]
+        [Route("get-flexRate-all")]
         [ProducesResponseType(typeof(BaseDataResponseModel<FlexRateModel>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(typeof(BaseDataResponseModel<>), StatusCodes.Status400BadRequest)]

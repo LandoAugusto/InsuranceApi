@@ -30,6 +30,7 @@ namespace InsuranceApi.Infra.Data.Contexts
         public virtual DbSet<FlexRateBorrower> FlexRateBorrower { get; set; }
         public virtual DbSet<FlexRateBroker> FlexRateBroker { get; set; }
         public virtual DbSet<FlexRateProfile> FlexRateProfile { get; set; }
+        public virtual DbSet<AppealFee> AppealFee { get; set; }
         public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<DocumentType> DocumentType { get; set; }
         public virtual DbSet<Address> Address { get; set; }

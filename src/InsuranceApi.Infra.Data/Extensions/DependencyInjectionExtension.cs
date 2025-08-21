@@ -26,7 +26,8 @@ namespace InsuranceApi.Infra.Data.Extensions
             services.AddScoped<IBorrowerRepository, BorrowerRepository>();
             services.AddScoped<IBrokerRepository, BrokerRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
-
+            services.AddScoped<IAppealFeeRepository, AppealFeeRepository>();
+            services.AddScoped<IBorrowerAppealFeeRepository, BorrowerAppealFeeRepository>();
 
             return services;
         }
