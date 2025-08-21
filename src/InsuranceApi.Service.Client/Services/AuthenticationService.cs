@@ -214,7 +214,7 @@ namespace InsuranceApi.Service.Client.Services
                     request.RoleId,
                     request.Login,
                     request.Email,
-
+                    request.Password
                 };
                 rawResponse = await _httpClient.PostAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<int>>(rawResponse.Conteudo);

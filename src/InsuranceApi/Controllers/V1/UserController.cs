@@ -93,6 +93,21 @@ namespace InsuranceApi.Controllers.V1
             return ReturnSuccess(response);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("save-user")]
+        public async Task<ActionResult> SaveUsersync(SaveUserModel request)
+        {
+            var response = await _userAppService.SaveUsersync(request);
+
+            return ReturnSuccess(response);
+        }
+
         /// <summary>
         /// 
         /// </summary>
