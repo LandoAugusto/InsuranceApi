@@ -212,17 +212,18 @@ namespace InsuranceApi.Service.Client.Services
                 rawRequest.BodyObject = new
                 {
                     request.RoleId,
+                    request.ProfileId,
                     request.Login,
                     request.Email,
                     request.Password
                 };
                 rawResponse = await _httpClient.PostAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
-                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<int>>(rawResponse.Conteudo);
+                var response = JsonConvert.DeserializeObject<BaseDataResponseModel<int?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
                 {
                     throw new BusinessException(response.TransactionStatus.Message);
                 }
-                return response.Data;
+                return response.Data.Value;
             }
             catch (Exception exception)
             {

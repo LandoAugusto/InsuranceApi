@@ -111,7 +111,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-term-type";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-address-type";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<AddressTypeModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)
@@ -139,7 +139,7 @@ namespace InsuranceApi.Service.Client.Services.Product
             {
                 var _httpClient = new RestClient(_httpClientFactory.CreateClient(_endpont.Name));
 
-                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-term-type";
+                rawRequest.RequestUri = $"{_endpont.Url}/v1/common/get-document-type";
                 rawResponse = await _httpClient.GetAsync<RawRequest, RawResponse>(rawRequest.RequestUri, rawRequest);
                 var response = JsonConvert.DeserializeObject<BaseDataResponseModel<IEnumerable<DocumentTypeModel>?>>(rawResponse.Conteudo);
                 if (!response.TransactionStatus.Sucess)

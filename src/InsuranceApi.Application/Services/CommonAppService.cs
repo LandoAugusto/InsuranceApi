@@ -74,7 +74,7 @@ namespace InsuranceApi.Application.Services
 
         public async Task<IEnumerable<AddressTypeModel>> GetAddressTypeAsync()
         {
-            var response = await _commonService.GetAddressTypeAsync();
+             var response = await _commonService.GetAddressTypeAsync();
             if (!response.IsAny<AddressTypeModel>()) return null;
 
             return response;
